@@ -16,6 +16,16 @@
 /* Microcontroller dependent includes */
 // TO-DO alumnos: include the necessary files to interact with the GPIOs
 
+
+/* Typedefs --------------------------------------------------------------------*/
+typedef struct
+{
+    GPIO_TypeDef *p_port;
+    uint8_t pin;
+    uint8_t pupd_mode;
+    bool flag_pressed;
+} stm32f4_button_hw_t;
+
 /* Global variables ------------------------------------------------------------*/
 
 /* Private functions ----------------------------------------------------------*/
