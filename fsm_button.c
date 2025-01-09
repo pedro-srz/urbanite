@@ -40,15 +40,15 @@ fsm_button_t *fsm_button_init(uint32_t debounce_time_ms, uint32_t button_id)
 /* FSM-interface functions. These functions are used to interact with the FSM */
 void fsm_button_fire(fsm_button_t *p_fsm)
 {
-    /* TO-DO alumnos: */
+    return &p_fsm->f;
 }
 
 fsm_t *fsm_button_get_inner_fsm(fsm_button_t *p_fsm)
 {
-    /* TO-DO alumnos: */
+    return &p_fsm->f;
 }
 
 uint32_t fsm_button_get_state(fsm_button_t *p_fsm)
 {
-    /* TO-DO alumnos: */
+    return p_fsm->f.current_state;
 }
