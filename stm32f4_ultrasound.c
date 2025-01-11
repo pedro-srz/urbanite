@@ -1,0 +1,36 @@
+/**
+ * @file stm32f4_ultrasound.c
+ * @brief Portable functions to interact with the ultrasound FSM library. All portable functions must be implemented in this file.
+ * @author alumno1
+ * @author alumno2
+ * @date date
+ */
+
+/* Standard C includes */
+
+/* HW dependent includes */
+
+/* Microcontroller dependent includes */
+
+/* Typedefs --------------------------------------------------------------------*/
+
+/* Global variables */
+
+/* Private functions ----------------------------------------------------------*/
+
+/* Public functions -----------------------------------------------------------*/
+void port_ultrasound_init(uint32_t ultrasound_id)
+{
+    /* Get the ultrasound sensor */
+    stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
+
+    /* TO-DO alumnos: */
+
+    /* Trigger pin configuration */
+
+    /* Echo pin configuration */
+
+    /* Configure timers */
+}
+
+// Getters and setters functions
