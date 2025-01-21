@@ -26,7 +26,7 @@ static fsm_button_t *p_fsm_button;
 
 void setUp(void)
 {
-    p_fsm_button = fsm_button_init(USER_BUTTON_DEBOUNCE_TIME_MS, PORT_PARKING_BUTTON_ID);
+    p_fsm_button = fsm_button_new(USER_BUTTON_DEBOUNCE_TIME_MS, PORT_PARKING_BUTTON_ID);
     port_button_disable_interrupts(PORT_PARKING_BUTTON_ID); // Disable EXTI to avoid unwanted interrupts
 }
 

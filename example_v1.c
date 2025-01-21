@@ -15,7 +15,7 @@ int main(void)
 
     // Initialize the button FSM
     // Reserve space memory in the heap for the FSM
-    fsm_button_t *p_fsm_button = fsm_button_init(PORT_PARKING_BUTTON_DEBOUNCE_TIME_MS, PORT_PARKING_BUTTON_ID);
+    fsm_button_t *p_fsm_button = fsm_button_new(PORT_PARKING_BUTTON_DEBOUNCE_TIME_MS, PORT_PARKING_BUTTON_ID);
 
     while (1)
     {
