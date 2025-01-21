@@ -21,20 +21,23 @@
 /* State machine output or action functions */
 
 /* Other auxiliary functions */
-
-fsm_button_t *fsm_button_new()
+void fsm_button_init(fsm_t *p_this, uint32_t debounce_time_ms, uint32_t button_id)
 {
-    fsm_t *p_fsm = malloc(sizeof(fsm_button_t)); /* Do malloc to reserve memory of all other FSM elements, although it is interpreted as fsm_t (the first element of the structure) */
-    return p_fsm;                                /* Composite pattern: return the fsm_t pointer as a fsm_button_t pointer */
-}
+    // Initialize the FSM
+    fsm_init(p_this, fsm_trans_button);
 
-fsm_button_t *fsm_button_init(uint32_t debounce_time_ms, uint32_t button_id)
-{
-    // Create the FSM
-    fsm_button_t *p_fsm = fsm_button_new();
-    fsm_init(&p_fsm->f, fsm_trans_button);
+    // Retrun the pointer to the FSM
+    fsm_button_t *p_fsm = (fsm_button_t *)(p_this);
 
     /* TO-DO alumnos: */
+}
+
+/* Public functions -----------------------------------------------------------*/
+fsm_button_t *fsm_button_new(uint32_t debounce_time, uint32_t button_id)
+{
+    fsm_t *p_fsm = malloc(sizeof(fsm_button_t));      /* Do malloc to reserve memory of all other FSM elements, although it is interpreted as fsm_t (the first element of the structure) */
+    fsm_button_init(p_fsm, debounce_time, button_id); /* Initialize the FSM */
+    return (fsm_button_t *)(p_fsm);                   /* Composite pattern: return the fsm_t pointer as a fsm_button_t pointer */
 }
 
 /* FSM-interface functions. These functions are used to interact with the FSM */
