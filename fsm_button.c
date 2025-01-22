@@ -43,7 +43,12 @@ fsm_button_t *fsm_button_new(uint32_t debounce_time, uint32_t button_id)
 /* FSM-interface functions. These functions are used to interact with the FSM */
 void fsm_button_fire(fsm_button_t *p_fsm)
 {
-    return &p_fsm->f;
+    fsm_fire(&p_fsm->f); // Is it also possible to it in this way: fsm_fire((fsm_t *)p_fsm);
+}
+
+void fsm_button_destroy(fsm_button_t *p_fsm)
+{
+    fsm_destroy(&p_fsm->f);
 }
 
 fsm_t *fsm_button_get_inner_fsm(fsm_button_t *p_fsm)
