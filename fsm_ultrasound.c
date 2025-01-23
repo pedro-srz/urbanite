@@ -27,22 +27,19 @@ int _compare(const void *a, const void *b)
 /* State machine output or action functions */
 
 /* Other auxiliary functions */
-void fsm_ultrasound_init(fsm_t *p_this, uint32_t ultrasound_id)
+void fsm_ultrasound_init(fsm_ultrasound_t *p_fsm_ultrasound, uint32_t ultrasound_id)
 {
     // Initialize the FSM
-    fsm_init(p_this, fsm_trans_ultrasound);
+    fsm_init(&p_fsm_ultrasound->f, fsm_trans_ultrasound);
 
-    // Retrieve the ultrasound
-    fsm_ultrasound_t *p_fsm = (fsm_ultrasound_t *)(p_this);
-
-    /* TO-DO alumnos: */
+    /* TODO alumnos: */
     // Initialize the fields of the FSM structure
 }
 
 /* Public functions -----------------------------------------------------------*/
 fsm_ultrasound_t *fsm_ultrasound_new(uint32_t ultrasound_id)
 {
-    fsm_t *p_fsm = malloc(sizeof(fsm_ultrasound_t)); /* Do malloc to reserve memory of all other FSM elements, although it is interpreted as fsm_t (the first element of the structure) */
-    fsm_ultrasound_init(p_fsm, ultrasound_id);                  /* Initialize the FSM */
-    return (fsm_ultrasound_t *)(p_fsm);                         /* Composite pattern: return the fsm_t pointer as a fsm_ultrasound_t pointer */
+    fsm_ultrasound_t *p_fsm_ultrasound = malloc(sizeof(fsm_ultrasound_t)); /* Do malloc to reserve memory of all other FSM elements, although it is interpreted as fsm_t (the first element of the structure) */
+    fsm_ultrasound_init(p_fsm_ultrasound, ultrasound_id);                  /* Initialize the FSM */
+    return p_fsm_ultrasound;                         /* Composite pattern: return the fsm_t pointer as a fsm_ultrasound_t pointer */
 }
