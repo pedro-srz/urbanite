@@ -41,5 +41,5 @@ fsm_ultrasound_t *fsm_ultrasound_new(uint32_t ultrasound_id)
 {
     fsm_ultrasound_t *p_fsm_ultrasound = malloc(sizeof(fsm_ultrasound_t)); /* Do malloc to reserve memory of all other FSM elements, although it is interpreted as fsm_t (the first element of the structure) */
     fsm_ultrasound_init(p_fsm_ultrasound, ultrasound_id);                  /* Initialize the FSM */
-    return p_fsm_ultrasound;                         /* Composite pattern: return the fsm_t pointer as a fsm_ultrasound_t pointer */
+    return p_fsm_ultrasound;
 }
