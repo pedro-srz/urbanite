@@ -26,7 +26,7 @@
 /* Public functions -----------------------------------------------------------*/
 fsm_display_t *fsm_display_new(uint32_t display_id)
 {
-    fsm_t *p_fsm = malloc(sizeof(fsm_display_t)); /* Do malloc to reserve memory of all other FSM elements, although it is interpreted as fsm_t (the first element of the structure) */
-    fsm_display_init(p_fsm, display_id);          /* Initialize the FSM */
-    return (fsm_display_t *)(p_fsm);              /* Composite pattern: return the fsm_t pointer as a fsm_display_t pointer */
+    fsm_display_t *p_fsm_display = malloc(sizeof(fsm_display_t)); /* Do malloc to reserve memory of all other FSM elements, although it is interpreted as fsm_t (the first element of the structure) */
+    fsm_display_init(p_fsm_display, display_id); /* Initialize the FSM */
+    return p_fsm_display;
 }
