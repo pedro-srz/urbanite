@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: port/stm32f4/src/stm32f4_display.c File Reference</title>
+<title>Urbanite: Parking aid system: port/stm32f4/src/stm32f4_display.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('stm32f4__display_8c.html',''); initRes
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -93,13 +94,17 @@ $(document).ready(function(){initNavTree('stm32f4__display_8c.html',''); initRes
 <p>Portable functions to interact with the display system FSM library. All portable functions must be implemented in this file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="port__display_8h_source.html">port_display.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="port__system_8h_source.html">port_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stm32f4__system_8h_source.html">stm32f4_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stm32f4__display_8h_source.html">stm32f4_display.h</a>&quot;</code><br />
-</div>
-<p><a href="stm32f4__display_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="port__display_8h.html">port_display.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port__system_8h.html">port_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f4__system_8h.html">stm32f4_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f4__display_8h.html">stm32f4_display.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstm32f4__display__hw__t.html">stm32f4_display_hw_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to define the HW dependencies of an RGB LED.  <a href="structstm32f4__display__hw__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3b6c70bd891f8077f0e4f10e942cfab2"><td class="memItemLeft" align="right" valign="top"><a id="a3b6c70bd891f8077f0e4f10e942cfab2"></a>
@@ -117,16 +122,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_display_init</b>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a54f74d066fb1c4941b4ce62fb6c30039"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structstm32f4__display__hw__t.html">stm32f4_display_hw_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__display_8c.html#a54f74d066fb1c4941b4ce62fb6c30039">display_arr</a> []</td></tr>
-<tr class="memdesc:a54f74d066fb1c4941b4ce62fb6c30039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of elements that represents the HW characteristics of the RGB LED of the display systems connected to the STM32F4 platform.  <a href="stm32f4__display_8c.html#a54f74d066fb1c4941b4ce62fb6c30039">More...</a><br /></td></tr>
-<tr class="separator:a54f74d066fb1c4941b4ce62fb6c30039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6af2359602840e75d1a3a5c2e157271"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structstm32f4__display__hw__t.html">stm32f4_display_hw_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__display_8c.html#ad6af2359602840e75d1a3a5c2e157271">displays_arr</a> []</td></tr>
+<tr class="memdesc:ad6af2359602840e75d1a3a5c2e157271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of elements that represents the HW characteristics of the RGB LED of the display systems connected to the STM32F4 platform.  <a href="stm32f4__display_8c.html#ad6af2359602840e75d1a3a5c2e157271">More...</a><br /></td></tr>
+<tr class="separator:ad6af2359602840e75d1a3a5c2e157271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Portable functions to interact with the display system FSM library. All portable functions must be implemented in this file. </p>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="stm32f4__display_8c_source.html">stm32f4_display.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="adb06ac1219695cbea44db56a316ef9eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb06ac1219695cbea44db56a316ef9eb">&#9670;&nbsp;</a></span>port_display_set_rgb()</h2>
@@ -157,24 +160,22 @@ Variables</h2></td></tr>
 <p>Set a color on the RGB LED. </p>
 <p>This function receives integer values expected to be within the range [0, 255]. With this we can set any color by using PWM. The frequency of the PWM (timer) signal can be the same for the three LEDs. However each one need a dedicated channel. Any frequency higher than 25 Hz should be sufficient to avoid flicking. This would lead us to display up to 256^3=16.777.216 colors.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. TODO </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">display_id</td><td>ID. This index is used to select the element of the <code>display_arr[]</code> array. </td></tr>
+    <tr><td class="paramname">display_id</td><td>ID. This index is used to select the element of the <code>displays_arr[]</code> array. </td></tr>
     <tr><td class="paramname">color</td><td>RGB color to set on the LED. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="stm32f4__display_8c_source.html#l00126">126</a> of file <a class="el" href="stm32f4__display_8c_source.html">stm32f4_display.c</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a54f74d066fb1c4941b4ce62fb6c30039"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54f74d066fb1c4941b4ce62fb6c30039">&#9670;&nbsp;</a></span>display_arr</h2>
+<a id="ad6af2359602840e75d1a3a5c2e157271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6af2359602840e75d1a3a5c2e157271">&#9670;&nbsp;</a></span>displays_arr</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +184,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structstm32f4__display__hw__t.html">stm32f4_display_hw_t</a> display_arr[]</td>
+          <td class="memname"><a class="el" href="structstm32f4__display__hw__t.html">stm32f4_display_hw_t</a> displays_arr[]</td>
         </tr>
       </table>
   </td>
@@ -195,8 +196,6 @@ Variables</h2></td></tr>
 
 <p>Array of elements that represents the HW characteristics of the RGB LED of the display systems connected to the STM32F4 platform. </p>
 <p>This must be hidden from the user, so it is declared as static. To access the elements of this array, use the function <code>_stm32f4_display_get()</code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__display_8c_source.html#l00029">29</a> of file <a class="el" href="stm32f4__display_8c_source.html">stm32f4_display.c</a>.</p>
 
 </div>
 </div>

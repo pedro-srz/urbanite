@@ -1,5 +1,6 @@
 var fsm__urbanite_8c =
 [
+    [ "fsm_urbanite_t", "structfsm__urbanite__t.html", "structfsm__urbanite__t" ],
     [ "check_activity", "fsm__urbanite_8c.html#a91c31f180f16c2d66ef56e62004c83bc", null ],
     [ "check_activity_in_measure", "fsm__urbanite_8c.html#a104fb214aed1d538bb63184b71a93c49", null ],
     [ "check_new_measure", "fsm__urbanite_8c.html#a7d1dafd43be6fe5d6aaf70cb886c6dc7", null ],
@@ -15,7 +16,9 @@ var fsm__urbanite_8c =
     [ "do_sleep_while_on", "fsm__urbanite_8c.html#aad10008c814d0625ee12467bc836d702", null ],
     [ "do_start_up_measure", "fsm__urbanite_8c.html#a6ed418c9291c1c9a2c6d13b3fd1c0d6e", null ],
     [ "do_stop_urbanite", "fsm__urbanite_8c.html#aad4789790f16502c7e952755d895b492", null ],
+    [ "fsm_urbanite_destroy", "fsm__urbanite_8c.html#a932fc306dcc6c89fb66a29f1c8a82b50", null ],
     [ "fsm_urbanite_fire", "fsm__urbanite_8c.html#a0cb1e5b600d89599e654890a67c55b1b", null ],
-    [ "fsm_urbanite_init", "fsm__urbanite_8c.html#ae6d50a1c3ff856e2ce0b926b30193bcc", null ],
+    [ "fsm_urbanite_init", "fsm__urbanite_8c.html#a10d874543e8591ed9615a47b008dab3d", null ],
+    [ "fsm_urbanite_new", "fsm__urbanite_8c.html#a2f367002434396c3f0baa4a4106bcb6a", null ],
     [ "fsm_trans_urbanite", "fsm__urbanite_8c.html#aeba21fd1038f0c56fc5d6b1aaa9e2148", null ]
 ];

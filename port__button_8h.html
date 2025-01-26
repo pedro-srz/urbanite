@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: port/include/port_button.h File Reference</title>
+<title>Urbanite: Parking aid system: port/include/port_button.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -94,15 +94,13 @@ $(document).ready(function(){initNavTree('port__button_8h.html',''); initResizab
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
-</div>
-<p><a href="port__button_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a89a505ed0ba6c48b4ecdeea2a84779c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__button_8h.html#a89a505ed0ba6c48b4ecdeea2a84779c6">PORT_PARKING_BUTTON_ID</a></td></tr>
 <tr class="separator:a89a505ed0ba6c48b4ecdeea2a84779c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af11579b581861745eaaef17c21391012"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__button_8h.html#af11579b581861745eaaef17c21391012">PORT_REAR_BUTTON_DEBOUNCE_TIME_MS</a></td></tr>
-<tr class="separator:af11579b581861745eaaef17c21391012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb098373ef9c83a094ce25adbb165f19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__button_8h.html#afb098373ef9c83a094ce25adbb165f19">PORT_PARKING_BUTTON_DEBOUNCE_TIME_MS</a></td></tr>
+<tr class="separator:afb098373ef9c83a094ce25adbb165f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -132,9 +130,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_button_disable_i
 <div class="textblock"><p>Header for the portable functions to interact with the HW of the buttons. The functions must be implemented in the platform-specific code. </p>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="port__button_8h_source.html">port_button.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="afb098373ef9c83a094ce25adbb165f19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb098373ef9c83a094ce25adbb165f19">&#9670;&nbsp;</a></span>PORT_PARKING_BUTTON_DEBOUNCE_TIME_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PORT_PARKING_BUTTON_DEBOUNCE_TIME_MS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Button debounce time in milliseconds </p>
+
+</div>
+</div>
 <a id="a89a505ed0ba6c48b4ecdeea2a84779c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89a505ed0ba6c48b4ecdeea2a84779c6">&#9670;&nbsp;</a></span>PORT_PARKING_BUTTON_ID</h2>
 
@@ -147,25 +158,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_button_disable_i
       </table>
 </div><div class="memdoc">
 <p>User button identifier that represents the rear button (activation of the parking aid system) </p>
-
-<p class="definition">Definition at line <a class="el" href="port__button_8h_source.html#l00017">17</a> of file <a class="el" href="port__button_8h_source.html">port_button.h</a>.</p>
-
-</div>
-</div>
-<a id="af11579b581861745eaaef17c21391012"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af11579b581861745eaaef17c21391012">&#9670;&nbsp;</a></span>PORT_REAR_BUTTON_DEBOUNCE_TIME_MS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PORT_REAR_BUTTON_DEBOUNCE_TIME_MS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Button debounce time in milliseconds </p>
-
-<p class="definition">Definition at line <a class="el" href="port__button_8h_source.html#l00018">18</a> of file <a class="el" href="port__button_8h_source.html">port_button.h</a>.</p>
 
 </div>
 </div>
@@ -188,7 +180,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_button_disable_i
 
 <p>Return the status of the button (pressed or not). </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Return the value of the field <code>flag_pressed</code> </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -200,8 +192,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_button_disable_i
 <dl class="section return"><dt>Returns</dt><dd>true If the button has been pressed </dd>
 <dd>
 false If the button has not been pressed </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__button_8c_source.html#l00074">74</a> of file <a class="el" href="stm32f4__button_8c_source.html">stm32f4_button.c</a>.</p>
 
 </div>
 </div>
@@ -224,7 +214,7 @@ false If the button has not been pressed </dd></dl>
 <p>Configure the HW specifications of a given button. </p>
 <p>Assuming we are using an STM32F4-based platform, this function configures must call the following functions:</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code><a class="el" href="stm32f4__system_8h.html#aca348a9998b93751c1440d62050b7d79" title="Configure the mode and pull of a GPIO.">stm32f4_system_gpio_config()</a></code> with the right arguments to configure the button as input and no pull up neither pull down connection <br  />
 ✅ 2. Call function <code><a class="el" href="stm32f4__system_8h.html#a98f4105a82f32c645f0b06424af5ef22" title="Configure the external interruption or event of a GPIO.">stm32f4_system_gpio_config_exti()</a></code> with the right arguments to configure interruption mode in both rising and falling edges, and enable the interrupt request <br  />
 ✅ 3. Call function <code><a class="el" href="stm32f4__system_8h.html#a03d8c69cd44964e3f1ff05a2c79626b8" title="Enable interrupts of a GPIO line (pin)">stm32f4_system_gpio_exti_enable()</a></code> with the right parameters to enable the interrupt line and set the priority level to <code>1</code> and the subpriority level to <code>0</code> </p>
@@ -235,8 +225,6 @@ false If the button has not been pressed </dd></dl>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__button_8c_source.html#l00054">54</a> of file <a class="el" href="stm32f4__button_8c_source.html">stm32f4_button.c</a>.</p>
 
 </div>
 </div>

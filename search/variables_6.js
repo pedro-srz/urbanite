@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['idle_343',['idle',['../structfsm__display__t.html#aa3b2d75db29313e2c6d21c61ed8320d4',1,'fsm_display_t']]],
-  ['is_5fpaused_344',['is_paused',['../structfsm__urbanite__t.html#a99794bf9667eecffa32f28c4e4e6dbc1',1,'fsm_urbanite_t']]]
+  ['idle_352',['idle',['../structfsm__display__t.html#aa3b2d75db29313e2c6d21c61ed8320d4',1,'fsm_display_t']]],
+  ['is_5fpaused_353',['is_paused',['../structfsm__urbanite__t.html#a99794bf9667eecffa32f28c4e4e6dbc1',1,'fsm_urbanite_t']]]
 ];

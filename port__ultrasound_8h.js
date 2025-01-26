@@ -1,7 +1,7 @@
 var port__ultrasound_8h =
 [
+    [ "PORT_PARKING_SENSOR_TIMEOUT_MS", "port__ultrasound_8h.html#a3a357780889c91db508c4a4258c7ef01", null ],
     [ "PORT_REAR_PARKING_SENSOR_ID", "port__ultrasound_8h.html#aea2cc53bb1758ff046eb83a4d6af8b3a", null ],
-    [ "PORT_REAR_PARKING_SENSOR_TIMEOUT_MS", "port__ultrasound_8h.html#aee509388fb0c44404c6146cff5601bae", null ],
     [ "SPEED_OF_SOUND_MS", "port__ultrasound_8h.html#aa752310fe8d31623627b4e4ce01c8e96", null ],
     [ "port_ultrasound_get_echo_end_tick", "port__ultrasound_8h.html#a3fd8e4ff9c1aead8bbf9d63d4a132f0f", null ],
     [ "port_ultrasound_get_echo_init_tick", "port__ultrasound_8h.html#a385214eef040dbd4a4d9b1939000d14b", null ],
@@ -19,7 +19,7 @@ var port__ultrasound_8h =
     [ "port_ultrasound_set_trigger_ready", "port__ultrasound_8h.html#aae5b7c5a7e58b8498b58258ce9ae4e15", null ],
     [ "port_ultrasound_start_measurement", "port__ultrasound_8h.html#ae567e86e69a1e7a150cb7044feae0d55", null ],
     [ "port_ultrasound_stop_echo_timer", "port__ultrasound_8h.html#aab634b73c4b5c25b55e6fb8c8ec45445", null ],
-    [ "port_ultrasound_stop_new_measurement_timer", "port__ultrasound_8h.html#afce1f3599285c0f0626c644252b3e805", null ],
+    [ "port_ultrasound_stop_new_measurement_timer", "port__ultrasound_8h.html#ad6572229cb01aefb04cc50c4582bb174", null ],
     [ "port_ultrasound_stop_trigger_timer", "port__ultrasound_8h.html#ad359ec117f8b709a95dd81c1d31167f2", null ],
     [ "port_ultrasound_stop_ultrasound", "port__ultrasound_8h.html#ae6445d417d1b2390226787925d264d66", null ]
 ];

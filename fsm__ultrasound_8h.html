@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: common/include/fsm_ultrasound.h File Reference</title>
+<title>Urbanite: Parking aid system: common/include/fsm_ultrasound.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('fsm__ultrasound_8h.html',''); initResi
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">fsm_ultrasound.h File Reference</div>  </div>
@@ -95,9 +96,7 @@ $(document).ready(function(){initNavTree('fsm__ultrasound_8h.html',''); initResi
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
-</div>
-<p><a href="fsm__ultrasound_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a39422c42295f8c6febe61fe7b8e4ec0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#a39422c42295f8c6febe61fe7b8e4ec0f">FSM_ULTRASOUND_NUM_MEASUREMENTS</a>&#160;&#160;&#160;5</td></tr>
@@ -110,11 +109,31 @@ typedef struct <a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound
 <tr class="memdesc:a3c5d38a3be82106e26517a398e25fb74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to define the Display System FSM. <br /></td></tr>
 <tr class="separator:a3c5d38a3be82106e26517a398e25fb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a3c16f934dafa89c8f3edd6f4c098753a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#a3c16f934dafa89c8f3edd6f4c098753a">FSM_ULTRASOUND</a> { <br />
+&#160;&#160;<a class="el" href="fsm__ultrasound_8h.html#a3c16f934dafa89c8f3edd6f4c098753aad672f41b357cfe8db0e7b262a428fd66">WAIT_START</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="fsm__ultrasound_8h.html#a3c16f934dafa89c8f3edd6f4c098753aa1116e5229f559413cce1c65114f3d39d">TRIGGER_START</a>, 
+<br />
+&#160;&#160;<a class="el" href="fsm__ultrasound_8h.html#a3c16f934dafa89c8f3edd6f4c098753aa8bf50b0b5cf3d8ac3bbc17977d3d0e42">WAIT_ECHO_START</a>, 
+<br />
+&#160;&#160;<a class="el" href="fsm__ultrasound_8h.html#a3c16f934dafa89c8f3edd6f4c098753aa395cf8599725b9dc290150f5b39f2ab0">WAIT_ECHO_END</a>, 
+<br />
+&#160;&#160;<a class="el" href="fsm__ultrasound_8h.html#a3c16f934dafa89c8f3edd6f4c098753aa6b6d10e51a367e149571e663415e5b0c">SET_DISTANCE</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a3c16f934dafa89c8f3edd6f4c098753a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerator for the ultrasound finite state machine.  <a href="fsm__ultrasound_8h.html#a3c16f934dafa89c8f3edd6f4c098753a">More...</a><br /></td></tr>
+<tr class="separator:a3c16f934dafa89c8f3edd6f4c098753a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad16820551c7f4ee9f48d431c603861cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#ad16820551c7f4ee9f48d431c603861cf">fsm_ultrasound_init</a> (uint32_t ultrasound_id)</td></tr>
-<tr class="memdesc:ad16820551c7f4ee9f48d431c603861cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a ultrasound FSM.  <a href="fsm__ultrasound_8h.html#ad16820551c7f4ee9f48d431c603861cf">More...</a><br /></td></tr>
-<tr class="separator:ad16820551c7f4ee9f48d431c603861cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b1a051459a4fd05d84a8e6f07e8b678"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#a7b1a051459a4fd05d84a8e6f07e8b678">fsm_ultrasound_new</a> (uint32_t ultrasound_id)</td></tr>
+<tr class="memdesc:a7b1a051459a4fd05d84a8e6f07e8b678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a ultrasound FSM.  <a href="fsm__ultrasound_8h.html#a7b1a051459a4fd05d84a8e6f07e8b678">More...</a><br /></td></tr>
+<tr class="separator:a7b1a051459a4fd05d84a8e6f07e8b678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3058bd02199823fbdf00b996002cb1b"><td class="memItemLeft" align="right" valign="top"><a id="ad3058bd02199823fbdf00b996002cb1b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_ultrasound_destroy</b> (<a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm)</td></tr>
+<tr class="separator:ad3058bd02199823fbdf00b996002cb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff92f27acb083d23359ccfedbbae8012"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#aff92f27acb083d23359ccfedbbae8012">fsm_ultrasound_get_distance</a> (<a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:aff92f27acb083d23359ccfedbbae8012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the distance of the last object detected by the ultrasound sensor.  <a href="fsm__ultrasound_8h.html#aff92f27acb083d23359ccfedbbae8012">More...</a><br /></td></tr>
 <tr class="separator:aff92f27acb083d23359ccfedbbae8012"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,8 +166,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_ultrasound_start<
 <div class="textblock"><p>Header for <a class="el" href="fsm__ultrasound_8c.html" title="Ultrasound sensor FSM main file.">fsm_ultrasound.c</a> file. </p>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="fsm__ultrasound_8h_source.html">fsm_ultrasound.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a39422c42295f8c6febe61fe7b8e4ec0f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39422c42295f8c6febe61fe7b8e4ec0f">&#9670;&nbsp;</a></span>FSM_ULTRASOUND_NUM_MEASUREMENTS</h2>
@@ -163,7 +180,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_ultrasound_start<
 </div><div class="memdoc">
 <p>Number of measurements to store in the array </p>
 
-<p class="definition">Definition at line <a class="el" href="fsm__ultrasound_8h_source.html#l00017">17</a> of file <a class="el" href="fsm__ultrasound_8h_source.html">fsm_ultrasound.h</a>.</p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a3c16f934dafa89c8f3edd6f4c098753a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c16f934dafa89c8f3edd6f4c098753a">&#9670;&nbsp;</a></span>FSM_ULTRASOUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="fsm__ultrasound_8h.html#a3c16f934dafa89c8f3edd6f4c098753a">FSM_ULTRASOUND</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumerator for the ultrasound finite state machine. </p>
+<p>This enumerator defines the different states that the ultrasound finite state machine can be in. Each state represents a specific condition or step in the ultrasound distance measurement process. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3c16f934dafa89c8f3edd6f4c098753aad672f41b357cfe8db0e7b262a428fd66"></a>WAIT_START&#160;</td><td class="fielddoc"><p>Starting state. Also comes here when the distance measurement has been completed or a timeout has occurred </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3c16f934dafa89c8f3edd6f4c098753aa1116e5229f559413cce1c65114f3d39d"></a>TRIGGER_START&#160;</td><td class="fielddoc"><p>State to send the trigger pulse to the ultrasound sensor </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3c16f934dafa89c8f3edd6f4c098753aa8bf50b0b5cf3d8ac3bbc17977d3d0e42"></a>WAIT_ECHO_START&#160;</td><td class="fielddoc"><p>State to wait for the echo signal </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3c16f934dafa89c8f3edd6f4c098753aa395cf8599725b9dc290150f5b39f2ab0"></a>WAIT_ECHO_END&#160;</td><td class="fielddoc"><p>State to wait for the echo signal </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3c16f934dafa89c8f3edd6f4c098753aa6b6d10e51a367e149571e663415e5b0c"></a>SET_DISTANCE&#160;</td><td class="fielddoc"><p>State to compute the distance from the echo signal </p>
+</td></tr>
+</table>
 
 </div>
 </div>
@@ -186,7 +231,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_ultrasound_start<
 
 <p>Check if the ultrasound sensor is doing a distance measurement. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos Version 4:</b></p>
+<p><b>TODO alumnos Version 4:</b></p>
 <p>✅ 1. Get the field <code>current_state</code> of the FSM (field <code>f</code> of the struct). <br  />
 ✅ 2. Return <code>false</code> if the current state is <code>WAIT_START</code>. Otherwise, return <code>true</code>. <br  />
 </p>
@@ -200,8 +245,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_ultrasound_start<
 <dl class="section return"><dt>Returns</dt><dd>true </dd>
 <dd>
 false </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__ultrasound_8c_source.html#l00291">291</a> of file <a class="el" href="fsm__ultrasound_8c_source.html">fsm_ultrasound.c</a>.</p>
 
 </div>
 </div>
@@ -224,7 +267,7 @@ false </dd></dl>
 <p>Fire the ultrasound FSM. </p>
 <p>This function is used to fire the ultrasound FSM. It is used to check the transitions and execute the actions of the ultrasound FSM.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code>fsm_fire()</code> with the received pointer to <code>fsm_t</code> <br  />
 </p>
 </blockquote>
@@ -234,8 +277,6 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__ultrasound_8c_source.html#l00242">242</a> of file <a class="el" href="fsm__ultrasound_8c_source.html">fsm_ultrasound.c</a>.</p>
 
 </div>
 </div>
@@ -257,7 +298,7 @@ false </dd></dl>
 
 <p>Return the distance of the last object detected by the ultrasound sensor. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Retrieve and return the field <code>distance_cm</code> <br  />
 ✅ 2. Reset the field <code>new_measurement</code> to <code>false</code> <br  />
 </p>
@@ -270,18 +311,16 @@ false </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>uint32_t Distance measured by the ultrasound sensor in centimeters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm__ultrasound_8c_source.html#l00248">248</a> of file <a class="el" href="fsm__ultrasound_8c_source.html">fsm_ultrasound.c</a>.</p>
-
 </div>
 </div>
-<a id="ad16820551c7f4ee9f48d431c603861cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad16820551c7f4ee9f48d431c603861cf">&#9670;&nbsp;</a></span>fsm_ultrasound_init()</h2>
+<a id="a7b1a051459a4fd05d84a8e6f07e8b678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b1a051459a4fd05d84a8e6f07e8b678">&#9670;&nbsp;</a></span>fsm_ultrasound_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a>* fsm_ultrasound_init </td>
+          <td class="memname"><a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a>* fsm_ultrasound_new </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>ultrasound_id</em></td><td>)</td>
@@ -296,8 +335,8 @@ false </dd></dl>
 <p>The FSM contains information of the ultrasound ID. This ID is a unique identifier that is managed by the user in the <code>port</code>. That is where the user provides identifiers and HW information for all the ultrasounds on his system. The FSM does not have to know anything of the underlying HW.</p>
 <dl class="section note"><dt>Note</dt><dd>Both unit and integration tests (example) are provided for this ultrasound library are available in this GitHub repository: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v2_test">https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v2_test</a></dd></dl>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
-<p>✅ 1. Call the functions <code>fsm_ultrasound_new()</code> and <code>fsm_init()</code> to initialize the FSM with the transitions table. <br  />
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Call the functions <code>fsm_ultrasound_init()</code> to initialize the FSM with the transitions table. <br  />
 ✅ 2. Initialize the fields all the fields of the <code>p_fsm</code> with the received values. <br  />
 ✅ 3. Call function <code><a class="el" href="port__ultrasound_8h.html#acfa7c7fa4ee94431efa746fceaf2a770" title="Configure the HW specifications of a given ultrasound sensor.">port_ultrasound_init()</a></code> </p>
 </blockquote>
@@ -309,8 +348,6 @@ false </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>fsm_ultrasound_t* Pointer to the ultrasound FSM. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__ultrasound_8c_source.html#l00222">222</a> of file <a class="el" href="fsm__ultrasound_8c_source.html">fsm_ultrasound.c</a>.</p>
 
 </div>
 </div>
@@ -342,7 +379,7 @@ false </dd></dl>
 
 <p>Set the status of the ultrasound sensor. <code>true</code> means that the ultrasound sensor is active and a distance measurement must be performed. <code>false</code> means that the ultrasound sensor is inactive. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Update the field <code>status</code> with the received value <br  />
 </p>
 </blockquote>
@@ -353,8 +390,6 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__ultrasound_8c_source.html#l00275">275</a> of file <a class="el" href="fsm__ultrasound_8c_source.html">fsm_ultrasound.c</a>.</p>
 
 </div>
 </div>

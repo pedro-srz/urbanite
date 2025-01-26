@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: port/stm32f4/src/stm32f4_ultrasound.c File Reference</title>
+<title>Urbanite: Parking aid system: port/stm32f4/src/stm32f4_ultrasound.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('stm32f4__ultrasound_8c.html',''); init
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -94,27 +95,31 @@ $(document).ready(function(){initNavTree('stm32f4__ultrasound_8c.html',''); init
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="port__ultrasound_8h_source.html">port_ultrasound.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="port__system_8h_source.html">port_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stm32f4__system_8h_source.html">stm32f4_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stm32f4__ultrasound_8h_source.html">stm32f4_ultrasound.h</a>&quot;</code><br />
-</div>
-<p><a href="stm32f4__ultrasound_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="port__ultrasound_8h.html">port_ultrasound.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port__system_8h.html">port_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f4__system_8h.html">stm32f4_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f4__ultrasound_8h.html">stm32f4_ultrasound.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstm32f4__ultrasound__hw__t.html">stm32f4_ultrasound_hw_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to define the HW dependencies of aN ultrasound sensor.  <a href="structstm32f4__ultrasound__hw__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a25c1bd959768a66ebfdc3c4995b128a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstm32f4__ultrasound__hw__t.html">stm32f4_ultrasound_hw_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__ultrasound_8c.html#a25c1bd959768a66ebfdc3c4995b128a2">_stm32f4_ultrasound_get</a> (uint32_t ultrasound_id)</td></tr>
 <tr class="memdesc:a25c1bd959768a66ebfdc3c4995b128a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ultrasound struct with the given ID.  <a href="stm32f4__ultrasound_8c.html#a25c1bd959768a66ebfdc3c4995b128a2">More...</a><br /></td></tr>
 <tr class="separator:a25c1bd959768a66ebfdc3c4995b128a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c2ba769a41b9789476b521df3f39414"><td class="memItemLeft" align="right" valign="top"><a id="a8c2ba769a41b9789476b521df3f39414"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>_timer_trigger_setup</b> (uint32_t ultrasound_id)</td></tr>
-<tr class="separator:a8c2ba769a41b9789476b521df3f39414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c3b91c72ccc14205bff17fb07c8a58"><td class="memItemLeft" align="right" valign="top"><a id="ac4c3b91c72ccc14205bff17fb07c8a58"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>_timer_trigger_setup</b> ()</td></tr>
+<tr class="separator:ac4c3b91c72ccc14205bff17fb07c8a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a1f78238258e444b4e7b3a2d42f445b"><td class="memItemLeft" align="right" valign="top"><a id="a2a1f78238258e444b4e7b3a2d42f445b"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>_timer_echo_setup</b> (uint32_t ultrasound_id)</td></tr>
 <tr class="separator:a2a1f78238258e444b4e7b3a2d42f445b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af371e8e0be41a2cbcfb66765db2cde6c"><td class="memItemLeft" align="right" valign="top"><a id="af371e8e0be41a2cbcfb66765db2cde6c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>_timer_new_measurement_setup</b> (uint32_t ultrasound_id)</td></tr>
-<tr class="separator:af371e8e0be41a2cbcfb66765db2cde6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288d1d8f0fec4fa8ebcec4679e1c2d48"><td class="memItemLeft" align="right" valign="top"><a id="a288d1d8f0fec4fa8ebcec4679e1c2d48"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>_timer_new_measurement_setup</b> ()</td></tr>
+<tr class="separator:a288d1d8f0fec4fa8ebcec4679e1c2d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa7c7fa4ee94431efa746fceaf2a770"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__ultrasound_8c.html#acfa7c7fa4ee94431efa746fceaf2a770">port_ultrasound_init</a> (uint32_t ultrasound_id)</td></tr>
 <tr class="memdesc:acfa7c7fa4ee94431efa746fceaf2a770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the HW specifications of a given ultrasound sensor.  <a href="stm32f4__ultrasound_8c.html#acfa7c7fa4ee94431efa746fceaf2a770">More...</a><br /></td></tr>
 <tr class="separator:acfa7c7fa4ee94431efa746fceaf2a770"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,9 +135,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_ultrasound_stop_
 <tr class="memitem:aba9e7b923969aca6331b16832fbee4f8"><td class="memItemLeft" align="right" valign="top"><a id="aba9e7b923969aca6331b16832fbee4f8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>port_ultrasound_reset_echo_ticks</b> (uint32_t ultrasound_id)</td></tr>
 <tr class="separator:aba9e7b923969aca6331b16832fbee4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afce1f3599285c0f0626c644252b3e805"><td class="memItemLeft" align="right" valign="top"><a id="afce1f3599285c0f0626c644252b3e805"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>port_ultrasound_stop_new_measurement_timer</b> (uint32_t ultrasound_id)</td></tr>
-<tr class="separator:afce1f3599285c0f0626c644252b3e805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2ce87e9dba405678eecbf46c9e11c7"><td class="memItemLeft" align="right" valign="top"><a id="aef2ce87e9dba405678eecbf46c9e11c7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>port_ultrasound_stop_new_measurement_timer</b> ()</td></tr>
+<tr class="separator:aef2ce87e9dba405678eecbf46c9e11c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6445d417d1b2390226787925d264d66"><td class="memItemLeft" align="right" valign="top"><a id="ae6445d417d1b2390226787925d264d66"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>port_ultrasound_stop_ultrasound</b> (uint32_t ultrasound_id)</td></tr>
 <tr class="separator:ae6445d417d1b2390226787925d264d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,8 +188,6 @@ Variables</h2></td></tr>
 <div class="textblock"><p>Portable functions to interact with the ultrasound FSM library. All portable functions must be implemented in this file. </p>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="stm32f4__ultrasound_8c_source.html">stm32f4_ultrasound.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a25c1bd959768a66ebfdc3c4995b128a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25c1bd959768a66ebfdc3c4995b128a2">&#9670;&nbsp;</a></span>_stm32f4_ultrasound_get()</h2>
@@ -213,8 +216,6 @@ Variables</h2></td></tr>
 <dd>
 NULL If the ultrasound ID is not valid. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stm32f4__ultrasound_8c_source.html#l00042">42</a> of file <a class="el" href="stm32f4__ultrasound_8c_source.html">stm32f4_ultrasound.c</a>.</p>
-
 </div>
 </div>
 <a id="acfa7c7fa4ee94431efa746fceaf2a770"></a>
@@ -236,7 +237,7 @@ NULL If the ultrasound ID is not valid. </dd></dl>
 <p>Configure the HW specifications of a given ultrasound sensor. </p>
 <p>Assuming we are using an STM32F4-based platform, this function configures must call the following functions:</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. <br  />
 ✅ 2. <br  />
 ✅ 3. </p>
@@ -247,8 +248,6 @@ NULL If the ultrasound ID is not valid. </dd></dl>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__ultrasound_8c_source.html#l00199">199</a> of file <a class="el" href="stm32f4__ultrasound_8c_source.html">stm32f4_ultrasound.c</a>.</p>
 
 </div>
 </div>
@@ -275,8 +274,6 @@ NULL If the ultrasound ID is not valid. </dd></dl>
 
 <p>Array of elements that represents the HW characteristics of the ultrasounds connected to the STM32F4 platform. </p>
 <p>This must be hidden from the user, so it is declared as static. To access the elements of this array, use the function <code><a class="el" href="stm32f4__ultrasound_8c.html#a25c1bd959768a66ebfdc3c4995b128a2" title="Get the ultrasound struct with the given ID.">_stm32f4_ultrasound_get()</a></code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__ultrasound_8c_source.html#l00029">29</a> of file <a class="el" href="stm32f4__ultrasound_8c_source.html">stm32f4_ultrasound.c</a>.</p>
 
 </div>
 </div>

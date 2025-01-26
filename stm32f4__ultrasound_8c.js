@@ -1,9 +1,10 @@
 var stm32f4__ultrasound_8c =
 [
+    [ "stm32f4_ultrasound_hw_t", "structstm32f4__ultrasound__hw__t.html", "structstm32f4__ultrasound__hw__t" ],
     [ "_stm32f4_ultrasound_get", "stm32f4__ultrasound_8c.html#a25c1bd959768a66ebfdc3c4995b128a2", null ],
     [ "_timer_echo_setup", "stm32f4__ultrasound_8c.html#a2a1f78238258e444b4e7b3a2d42f445b", null ],
-    [ "_timer_new_measurement_setup", "stm32f4__ultrasound_8c.html#af371e8e0be41a2cbcfb66765db2cde6c", null ],
-    [ "_timer_trigger_setup", "stm32f4__ultrasound_8c.html#a8c2ba769a41b9789476b521df3f39414", null ],
+    [ "_timer_new_measurement_setup", "stm32f4__ultrasound_8c.html#a288d1d8f0fec4fa8ebcec4679e1c2d48", null ],
+    [ "_timer_trigger_setup", "stm32f4__ultrasound_8c.html#ac4c3b91c72ccc14205bff17fb07c8a58", null ],
     [ "port_ultrasound_get_echo_end_tick", "stm32f4__ultrasound_8c.html#a3fd8e4ff9c1aead8bbf9d63d4a132f0f", null ],
     [ "port_ultrasound_get_echo_init_tick", "stm32f4__ultrasound_8c.html#a385214eef040dbd4a4d9b1939000d14b", null ],
     [ "port_ultrasound_get_echo_overflows", "stm32f4__ultrasound_8c.html#a2d21bece407596a4e345734a65490983", null ],
@@ -20,7 +21,7 @@ var stm32f4__ultrasound_8c =
     [ "port_ultrasound_set_trigger_ready", "stm32f4__ultrasound_8c.html#aae5b7c5a7e58b8498b58258ce9ae4e15", null ],
     [ "port_ultrasound_start_measurement", "stm32f4__ultrasound_8c.html#ae567e86e69a1e7a150cb7044feae0d55", null ],
     [ "port_ultrasound_stop_echo_timer", "stm32f4__ultrasound_8c.html#aab634b73c4b5c25b55e6fb8c8ec45445", null ],
-    [ "port_ultrasound_stop_new_measurement_timer", "stm32f4__ultrasound_8c.html#afce1f3599285c0f0626c644252b3e805", null ],
+    [ "port_ultrasound_stop_new_measurement_timer", "stm32f4__ultrasound_8c.html#aef2ce87e9dba405678eecbf46c9e11c7", null ],
     [ "port_ultrasound_stop_trigger_timer", "stm32f4__ultrasound_8c.html#ad359ec117f8b709a95dd81c1d31167f2", null ],
     [ "port_ultrasound_stop_ultrasound", "stm32f4__ultrasound_8c.html#ae6445d417d1b2390226787925d264d66", null ],
     [ "ultrasounds_arr", "stm32f4__ultrasound_8c.html#ab2d00832e8d089dbc740ccb37880ffc2", null ]

@@ -11,11 +11,16 @@ var fsm__display_8h =
     [ "WARNING_MAX_CM", "fsm__display_8h.html#af83e1e76769ea1dae6a9ab2a33fe8dd3", null ],
     [ "WARNING_MIN_CM", "fsm__display_8h.html#a518c5af52bbb0b3a64b130b30affd88a", null ],
     [ "fsm_display_t", "fsm__display_8h.html#a82b1733c12aec252ef9143f87216ea59", null ],
+    [ "FSM_DISPLAY_SYSTEM", "fsm__display_8h.html#a4888f6560d495e7d5e5b0bb960dc86e5", [
+      [ "WAIT_DISPLAY", "fsm__display_8h.html#a4888f6560d495e7d5e5b0bb960dc86e5a1cd22d477451f6bc772efe2537795bd3", null ],
+      [ "SET_DISPLAY", "fsm__display_8h.html#a4888f6560d495e7d5e5b0bb960dc86e5ab04fc18727d312a9c526635ddd8790e1", null ]
+    ] ],
     [ "fsm_display_check_activity", "fsm__display_8h.html#a410aafc7e009641a9588f2b0fd8bf76f", null ],
+    [ "fsm_display_destroy", "fsm__display_8h.html#aa4a55697e744379b93e16803110a1fd4", null ],
     [ "fsm_display_fire", "fsm__display_8h.html#a339cb7a174b5bad645b83852aee8a6d7", null ],
     [ "fsm_display_get_distance", "fsm__display_8h.html#ae686f4ca36df093005ac13a211fe5494", null ],
     [ "fsm_display_get_status", "fsm__display_8h.html#ab78e6093f02263a5bfb8dd2e3c652791", null ],
-    [ "fsm_display_init", "fsm__display_8h.html#a9014e7fb61264e9cbe1c87b7b5fa9027", null ],
+    [ "fsm_display_new", "fsm__display_8h.html#af8971b5e7c7e72e1d5f955b7ece4475b", null ],
     [ "fsm_display_set_display", "fsm__display_8h.html#af52c94abb2bcd805b55d208e3377c2b1", null ],
     [ "fsm_display_set_distance", "fsm__display_8h.html#a8c5b967c941aa17e58774324d348dff6", null ],
     [ "fsm_display_set_status", "fsm__display_8h.html#a83d5e775845d1c91e63f74eebde0a603", null ]

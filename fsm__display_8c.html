@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: common/src/fsm_display.c File Reference</title>
+<title>Urbanite: Parking aid system: common/src/fsm_display.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -84,7 +84,6 @@ $(document).ready(function(){initNavTree('fsm__display_8c.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -96,28 +95,15 @@ $(document).ready(function(){initNavTree('fsm__display_8c.html',''); initResizab
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="port__display_8h_source.html">port_display.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="port__system_8h_source.html">port_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port__display_8h.html">port_display.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port__system_8h.html">port_system.h</a>&quot;</code><br />
 <code>#include &quot;fsm.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="fsm__display_8h_source.html">fsm_display.h</a>&quot;</code><br />
-</div>
-<p><a href="fsm__display_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="fsm__display_8h.html">fsm_display.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__display__t.html">fsm_display_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a4888f6560d495e7d5e5b0bb960dc86e5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a4888f6560d495e7d5e5b0bb960dc86e5">FSM_DISPLAY_SYSTEM</a> { <br />
-&#160;&#160;<a class="el" href="fsm__display_8c.html#a4888f6560d495e7d5e5b0bb960dc86e5a1cd22d477451f6bc772efe2537795bd3">WAIT_DISPLAY</a> = 0, 
-<br />
-&#160;&#160;<a class="el" href="fsm__display_8c.html#a4888f6560d495e7d5e5b0bb960dc86e5ab04fc18727d312a9c526635ddd8790e1">SET_DISPLAY</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a4888f6560d495e7d5e5b0bb960dc86e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerator for the display system finite state machine.  <a href="fsm__display_8c.html#a4888f6560d495e7d5e5b0bb960dc86e5">More...</a><br /></td></tr>
-<tr class="separator:a4888f6560d495e7d5e5b0bb960dc86e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -142,12 +128,15 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>do_set_color</
 <tr class="memitem:a93a8745b455e90e7dd7093adf9d90a06"><td class="memItemLeft" align="right" valign="top"><a id="a93a8745b455e90e7dd7093adf9d90a06"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>do_set_off</b> (fsm_t *p_this)</td></tr>
 <tr class="separator:a93a8745b455e90e7dd7093adf9d90a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba25eb4b4a93c39b33bb6f560e75ada6"><td class="memItemLeft" align="right" valign="top"><a id="aba25eb4b4a93c39b33bb6f560e75ada6"></a>
-<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_new</b> ()</td></tr>
-<tr class="separator:aba25eb4b4a93c39b33bb6f560e75ada6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9014e7fb61264e9cbe1c87b7b5fa9027"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a9014e7fb61264e9cbe1c87b7b5fa9027">fsm_display_init</a> (uint32_t display_id)</td></tr>
-<tr class="memdesc:a9014e7fb61264e9cbe1c87b7b5fa9027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a display system FSM.  <a href="fsm__display_8c.html#a9014e7fb61264e9cbe1c87b7b5fa9027">More...</a><br /></td></tr>
-<tr class="separator:a9014e7fb61264e9cbe1c87b7b5fa9027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac29a05b18eea8186a41013d7aaa8a816"><td class="memItemLeft" align="right" valign="top"><a id="ac29a05b18eea8186a41013d7aaa8a816"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_init</b> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm_display, uint32_t display_id)</td></tr>
+<tr class="separator:ac29a05b18eea8186a41013d7aaa8a816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8971b5e7c7e72e1d5f955b7ece4475b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#af8971b5e7c7e72e1d5f955b7ece4475b">fsm_display_new</a> (uint32_t display_id)</td></tr>
+<tr class="memdesc:af8971b5e7c7e72e1d5f955b7ece4475b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a display system FSM.  <a href="fsm__display_8c.html#af8971b5e7c7e72e1d5f955b7ece4475b">More...</a><br /></td></tr>
+<tr class="separator:af8971b5e7c7e72e1d5f955b7ece4475b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a55697e744379b93e16803110a1fd4"><td class="memItemLeft" align="right" valign="top"><a id="aa4a55697e744379b93e16803110a1fd4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_destroy</b> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="separator:aa4a55697e744379b93e16803110a1fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a339cb7a174b5bad645b83852aee8a6d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a339cb7a174b5bad645b83852aee8a6d7">fsm_display_fire</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a339cb7a174b5bad645b83852aee8a6d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire the display system FSM.  <a href="fsm__display_8c.html#a339cb7a174b5bad645b83852aee8a6d7">More...</a><br /></td></tr>
 <tr class="separator:a339cb7a174b5bad645b83852aee8a6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,35 +166,7 @@ Variables</h2></td></tr>
 <div class="textblock"><p>Display system FSM main file. </p>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="fsm__display_8c_source.html">fsm_display.c</a>.</p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a4888f6560d495e7d5e5b0bb960dc86e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4888f6560d495e7d5e5b0bb960dc86e5">&#9670;&nbsp;</a></span>FSM_DISPLAY_SYSTEM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="fsm__display_8c.html#a4888f6560d495e7d5e5b0bb960dc86e5">FSM_DISPLAY_SYSTEM</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enumerator for the display system finite state machine. </p>
-<p>This enumerator defines the different states that the display system finite state machine can be in. Each state represents a specific condition of the display system: waiting for a status of display, or showing the status of the display. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4888f6560d495e7d5e5b0bb960dc86e5a1cd22d477451f6bc772efe2537795bd3"></a>WAIT_DISPLAY&#160;</td><td class="fielddoc"><p>Starting state. Also comes here when there is no status of display, i.e. the display system is inactive </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a4888f6560d495e7d5e5b0bb960dc86e5ab04fc18727d312a9c526635ddd8790e1"></a>SET_DISPLAY&#160;</td><td class="fielddoc"><p>State to show the status of the display system </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="fsm__display_8c_source.html#l00030">30</a> of file <a class="el" href="fsm__display_8c_source.html">fsm_display.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a8e382225a9b12e32722e6d5c36dbea57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e382225a9b12e32722e6d5c36dbea57">&#9670;&nbsp;</a></span>check_active()</h2>
 
@@ -232,7 +193,7 @@ Variables</h2></td></tr>
 
 <p>Check if a new display measure has to be shown. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Return <code>true</code> if the display system has been indicated to be active. Otherwise, return <code>false</code> <br  />
 </p>
 </blockquote>
@@ -245,8 +206,6 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true If the display system has been indicated to be active </dd>
 <dd>
 false If the display system has been indicated to be inactive </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__display_8c_source.html#l00121">121</a> of file <a class="el" href="fsm__display_8c_source.html">fsm_display.c</a>.</p>
 
 </div>
 </div>
@@ -269,7 +228,7 @@ false If the display system has been indicated to be inactive </dd></dl>
 <p>Fire the display system FSM. </p>
 <p>This function is used to fire the display system FSM. It is used to check the transitions and execute the actions of the display system FSM.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call the <code>fsm_fire()</code> function with the pointer to the display system FSM <br  />
 </p>
 </blockquote>
@@ -280,18 +239,16 @@ false If the display system has been indicated to be inactive </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm__display_8c_source.html#l00211">211</a> of file <a class="el" href="fsm__display_8c_source.html">fsm_display.c</a>.</p>
-
 </div>
 </div>
-<a id="a9014e7fb61264e9cbe1c87b7b5fa9027"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9014e7fb61264e9cbe1c87b7b5fa9027">&#9670;&nbsp;</a></span>fsm_display_init()</h2>
+<a id="af8971b5e7c7e72e1d5f955b7ece4475b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8971b5e7c7e72e1d5f955b7ece4475b">&#9670;&nbsp;</a></span>fsm_display_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structfsm__display__t.html">fsm_display_t</a>* fsm_display_init </td>
+          <td class="memname"><a class="el" href="structfsm__display__t.html">fsm_display_t</a>* fsm_display_new </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>display_id</em></td><td>)</td>
@@ -309,7 +266,7 @@ false If the display system has been indicated to be inactive </dd></dl>
 <p>The FSM contains information of the RGB LED ID. This ID is a unique identifier that is managed by the user in the <code>port</code>. That is where the user provides identifiers and HW information for all the RGB LEDs on his system. The FSM does not have to know anything of the underlying HW.</p>
 <dl class="section note"><dt>Note</dt><dd>Both unit and integration tests (example) are provided for this ultrasound library are available in this GitHub repository: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v3_test">https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v3_test</a></dd></dl>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Initialize the fields <code>display_id</code> and <code>p_fsm</code> with the received values. <br  />
 ✅ 2. Set the <code>distance_cm</code> to <code>-1</code> or any other negative value <br  />
 ✅ 3. Call function <code>port_display_init()</code> </p>
@@ -321,8 +278,6 @@ false If the display system has been indicated to be inactive </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>fsm_display_t* Pointer to the display system FSM. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__display_8c_source.html#l00191">191</a> of file <a class="el" href="fsm__display_8c_source.html">fsm_display.c</a>.</p>
 
 </div>
 </div>
@@ -352,8 +307,6 @@ false If the display system has been indicated to be inactive </dd></dl>
 <img src="fsm_display.png" alt=""/>
 </div>
  
-<p class="definition">Definition at line <a class="el" href="fsm__display_8c_source.html#l00177">177</a> of file <a class="el" href="fsm__display_8c_source.html">fsm_display.c</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->

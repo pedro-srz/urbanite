@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: common/src/fsm_urbanite.c File Reference</title>
+<title>Urbanite: Parking aid system: common/src/fsm_urbanite.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('fsm__urbanite_8c.html',''); initResiza
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -94,11 +95,15 @@ $(document).ready(function(){initNavTree('fsm__urbanite_8c.html',''); initResiza
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="port__system_8h_source.html">port_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="fsm__urbanite_8h_source.html">fsm_urbanite.h</a>&quot;</code><br />
-</div>
-<p><a href="fsm__urbanite_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="port__system_8h.html">port_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fsm__urbanite_8h.html">fsm_urbanite.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to define the Ultrasound FSM.  <a href="structfsm__urbanite__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab64512dbce31c38a36bff5e337f4fb8f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__urbanite_8c.html#ab64512dbce31c38a36bff5e337f4fb8f">check_on</a> (fsm_t *p_this)</td></tr>
@@ -146,12 +151,18 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>do_sleep_while
 <tr class="memitem:a9d2922e21185739c528166e38ed8ab3b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__urbanite_8c.html#a9d2922e21185739c528166e38ed8ab3b">do_sleep_off</a> (fsm_t *p_this)</td></tr>
 <tr class="memdesc:a9d2922e21185739c528166e38ed8ab3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the low power mode while the Urbanite is OFF.  <a href="fsm__urbanite_8c.html#a9d2922e21185739c528166e38ed8ab3b">More...</a><br /></td></tr>
 <tr class="separator:a9d2922e21185739c528166e38ed8ab3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6d50a1c3ff856e2ce0b926b30193bcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__urbanite_8c.html#ae6d50a1c3ff856e2ce0b926b30193bcc">fsm_urbanite_init</a> (<a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *p_fsm_urbanite, <a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm_button, uint32_t on_off_press_time_ms, uint32_t pause_display_time_ms, <a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm_ultrasound_rear, <a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm_display_rear)</td></tr>
-<tr class="memdesc:ae6d50a1c3ff856e2ce0b926b30193bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Urbanite FSM.  <a href="fsm__urbanite_8c.html#ae6d50a1c3ff856e2ce0b926b30193bcc">More...</a><br /></td></tr>
-<tr class="separator:ae6d50a1c3ff856e2ce0b926b30193bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d874543e8591ed9615a47b008dab3d"><td class="memItemLeft" align="right" valign="top"><a id="a10d874543e8591ed9615a47b008dab3d"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_urbanite_init</b> (<a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *p_fsm_urbanite, <a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm_button, uint32_t on_off_press_time_ms, uint32_t pause_display_time_ms, <a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm_ultrasound_rear, <a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm_display_rear)</td></tr>
+<tr class="separator:a10d874543e8591ed9615a47b008dab3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f367002434396c3f0baa4a4106bcb6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__urbanite_8c.html#a2f367002434396c3f0baa4a4106bcb6a">fsm_urbanite_new</a> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm_button, uint32_t on_off_press_time_ms, uint32_t pause_display_time_ms, <a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm_ultrasound_rear, <a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm_display_rear)</td></tr>
+<tr class="memdesc:a2f367002434396c3f0baa4a4106bcb6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Urbanite FSM.  <a href="fsm__urbanite_8c.html#a2f367002434396c3f0baa4a4106bcb6a">More...</a><br /></td></tr>
+<tr class="separator:a2f367002434396c3f0baa4a4106bcb6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cb1e5b600d89599e654890a67c55b1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__urbanite_8c.html#a0cb1e5b600d89599e654890a67c55b1b">fsm_urbanite_fire</a> (<a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *p_fsm_urbanite)</td></tr>
 <tr class="memdesc:a0cb1e5b600d89599e654890a67c55b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire the Urbanite FSM.  <a href="fsm__urbanite_8c.html#a0cb1e5b600d89599e654890a67c55b1b">More...</a><br /></td></tr>
 <tr class="separator:a0cb1e5b600d89599e654890a67c55b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a932fc306dcc6c89fb66a29f1c8a82b50"><td class="memItemLeft" align="right" valign="top"><a id="a932fc306dcc6c89fb66a29f1c8a82b50"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_urbanite_destroy</b> (<a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *p_fsm)</td></tr>
+<tr class="separator:a932fc306dcc6c89fb66a29f1c8a82b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -163,8 +174,6 @@ Variables</h2></td></tr>
 <div class="textblock"><p>Urbanite FSM main file. </p>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a91c31f180f16c2d66ef56e62004c83bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a91c31f180f16c2d66ef56e62004c83bc">&#9670;&nbsp;</a></span>check_activity()</h2>
@@ -192,21 +201,19 @@ Variables</h2></td></tr>
 
 <p>Check if any of the elements of the system is active. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Return <code>true</code> if any of the elements (button, ultrasound, or display) is active. Otherwise, return <code>false</code> <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code>. </td></tr>
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true </dd>
 <dd>
 false </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00082">82</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 
 </div>
 </div>
@@ -236,21 +243,19 @@ false </dd></dl>
 
 <p>Check if all the is system active. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code><a class="el" href="fsm__urbanite_8c.html#a91c31f180f16c2d66ef56e62004c83bc" title="Check if any of the elements of the system is active.">check_activity()</a></code> and return the inverse of the result. The result will be <code>true</code> if all the elements of the system are inactive, otherwise it will be <code>false</code>. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct than contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code>. </td></tr>
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct than contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true </dd>
 <dd>
 false </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00104">104</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 
 </div>
 </div>
@@ -280,21 +285,19 @@ false </dd></dl>
 
 <p>Check if the button has been pressed for the required time to turn OFF the system. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. It is enough to call the function <code><a class="el" href="fsm__urbanite_8c.html#ab64512dbce31c38a36bff5e337f4fb8f" title="Check if the button has been pressed for the required time to turn ON the Urbanite system.">check_on()</a></code> because the required time to turn ON and OFF the system is the same. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code>. </td></tr>
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true </dd>
 <dd>
 false </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00052">52</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 
 </div>
 </div>
@@ -324,22 +327,20 @@ false </dd></dl>
 
 <p>Check if the button has been pressed for the required time to turn ON the Urbanite system. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code><a class="el" href="fsm__button_8h.html#a8ceba02b9a4674bb307147638a4cf3fc" title="Return the duration of the last button press.">fsm_button_get_duration()</a></code> to get the duration of the button press <br  />
 ✅ 2. Return <code>true</code> if the duration is greater than 0 and greater than the required time to turn ON the system. Otherwise, return <code>false</code> <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code>. </td></tr>
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true </dd>
 <dd>
 false </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00032">32</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 
 </div>
 </div>
@@ -369,18 +370,16 @@ false </dd></dl>
 
 <p>Start the low power mode while the Urbanite is OFF. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code><a class="el" href="port__system_8h.html#ae3c6ff19d65f5cdeb1e1b556b0823b40" title="Enable low power consumption in sleep mode.">port_system_sleep()</a></code> to start the low power mode <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code>. </td></tr>
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00254">254</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 
 </div>
 </div>
@@ -410,18 +409,16 @@ false </dd></dl>
 
 <p>Start the low power mode while the Urbanite is OFF. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code><a class="el" href="port__system_8h.html#ae3c6ff19d65f5cdeb1e1b556b0823b40" title="Enable low power consumption in sleep mode.">port_system_sleep()</a></code> to start the low power mode <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code>. </td></tr>
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00221">221</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 
 </div>
 </div>
@@ -451,18 +448,16 @@ false </dd></dl>
 
 <p>Start the low power mode while the Urbanite is ON. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code><a class="el" href="port__system_8h.html#ae3c6ff19d65f5cdeb1e1b556b0823b40" title="Enable low power consumption in sleep mode.">port_system_sleep()</a></code> to start the low power mode <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code>. </td></tr>
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00235">235</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 
 </div>
 </div>
@@ -492,7 +487,7 @@ false </dd></dl>
 
 <p>Turn the Urbanite system ON. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Reset the duration of the button by calling <code><a class="el" href="fsm__button_8h.html#a911736d0a80d826cf083b94d049aacee" title="Reset the duration of the last button press.">fsm_button_reset_duration()</a></code> <br  />
 ✅ 2. Activate the ultrasound sensor by calling its appropriate function with the right parameter. With this the ultrasound sensor will start measuring the distance <br  />
 ✅ 3. Activate the display system by calling its appropriate function with the right parameter. With this the display system will start showing the distance <br  />
@@ -500,12 +495,10 @@ false </dd></dl>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code>. </td></tr>
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00126">126</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 
 </div>
 </div>
@@ -535,7 +528,7 @@ false </dd></dl>
 
 <p>Turn the Urbanite system OFF. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Reset the duration of the button by calling <code><a class="el" href="fsm__button_8h.html#a911736d0a80d826cf083b94d049aacee" title="Reset the duration of the last button press.">fsm_button_reset_duration()</a></code> <br  />
 ✅ 2. Disable the ultrasound sensor by calling <code><a class="el" href="fsm__ultrasound_8h.html#a9de1dbe32ceb27eea1b9f8d7b3781b9b" title="Set the status of the ultrasound sensor. true means that the ultrasound sensor is active and a distan...">fsm_ultrasound_set_status()</a></code> with the right parameter. With this the ultrasound sensor will stop measuring the distance if it was measuring <br  />
 ✅ 3. Turn off the display system by calling <code>fsm_display_set_status()</code> with the right parameter. With this the display system will stop showing the distance if it was showing it <br  />
@@ -543,12 +536,10 @@ false </dd></dl>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code>. </td></tr>
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct that contains an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00201">201</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
 
 </div>
 </div>
@@ -571,36 +562,28 @@ false </dd></dl>
 <p>Fire the Urbanite FSM. </p>
 <p>This function is used to check the transitions and execute the actions of the Urbanite FSM.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code>fsm_fire()</code> with the received pointer to <code>fsm_t</code> <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to the <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to the <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00297">297</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
-
 </div>
 </div>
-<a id="ae6d50a1c3ff856e2ce0b926b30193bcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6d50a1c3ff856e2ce0b926b30193bcc">&#9670;&nbsp;</a></span>fsm_urbanite_init()</h2>
+<a id="a2f367002434396c3f0baa4a4106bcb6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f367002434396c3f0baa4a4106bcb6a">&#9670;&nbsp;</a></span>fsm_urbanite_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void fsm_urbanite_init </td>
+          <td class="memname"><a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a>* fsm_urbanite_new </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *&#160;</td>
-          <td class="paramname"><em>p_fsm_urbanite</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="structfsm__button__t.html">fsm_button_t</a> *&#160;</td>
           <td class="paramname"><em>p_fsm_button</em>, </td>
         </tr>
@@ -651,24 +634,22 @@ false </dd></dl>
 </div>
 <p>This function initializes the default values of the FSM struct and calls to the <code>port</code> to initialize the HWs associated to the devices.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code>fsm_init()</code> with the received pointer to <code>fsm_t</code> and the transition table <br  />
 ✅ 2. Initialize the fields <code>p_fsm_button</code>, <code>on_off_press_time_ms</code> <code>p_fsm_ultrasound_rear</code>, and <code>p_fsm_display_rear</code> of <code>p_fsm_urbanite</code> with the received values <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm_urbanite</td><td>Pointer to the <code><a class="el" href="structfsm__urbanite__t.html" title="Structure that contains the information of a distance measurement system.">fsm_urbanite_t</a></code> struct that could contain many ultrasound sensors and displays. </td></tr>
     <tr><td class="paramname">p_fsm_button</td><td>Pointer to the button FSM that activates the system and disables the display if it disturbs the driver. </td></tr>
     <tr><td class="paramname">on_off_press_time_ms</td><td>Button press time in milliseconds to turn the system ON or OFF </td></tr>
     <tr><td class="paramname">pause_display_time_ms</td><td>Time in milliseconds to pause the display after a short press of the button </td></tr>
     <tr><td class="paramname">p_fsm_ultrasound_rear</td><td>Pointer to the ultrasound FSM that measures the distance to the rear obstacle. </td></tr>
-    <tr><td class="paramname">p_fsm_display_rear</td><td>Pointer to the display FSM that shows the distance to the rear obstacle. </td></tr>
+    <tr><td class="paramname">p_fsm_display_rear</td><td>Pointer to the display FSM that shows the distance to the rear obstacle.</td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00285">285</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>fsm_urbanite_t* Pointer to the Urbanite FSM. </dd></dl>
 
 </div>
 </div>
@@ -690,8 +671,6 @@ false </dd></dl>
 <img src="fsm_urbanite.png" alt=""/>
 </div>
  
-<p class="definition">Definition at line <a class="el" href="fsm__urbanite_8c_source.html#l00267">267</a> of file <a class="el" href="fsm__urbanite_8c_source.html">fsm_urbanite.c</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->

@@ -1,6 +1,5 @@
 var stm32f4__display_8h =
 [
-    [ "stm32f4_display_hw_t", "structstm32f4__display__hw__t.html", "structstm32f4__display__hw__t" ],
     [ "STM32F4_REAR_PARKING_DISPLAY_RGB_B_GPIO", "stm32f4__display_8h.html#a39252c678dbbc9813da24c25f090c430", null ],
     [ "STM32F4_REAR_PARKING_DISPLAY_RGB_B_PIN", "stm32f4__display_8h.html#a4fad6ff00b071c12a04767079d22bcd2", null ],
     [ "STM32F4_REAR_PARKING_DISPLAY_RGB_G_GPIO", "stm32f4__display_8h.html#ae281d67c301c5896b91e0f70d4ed98b3", null ],

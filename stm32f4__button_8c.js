@@ -1,5 +1,6 @@
 var stm32f4__button_8c =
 [
+    [ "stm32f4_button_hw_t", "structstm32f4__button__hw__t.html", "structstm32f4__button__hw__t" ],
     [ "_stm32f4_button_get", "stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478", null ],
     [ "port_button_clear_pending_interrupt", "stm32f4__button_8c.html#a946940c972174600920531c35e83d2d5", null ],
     [ "port_button_disable_interrupts", "stm32f4__button_8c.html#ae815c70ad2109eb297c8d56033333e88", null ],

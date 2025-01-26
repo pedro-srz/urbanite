@@ -22,17 +22,21 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "Project Template", "index.html", [
-    [ "Project title", "index.html", [
-      [ "Posibles mejoras", "index.html#autotoc_md1", null ],
-      [ "Authors", "index.html#autotoc_md2", null ],
-      [ "Version 1", "index.html#autotoc_md3", [
-        [ "Subsection 1", "index.html#autotoc_md4", null ]
+  [ "Urbanite: Parking aid system", "index.html", [
+    [ "Urbanite Project", "index.html", [
+      [ "Version 1", "index.html#autotoc_md1", null ],
+      [ "Version 2", "index.html#autotoc_md2", null ],
+      [ "Version 3", "index.html#autotoc_md3", null ],
+      [ "Version 4", "index.html#autotoc_md4", null ],
+      [ "Version 5", "index.html#autotoc_md5", null ],
+      [ "Getting Started", "index.html#autotoc_md6", [
+        [ "Prerequisites", "index.html#autotoc_md7", null ]
       ] ],
-      [ "Version 2", "index.html#autotoc_md5", null ],
-      [ "Version N", "index.html#autotoc_md6", null ],
-      [ "Information on project_template", "index.html#autotoc_md7", null ],
-      [ "File Organization", "index.html#autotoc_md8", null ]
+      [ "Document your code", "index.html#autotoc_md8", null ],
+      [ "Authors", "index.html#autotoc_md9", null ],
+      [ "License", "index.html#autotoc_md10", null ],
+      [ "Acknowledgments", "index.html#autotoc_md11", null ],
+      [ "References", "index.html#autotoc_md12", null ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -45,7 +49,7 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
@@ -60,7 +64,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"port__ultrasound_8h.html#ae567e86e69a1e7a150cb7044feae0d55"
+"port__ultrasound_8h.html#a28e921af96b431d832fd574ee90b3baa"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

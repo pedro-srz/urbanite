@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: port/include/port_system.h File Reference</title>
+<title>Urbanite: Parking aid system: port/include/port_system.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -92,9 +92,7 @@ $(document).ready(function(){initNavTree('port__system_8h.html',''); initResizab
 <p>: Header for port_system.c file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
-</div>
-<p><a href="port__system_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1befb05b8ffd1facb00ea3ada45de6c1"><td class="memItemLeft" align="right" valign="top"><a id="a1befb05b8ffd1facb00ea3ada45de6c1"></a>
@@ -133,8 +131,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <div class="textblock"><p>: Header for port_system.c file. </p>
 <dl class="section attention"><dt>Attention</dt><dd></dd></dl>
 <p>Josué Pagán Ortiz (<a href="#" onclick="location.href='mai'+'lto:'+'j.p'+'ag'+'an@'+'up'+'m.e'+'s'; return false;">j.pag<span style="display: none;">.nosp@m.</span>an@u<span style="display: none;">.nosp@m.</span>pm.es</a>) Sistemas Digitales II </p>
-
-<p class="definition">Definition in file <a class="el" href="port__system_8h_source.html">port_system.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae6ca17ba9c9d055d442cf1e4a73be046"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6ca17ba9c9d055d442cf1e4a73be046">&#9670;&nbsp;</a></span>port_system_delay_ms()</h2>
@@ -159,8 +155,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__system_8c_source.html#l00158">158</a> of file <a class="el" href="stm32f4__system_8c_source.html">stm32f4_system.c</a>.</p>
 
 </div>
 </div>
@@ -202,8 +196,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <dd>
 This function is useful to implement periodic tasks. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stm32f4__system_8c_source.html#l00167">167</a> of file <a class="el" href="stm32f4__system_8c_source.html">stm32f4_system.c</a>.</p>
-
 </div>
 </div>
 <a id="ab415270cfcefc90ed8b8842da4e3d4c6"></a>
@@ -230,8 +222,6 @@ This function is useful to implement periodic tasks. </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="stm32f4__system_8c_source.html#l00178">178</a> of file <a class="el" href="stm32f4__system_8c_source.html">stm32f4_system.c</a>.</p>
-
 </div>
 </div>
 <a id="a5dcdf1cde8372fa1893e1c8f2baf6e55"></a>
@@ -255,7 +245,7 @@ This function is useful to implement periodic tasks. </dd></dl>
 After that, the function sets the system mode in sleep mode, to enter in <b>sleep mode</b> when calling <code>__WFI()</code> (wait for interruption). <br  />
 The system remains in this line until an external interruption or timer interruption occurs. <br  />
  </p><blockquote class="doxtable">
-<p><b>ONLY IF YOU NEED IT! TO-DO alumnos Version 4:</b></p>
+<p><b>ONLY IF YOU NEED IT! TODO alumnos Version 4:</b></p>
 <p>✅ 1. Copy the following code in the file <a class="el" href="">port_system.c</a>. <br  />
 </p>
 </blockquote>
@@ -266,8 +256,6 @@ The system remains in this line until an external interruption or timer interrup
 <div class="line"> __WFI(); <span class="comment">// Select Sleep mode entry : Request Wait For Interrupt</span></div>
 <div class="line">}</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="stm32f4__system_8c_source.html#l00350">350</a> of file <a class="el" href="stm32f4__system_8c_source.html">stm32f4_system.c</a>.</p>
-
 </div>
 </div>
 <a id="a9ba4258bf8d3fa567f2bb0d6c43029a2"></a>
@@ -292,7 +280,7 @@ After that, the function sets the system mode in sleep mode, to enter in <b>stop
 The system remains in this line until an external interruption or timer interruption occurs. <br  />
 If an interruption occurs the system wakes up and resets the system mode.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos Version 4:</b></p>
+<p><b>TODO alumnos Version 4:</b></p>
 <p>✅ 1. Copy the following code in the file <a class="el" href="">port_system.c</a>. <br  />
 </p>
 </blockquote>
@@ -304,8 +292,6 @@ If an interruption occurs the system wakes up and resets the system mode.</p>
 <div class="line"> SCB-&gt;SCR &amp;= ~((uint32_t)SCB_SCR_SLEEPDEEP_Msk); <span class="comment">// Reset SLEEPDEEP bit of Cortex System Control Register</span></div>
 <div class="line">}</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="stm32f4__system_8c_source.html#l00335">335</a> of file <a class="el" href="stm32f4__system_8c_source.html">stm32f4_system.c</a>.</p>
-
 </div>
 </div>
 <a id="abb94f01f1901334f3df650392be23009"></a>
@@ -332,8 +318,6 @@ If an interruption occurs the system wakes up and resets the system mode.</p>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="stm32f4__system_8c_source.html#l00183">183</a> of file <a class="el" href="stm32f4__system_8c_source.html">stm32f4_system.c</a>.</p>
-
 </div>
 </div>
 <a id="ae3c6ff19d65f5cdeb1e1b556b0823b40"></a>
@@ -354,13 +338,11 @@ If an interruption occurs the system wakes up and resets the system mode.</p>
 
 <p>Enable low power consumption in sleep mode. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos Version 4:</b></p>
+<p><b>TODO alumnos Version 4:</b></p>
 <p>✅ 1. Call function <code><a class="el" href="port__system_8h.html#af3c45ccd0a549c3d753b752b726a795f" title="Suspend Tick increment.">port_system_systick_suspend()</a></code> to suspend the count of the SysTick. <br  />
 ✅ 2. Call function <code><a class="el" href="port__system_8h.html#a5dcdf1cde8372fa1893e1c8f2baf6e55" title="Set the system in sleep mode for low power consumption.">port_system_power_sleep()</a></code> to enter sleep in <b>sleep mode</b>. <br  />
 </p>
 </blockquote>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__system_8c_source.html#l00362">362</a> of file <a class="el" href="stm32f4__system_8c_source.html">stm32f4_system.c</a>.</p>
 
 </div>
 </div>
@@ -383,7 +365,7 @@ If an interruption occurs the system wakes up and resets the system mode.</p>
 <p>Resume Tick increment. </p>
 <p>The SysTick timer is the source of time base. It is used to generate interrupts at regular time intervals. Once this function is called, the SysTick interrupt will be enabled and so Tick increment is resumed.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos Version 4:</b></p>
+<p><b>TODO alumnos Version 4:</b></p>
 <p>✅ 1. Copy the following code in the file <a class="el" href="">port_system.c</a>. <br  />
 </p>
 </blockquote>
@@ -392,8 +374,6 @@ If an interruption occurs the system wakes up and resets the system mode.</p>
 <div class="line">  SysTick-&gt;CTRL |= SysTick_CTRL_TICKINT_Msk;</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="stm32f4__system_8c_source.html#l00323">323</a> of file <a class="el" href="stm32f4__system_8c_source.html">stm32f4_system.c</a>.</p>
-
 </div>
 </div>
 <a id="af3c45ccd0a549c3d753b752b726a795f"></a>
@@ -415,7 +395,7 @@ If an interruption occurs the system wakes up and resets the system mode.</p>
 <p>Suspend Tick increment. </p>
 <p>The SysTick timer is the source of time base. It is used to generate interrupts at regular time intervals. Once this function is called, the SysTick interrupt will be disabled so it saves more energy and it does not generate any interruption.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos Version 4:</b></p>
+<p><b>TODO alumnos Version 4:</b></p>
 <p>✅ 1. Copy the following code in the file <a class="el" href="">port_system.c</a>. <br  />
 </p>
 </blockquote>
@@ -424,16 +404,14 @@ If an interruption occurs the system wakes up and resets the system mode.</p>
 <div class="line"> SysTick-&gt;CTRL &amp;= ~SysTick_CTRL_TICKINT_Msk;</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="stm32f4__system_8c_source.html#l00329">329</a> of file <a class="el" href="stm32f4__system_8c_source.html">stm32f4_system.c</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aport__system_8h_html_af3c45ccd0a549c3d753b752b726a795f"><div class="ttname"><a href="port__system_8h.html#af3c45ccd0a549c3d753b752b726a795f">port_system_systick_suspend</a></div><div class="ttdeci">void port_system_systick_suspend(void)</div><div class="ttdoc">Suspend Tick increment.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4__system_8c_source.html#l00329">stm32f4_system.c:329</a></div></div>
-<div class="ttc" id="aport__system_8h_html_a9ba4258bf8d3fa567f2bb0d6c43029a2"><div class="ttname"><a href="port__system_8h.html#a9ba4258bf8d3fa567f2bb0d6c43029a2">port_system_power_stop</a></div><div class="ttdeci">void port_system_power_stop(void)</div><div class="ttdoc">Set the system in stop mode for low power consumption.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4__system_8c_source.html#l00335">stm32f4_system.c:335</a></div></div>
-<div class="ttc" id="aport__system_8h_html_a5dcdf1cde8372fa1893e1c8f2baf6e55"><div class="ttname"><a href="port__system_8h.html#a5dcdf1cde8372fa1893e1c8f2baf6e55">port_system_power_sleep</a></div><div class="ttdeci">void port_system_power_sleep(void)</div><div class="ttdoc">Set the system in sleep mode for low power consumption.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4__system_8c_source.html#l00350">stm32f4_system.c:350</a></div></div>
-<div class="ttc" id="aport__system_8h_html_a2dca6b2c8ee48c36828b323f42c47fc8"><div class="ttname"><a href="port__system_8h.html#a2dca6b2c8ee48c36828b323f42c47fc8">port_system_systick_resume</a></div><div class="ttdeci">void port_system_systick_resume(void)</div><div class="ttdoc">Resume Tick increment.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4__system_8c_source.html#l00323">stm32f4_system.c:323</a></div></div>
+<div class="ttc" id="aport__system_8h_html_af3c45ccd0a549c3d753b752b726a795f"><div class="ttname"><a href="port__system_8h.html#af3c45ccd0a549c3d753b752b726a795f">port_system_systick_suspend</a></div><div class="ttdeci">void port_system_systick_suspend(void)</div><div class="ttdoc">Suspend Tick increment.</div><div class="ttdef"><b>Definition:</b> stm32f4_system.c:329</div></div>
+<div class="ttc" id="aport__system_8h_html_a9ba4258bf8d3fa567f2bb0d6c43029a2"><div class="ttname"><a href="port__system_8h.html#a9ba4258bf8d3fa567f2bb0d6c43029a2">port_system_power_stop</a></div><div class="ttdeci">void port_system_power_stop(void)</div><div class="ttdoc">Set the system in stop mode for low power consumption.</div><div class="ttdef"><b>Definition:</b> stm32f4_system.c:335</div></div>
+<div class="ttc" id="aport__system_8h_html_a5dcdf1cde8372fa1893e1c8f2baf6e55"><div class="ttname"><a href="port__system_8h.html#a5dcdf1cde8372fa1893e1c8f2baf6e55">port_system_power_sleep</a></div><div class="ttdeci">void port_system_power_sleep(void)</div><div class="ttdoc">Set the system in sleep mode for low power consumption.</div><div class="ttdef"><b>Definition:</b> stm32f4_system.c:350</div></div>
+<div class="ttc" id="aport__system_8h_html_a2dca6b2c8ee48c36828b323f42c47fc8"><div class="ttname"><a href="port__system_8h.html#a2dca6b2c8ee48c36828b323f42c47fc8">port_system_systick_resume</a></div><div class="ttdeci">void port_system_systick_resume(void)</div><div class="ttdoc">Resume Tick increment.</div><div class="ttdef"><b>Definition:</b> stm32f4_system.c:323</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

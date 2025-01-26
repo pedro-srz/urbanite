@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: port/stm32f4/src/stm32f4_button.c File Reference</title>
+<title>Urbanite: Parking aid system: port/stm32f4/src/stm32f4_button.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('stm32f4__button_8c.html',''); initResi
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -93,13 +94,17 @@ $(document).ready(function(){initNavTree('stm32f4__button_8c.html',''); initResi
 <p>Portable functions to interact with the button FSM library. All portable functions must be implemented in this file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="port__button_8h_source.html">port_button.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="port__system_8h_source.html">port_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stm32f4__system_8h_source.html">stm32f4_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stm32f4__button_8h_source.html">stm32f4_button.h</a>&quot;</code><br />
-</div>
-<p><a href="stm32f4__button_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="port__button_8h.html">port_button.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port__system_8h.html">port_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f4__system_8h.html">stm32f4_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f4__button_8h.html">stm32f4_button.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstm32f4__button__hw__t.html">stm32f4_button_hw_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to define the HW dependencies of a button status.  <a href="structstm32f4__button__hw__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:adf8fb86ad32ed825cfee1336a05b4478"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstm32f4__button__hw__t.html">stm32f4_button_hw_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478">_stm32f4_button_get</a> (uint32_t button_id)</td></tr>
@@ -140,8 +145,6 @@ Variables</h2></td></tr>
 <div class="textblock"><p>Portable functions to interact with the button FSM library. All portable functions must be implemented in this file. </p>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="stm32f4__button_8c_source.html">stm32f4_button.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="adf8fb86ad32ed825cfee1336a05b4478"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf8fb86ad32ed825cfee1336a05b4478">&#9670;&nbsp;</a></span>_stm32f4_button_get()</h2>
@@ -170,8 +173,6 @@ Variables</h2></td></tr>
 <dd>
 NULL If the button ID is not valid. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stm32f4__button_8c_source.html#l00040">40</a> of file <a class="el" href="stm32f4__button_8c_source.html">stm32f4_button.c</a>.</p>
-
 </div>
 </div>
 <a id="a9f0618e6a2fcdc62229315b8802a3315"></a>
@@ -192,7 +193,7 @@ NULL If the button ID is not valid. </dd></dl>
 
 <p>Return the status of the button (pressed or not). </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Return the value of the field <code>flag_pressed</code> </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -204,8 +205,6 @@ NULL If the button ID is not valid. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true If the button has been pressed </dd>
 <dd>
 false If the button has not been pressed </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__button_8c_source.html#l00074">74</a> of file <a class="el" href="stm32f4__button_8c_source.html">stm32f4_button.c</a>.</p>
 
 </div>
 </div>
@@ -228,7 +227,7 @@ false If the button has not been pressed </dd></dl>
 <p>Configure the HW specifications of a given button. </p>
 <p>Assuming we are using an STM32F4-based platform, this function configures must call the following functions:</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Call function <code><a class="el" href="stm32f4__system_8h.html#aca348a9998b93751c1440d62050b7d79" title="Configure the mode and pull of a GPIO.">stm32f4_system_gpio_config()</a></code> with the right arguments to configure the button as input and no pull up neither pull down connection <br  />
 ✅ 2. Call function <code><a class="el" href="stm32f4__system_8h.html#a98f4105a82f32c645f0b06424af5ef22" title="Configure the external interruption or event of a GPIO.">stm32f4_system_gpio_config_exti()</a></code> with the right arguments to configure interruption mode in both rising and falling edges, and enable the interrupt request <br  />
 ✅ 3. Call function <code><a class="el" href="stm32f4__system_8h.html#a03d8c69cd44964e3f1ff05a2c79626b8" title="Enable interrupts of a GPIO line (pin)">stm32f4_system_gpio_exti_enable()</a></code> with the right parameters to enable the interrupt line and set the priority level to <code>1</code> and the subpriority level to <code>0</code> </p>
@@ -239,8 +238,6 @@ false If the button has not been pressed </dd></dl>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__button_8c_source.html#l00054">54</a> of file <a class="el" href="stm32f4__button_8c_source.html">stm32f4_button.c</a>.</p>
 
 </div>
 </div>
@@ -286,8 +283,6 @@ false If the button has not been pressed </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="stm32f4__button_8c_source.html#l00114">114</a> of file <a class="el" href="stm32f4__button_8c_source.html">stm32f4_button.c</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -313,8 +308,6 @@ false If the button has not been pressed </dd></dl>
 
 <p>Array of elements that represents the HW characteristics of the buttons connected to the STM32F4 platform. </p>
 <p>This must be hidden from the user, so it is declared as static. To access the elements of this array, use the function <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button status struct with the given ID.">_stm32f4_button_get()</a></code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="stm32f4__button_8c_source.html#l00027">27</a> of file <a class="el" href="stm32f4__button_8c_source.html">stm32f4_button.c</a>.</p>
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: common/include/fsm_button.h File Reference</title>
+<title>Urbanite: Parking aid system: common/include/fsm_button.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -96,9 +96,7 @@ $(document).ready(function(){initNavTree('fsm__button_8h.html',''); initResizabl
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;fsm.h&quot;</code><br />
-</div>
-<p><a href="fsm__button_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:aec6bc62ec1cc0ab65e153d018cafd633"><td class="memItemLeft" align="right" valign="top"><a id="aec6bc62ec1cc0ab65e153d018cafd633"></a>
@@ -123,17 +121,20 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa28e8a9858a115798208ca04268c8d74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfsm__button__t.html">fsm_button_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#aa28e8a9858a115798208ca04268c8d74">fsm_button_init</a> (uint32_t debounce_time_ms, uint32_t button_id)</td></tr>
-<tr class="memdesc:aa28e8a9858a115798208ca04268c8d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a button FSM.  <a href="fsm__button_8h.html#aa28e8a9858a115798208ca04268c8d74">More...</a><br /></td></tr>
-<tr class="separator:aa28e8a9858a115798208ca04268c8d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3bb8322bc7b726104949160c9b47276"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfsm__button__t.html">fsm_button_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#af3bb8322bc7b726104949160c9b47276">fsm_button_new</a> (uint32_t debounce_time_ms, uint32_t button_id)</td></tr>
+<tr class="memdesc:af3bb8322bc7b726104949160c9b47276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new button FSM.  <a href="fsm__button_8h.html#af3bb8322bc7b726104949160c9b47276">More...</a><br /></td></tr>
+<tr class="separator:af3bb8322bc7b726104949160c9b47276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4aa8054f212e21a1e517faebe27126"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#ace4aa8054f212e21a1e517faebe27126">fsm_button_destroy</a> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:ace4aa8054f212e21a1e517faebe27126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a button FSM.  <a href="fsm__button_8h.html#ace4aa8054f212e21a1e517faebe27126">More...</a><br /></td></tr>
+<tr class="separator:ace4aa8054f212e21a1e517faebe27126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ab2d6c73b1f2e7ffe2913a956f1580f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#a7ab2d6c73b1f2e7ffe2913a956f1580f">fsm_button_fire</a> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a7ab2d6c73b1f2e7ffe2913a956f1580f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire the button FSM.  <a href="fsm__button_8h.html#a7ab2d6c73b1f2e7ffe2913a956f1580f">More...</a><br /></td></tr>
 <tr class="separator:a7ab2d6c73b1f2e7ffe2913a956f1580f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14d12db278609de246350b7c1638e327"><td class="memItemLeft" align="right" valign="top"><a id="a14d12db278609de246350b7c1638e327"></a>
-fsm_t *&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_button_get_inner_fsm</b> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
+<tr class="memitem:a14d12db278609de246350b7c1638e327"><td class="memItemLeft" align="right" valign="top">fsm_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#a14d12db278609de246350b7c1638e327">fsm_button_get_inner_fsm</a> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a14d12db278609de246350b7c1638e327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the inner FSM of the button.  <a href="fsm__button_8h.html#a14d12db278609de246350b7c1638e327">More...</a><br /></td></tr>
 <tr class="separator:a14d12db278609de246350b7c1638e327"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a006f0940fe60ffbe9a0e8da6f8ba7370"><td class="memItemLeft" align="right" valign="top"><a id="a006f0940fe60ffbe9a0e8da6f8ba7370"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_button_get_state</b> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
+<tr class="memitem:a006f0940fe60ffbe9a0e8da6f8ba7370"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#a006f0940fe60ffbe9a0e8da6f8ba7370">fsm_button_get_state</a> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a006f0940fe60ffbe9a0e8da6f8ba7370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the button FSM.  <a href="fsm__button_8h.html#a006f0940fe60ffbe9a0e8da6f8ba7370">More...</a><br /></td></tr>
 <tr class="separator:a006f0940fe60ffbe9a0e8da6f8ba7370"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ceba02b9a4674bb307147638a4cf3fc"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#a8ceba02b9a4674bb307147638a4cf3fc">fsm_button_get_duration</a> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a8ceba02b9a4674bb307147638a4cf3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the duration of the last button press.  <a href="fsm__button_8h.html#a8ceba02b9a4674bb307147638a4cf3fc">More...</a><br /></td></tr>
@@ -141,8 +142,8 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_button_get_st
 <tr class="memitem:a911736d0a80d826cf083b94d049aacee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#a911736d0a80d826cf083b94d049aacee">fsm_button_reset_duration</a> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a911736d0a80d826cf083b94d049aacee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the duration of the last button press.  <a href="fsm__button_8h.html#a911736d0a80d826cf083b94d049aacee">More...</a><br /></td></tr>
 <tr class="separator:a911736d0a80d826cf083b94d049aacee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b24e1fd24d9b84dd59ccea801d79b58"><td class="memItemLeft" align="right" valign="top"><a id="a8b24e1fd24d9b84dd59ccea801d79b58"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_button_get_debounce_time_ms</b> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
+<tr class="memitem:a8b24e1fd24d9b84dd59ccea801d79b58"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#a8b24e1fd24d9b84dd59ccea801d79b58">fsm_button_get_debounce_time_ms</a> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a8b24e1fd24d9b84dd59ccea801d79b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the debounce time of the button FSM.  <a href="fsm__button_8h.html#a8b24e1fd24d9b84dd59ccea801d79b58">More...</a><br /></td></tr>
 <tr class="separator:a8b24e1fd24d9b84dd59ccea801d79b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b5728721dbfc410b27b4a5af1da1bb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__button_8h.html#a9b5728721dbfc410b27b4a5af1da1bb8">fsm_button_check_activity</a> (<a class="el" href="structfsm__button__t.html">fsm_button_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a9b5728721dbfc410b27b4a5af1da1bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the button FSM is active, or not.  <a href="fsm__button_8h.html#a9b5728721dbfc410b27b4a5af1da1bb8">More...</a><br /></td></tr>
@@ -152,8 +153,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_button_get_de
 <div class="textblock"><p>Header for <a class="el" href="fsm__button_8c.html" title="Button FSM main file.">fsm_button.c</a> file. </p>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="fsm__button_8h_source.html">fsm_button.h</a>.</p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="acd7caaebd935f2c31359e79110f682b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd7caaebd935f2c31359e79110f682b6">&#9670;&nbsp;</a></span>FSM_BUTTON</h2>
@@ -182,8 +181,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_button_get_de
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="fsm__button_8h_source.html#l00028">28</a> of file <a class="el" href="fsm__button_8h_source.html">fsm_button.h</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -206,14 +203,14 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_button_get_de
 <p>Check if the button FSM is active, or not. </p>
 <p>The button is inactive when it is in the status <code>BUTTON_RELEASED</code>.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos Version 4:</b></p>
+<p><b>TODO alumnos Version 4:</b></p>
 <p>✅ 1. Get the field <code>current_state</code> of the FSM (field <code>f</code> of the struct). <br  />
 ✅ 2. Return <code>false</code> if the current state is <code>BUTTON_RELEASED</code>. Otherwise, return <code>true</code>. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure to define the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure of the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -221,7 +218,32 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_button_get_de
 <dd>
 false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm__button_8c_source.html#l00210">210</a> of file <a class="el" href="fsm__button_8c_source.html">fsm_button.c</a>.</p>
+</div>
+</div>
+<a id="ace4aa8054f212e21a1e517faebe27126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace4aa8054f212e21a1e517faebe27126">&#9670;&nbsp;</a></span>fsm_button_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fsm_button_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__button__t.html">fsm_button_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroy a button FSM. </p>
+<p>This function destroys a button FSM and frees the memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure of the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -244,18 +266,49 @@ false </dd></dl>
 <p>Fire the button FSM. </p>
 <p>This function is used to fire the button FSM. It is used to check the transitions and execute the actions of the button FSM.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
-<p>✅ 1. Call the <code>fsm_fire()</code> function with the pointer to the button FSM <br  />
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Call the <code>fsm_fire()</code> function. Pass the address of the <code>fsm_t</code> struct. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure to define the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure of the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm__button_8c_source.html#l00174">174</a> of file <a class="el" href="fsm__button_8c_source.html">fsm_button.c</a>.</p>
+</div>
+</div>
+<a id="a8b24e1fd24d9b84dd59ccea801d79b58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b24e1fd24d9b84dd59ccea801d79b58">&#9670;&nbsp;</a></span>fsm_button_get_debounce_time_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t fsm_button_get_debounce_time_ms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__button__t.html">fsm_button_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the debounce time of the button FSM. </p>
+<p>This function returns the debounce time of the button FSM.</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Retrieve and return the field <code>debounce_time_ms</code> <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure of the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint32_t Debounce time in milliseconds. </dd></dl>
 
 </div>
 </div>
@@ -277,30 +330,102 @@ false </dd></dl>
 
 <p>Return the duration of the last button press. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Retrieve and return the field <code>duration</code> <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure to define the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure of the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>uint32_t Duration of the last button press in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm__button_8c_source.html#l00192">192</a> of file <a class="el" href="fsm__button_8c_source.html">fsm_button.c</a>.</p>
-
 </div>
 </div>
-<a id="aa28e8a9858a115798208ca04268c8d74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa28e8a9858a115798208ca04268c8d74">&#9670;&nbsp;</a></span>fsm_button_init()</h2>
+<a id="a14d12db278609de246350b7c1638e327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14d12db278609de246350b7c1638e327">&#9670;&nbsp;</a></span>fsm_button_get_inner_fsm()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structfsm__button__t.html">fsm_button_t</a>* fsm_button_init </td>
+          <td class="memname">fsm_t* fsm_button_get_inner_fsm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__button__t.html">fsm_button_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the inner FSM of the button. </p>
+<p>This function returns the inner FSM of the button.</p>
+<blockquote class="doxtable">
+<p>&#160;&#160;&#160;&#160;💡 This function is important because the struct is private and external functions such as those of the unit tests cannot access the inner FSM directly. <br  />
+ </p>
+</blockquote>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Return the address of the <code>f</code> field of the struct. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure of the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>fsm_t* Pointer to the inner FSM. </dd></dl>
+
+</div>
+</div>
+<a id="a006f0940fe60ffbe9a0e8da6f8ba7370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a006f0940fe60ffbe9a0e8da6f8ba7370">&#9670;&nbsp;</a></span>fsm_button_get_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t fsm_button_get_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__button__t.html">fsm_button_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the state of the button FSM. </p>
+<p>This function returns the current state of the button FSM.</p>
+<blockquote class="doxtable">
+<p>&#160;&#160;&#160;&#160;💡 This function is important because the struct is private and external functions such as those of the unit tests cannot access the state of the FSM directly. <br  />
+</p>
+</blockquote>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Retrieve and return the field <code>current_state</code> of the FSM (field <code>f</code> of the struct). <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure of the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint32_t Current state of the button FSM. </dd></dl>
+
+</div>
+</div>
+<a id="af3bb8322bc7b726104949160c9b47276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3bb8322bc7b726104949160c9b47276">&#9670;&nbsp;</a></span>fsm_button_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfsm__button__t.html">fsm_button_t</a>* fsm_button_new </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>debounce_time_ms</em>, </td>
@@ -319,35 +444,16 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize a button FSM. </p>
-<p>This function initializes the default values of the FSM struct and calls to the <code>port</code> to initialize the associated HW given the ID.</p>
-<ul>
-<li>This FSM implements an anti-debounce mechanism. Debounces (or very fast button presses) lasting less than the <code>debounce_time_ms</code> are filtered out.</li>
-</ul>
-<p>The FSM stores the duration of the last button press. The user should ask for it using the function <code><a class="el" href="fsm__button_8h.html#a8ceba02b9a4674bb307147638a4cf3fc" title="Return the duration of the last button press.">fsm_button_get_duration()</a></code>.</p>
-<p>At start and reset, the duration value must be 0 ms. A value of 0 ms means that there has not been a new button press.</p>
-<dl class="section attention"><dt>Attention</dt><dd>The user is required to reset the duration value once it has been read. Otherwise, this value may be misinterpreted by the user, if successive calls are made without having pressed the button. In such a case we would be reading past information. In order to reset the value, the function <code><a class="el" href="fsm__button_8h.html#a911736d0a80d826cf083b94d049aacee" title="Reset the duration of the last button press.">fsm_button_reset_duration()</a></code> must be called.</dd></dl>
-<p>In other words, the status flag of this FSM is the variable duration. A duration of 0 means that no new button has been pressed, a value other than 0 means that it has been pressed and the value is its duration, so it is the user's responsibility to clear this status flag.</p>
-<p>The FSM contains information of the button ID. This ID is a unique identifier that is managed by the user in the <code>port</code>. That is where the user provides identifiers and HW information for all the buttons on his system. The FSM does not have to know anything of the underlying HW.</p>
-<dl class="section note"><dt>Note</dt><dd>Both unit and integration tests (example) are provided for this button library are available in this GitHub repository: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v1_test">https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v1_test</a></dd></dl>
-<blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
-<p>✅ 1. Call the <code>fsm_init()</code> to initialize the FSM with the transitions table <br  />
-✅ 2. Initialize the fields <code>debounce_time_ms</code>, <code>button_id</code> of <code>p_fsm</code> with the received values <br  />
-✅ 3. Initialize the fields <code>tick_pressed</code>, <code>duration</code> of <code>p_fsm</code> with 0 <br  />
-✅ 4. Call function <code><a class="el" href="port__button_8h.html#a8a60ec4a29c03b384c975a7780082ca3" title="Configure the HW specifications of a given button.">port_button_init()</a></code> </p>
-</blockquote>
-<dl class="section note"><dt>Note</dt><dd>The main program and the <code>port</code> are the only ones that manage and stablish the ID. The button FSM acts as a man-in-the-middle but this library does not handles the button IDs.</dd></dl>
+<p>Create a new button FSM. </p>
+<p>This function creates a new button FSM with the given debounce time and button ID.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">debounce_time_ms</td><td>Anti-debounce time in milliseconds </td></tr>
-    <tr><td class="paramname">button_id</td><td>Unique button identifier number</td></tr>
+    <tr><td class="paramname">debounce_time_ms</td><td>Debounce time in milliseconds. </td></tr>
+    <tr><td class="paramname">button_id</td><td>Button ID. Must be unique. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>fsm_button_t* Pointer to the button FSM. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__button_8c_source.html#l00156">156</a> of file <a class="el" href="fsm__button_8c_source.html">fsm_button.c</a>.</p>
 
 </div>
 </div>
@@ -369,18 +475,16 @@ false </dd></dl>
 
 <p>Reset the duration of the last button press. </p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos:</b></p>
+<p><b>TODO alumnos:</b></p>
 <p>✅ 1. Set to 0 the field <code>duration</code> <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure to define the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__button__t.html" title="Structure of the Button FSM.">fsm_button_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fsm__button_8c_source.html#l00199">199</a> of file <a class="el" href="fsm__button_8c_source.html">fsm_button.c</a>.</p>
 
 </div>
 </div>

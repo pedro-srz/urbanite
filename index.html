@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: Project title</title>
+<title>Urbanite: Parking aid system: Urbanite Project</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -83,120 +83,253 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Project title </div>  </div>
+<div class="title">Urbanite Project </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
-Posibles mejoras</h1>
+<div class="textblock"><p>This project demonstrates how the project Urbanite works using an ultrasound transceiver to measure the distance to an object in a parking aid system mounted on a car. It uses a finite state machine (FSM) to control the ultrasound sensor, a display (RGB LED) to show the distance, and a button to interact with the system.</p>
+<p>This project is intended to be used with the MatrixMCU toolkit. The toolkit is available at GitHub: <a href="https://github.com/sdg2DieUpm/MatrixMCU">MatrixMCU</a>.</p>
+<p><b>Click on the image</b> to see the video showing the Urbanite demo for Nucleo STM32:</p>
+<p><a href="https://youtu.be/d_IxjOpqCiI?si=lQ1Odllb4kI8Tql9" title="Urbanite Demo."><div class="image">
+<img src="fritzing_urbanite.png" alt=""/>
+<div class="caption">
+Urbanite Demo</div></div>
+    </a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Version 1</h1>
+<p>In Version 1, the system works with the user button only. The user button is connected to the pin PC13. The code uses the EXTI13 interrupt to detect the button press.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parameter </th><th class="markdownTableHeadNone">Value  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Pin </td><td class="markdownTableBodyNone">PC13  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Mode </td><td class="markdownTableBodyNone">Input  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Pull up/ down </td><td class="markdownTableBodyNone">No push no pull  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">EXTI </td><td class="markdownTableBodyNone">EXTI13  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ISR </td><td class="markdownTableBodyNone">EXTI15_10_IRQHandler  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Priority </td><td class="markdownTableBodyNone">1  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Subpriority </td><td class="markdownTableBodyNone">0  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Debounce time </td><td class="markdownTableBodyNone">100-200 ms  </td></tr>
+</table>
+<p>You can start from the <a href="stm32f4__button_8c.html">HW dependent part of Version 1</a>.</p>
 <ul>
-<li>Si el eco no se recibe en un tiempo determinado, la FSM del ultrasonido se queda en WAIT_ECHO_END y no sale salvo que se apague el sistema. Se podría añadir un temporizador para que si no se recibe el eco en un tiempo determinado, se salga de la FSM y se pueda volver a medir. No vale usar el systick porque este se detiene cuando está en modo de bajo consumo. Habría que meter un estado de ECHO_ERROR en la FSM si salta el timeout. También se puede hacer diciendo que está activo en WAIT_ECHO_END y usando el systick, como en el botón, pero esto es más ineficiente porque no se dormiría durante la espera del eco. Si ha habido un error, se computa la distancia como la mediana de todos los valores de distancia que se han medido.</li>
+<li>Here you can find the <b>project</b> with the basic configuration: <a href="https://github.com/sdg2DieUpm/urbanite">Urbanite Project</a>.</li>
+<li>Here you can find the <b>test files</b> for Version 1: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v1_test">V1 test files</a></li>
 </ul>
-<p>This README serves as a template for the documentation of your project. You can use it as a guide to write your own documentation. At the end of the document you will find some information on the <code>project_template</code> repository.</p>
+<p>This is the FSM of the button: </p><div class="image">
+<img src="fsm_v1.png" alt=""/>
+<div class="caption">
+FSM of the button</div></div>
+   <h1><a class="anchor" id="autotoc_md2"></a>
+Version 2</h1>
+<p>In Version 2, the system adds the ultrasonic transceiver to measure the distance to an object. The <em>trigger</em> pin is connected to the pin PB0, and the <em>echo</em> pin is connected to the pin PA1. The code uses the TIM2, TIM3 and TIM5 timers to control the ultrasonic transceiver.</p>
+<p>To measure the distance in centimeters with a timer resolution of 1 microseconds, we can say that 1 <em>cm</em> is equivalent to 58.3 microseconds. The speed of sound is 343 <em>m/s</em> at 20ºC. The ultrasonic transceiver is the HC-SR04.</p>
+<p>The characteristics and connections of the ultrasonic transceiver HC-SR04 are shown in the table below:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parameter </th><th class="markdownTableHeadNone">Value  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Power supply </td><td class="markdownTableBodyNone">5 V  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Current </td><td class="markdownTableBodyNone">15 mA  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Angle of aperture </td><td class="markdownTableBodyNone">15º  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Frequency </td><td class="markdownTableBodyNone">40 kHz  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Measurement range </td><td class="markdownTableBodyNone">2 cm to 400 cm  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Pins </td><td class="markdownTableBodyNone">PB0 (Trigger) and PA1 (Echo)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Mode </td><td class="markdownTableBodyNone">Output (Trigger) and alternative (Echo)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Pull up/ down </td><td class="markdownTableBodyNone">No pull  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Timer </td><td class="markdownTableBodyNone">TIM3 (Trigger) and TIM2 (Echo)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Channel </td><td class="markdownTableBodyNone">(see the Alternate Function table in the datasheet)  </td></tr>
+</table>
+<p>The system uses 3 timers: (i) one to control the duration of the trigger signal, (ii) another to measure the echo time, and (iii) another to measure the timeout between consecutive measurements that we want to make. The timing diagram of the measurements is shown in the figure below.</p>
+<p>To generate the <b>trigger signal</b>, we will activate (1 logical) the trigger pin for at least 10 microseconds. To control the duration of this signal, we will configure the timer TIM3 as shown in the table below.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parameter </th><th class="markdownTableHeadNone">Value  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Timer </td><td class="markdownTableBodyNone">TIM3  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Prescaler </td><td class="markdownTableBodyNone">(to be calculated for <code>PORT_PARKING_SENSOR_TRIGGER_UP_US</code>)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Period </td><td class="markdownTableBodyNone">(to be calculated for <code>PORT_PARKING_SENSOR_TRIGGER_UP_US</code>)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ISR </td><td class="markdownTableBodyNone">TIM3_IRQHandler()  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Priority </td><td class="markdownTableBodyNone">4  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Subpriority </td><td class="markdownTableBodyNone">0  </td></tr>
+</table>
+<p>To <b>measure the echo time</b>, we will configure the timer TIM2 in <b>input capture mode</b>, which will capture the value of the counter at the moment the echo signal is activated and deactivated.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parameter </th><th class="markdownTableHeadNone">Value  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Timer </td><td class="markdownTableBodyNone">TIM2  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Prescaler </td><td class="markdownTableBodyNone">(to be calculated for 1 microseconds)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Period </td><td class="markdownTableBodyNone">(to be calculated for 1 microseconds)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ISR </td><td class="markdownTableBodyNone">TIM2_IRQHandler()  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Priority </td><td class="markdownTableBodyNone">3  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Subpriority </td><td class="markdownTableBodyNone">0  </td></tr>
+</table>
+<p>The timer that controls the <b>timeout between consecutive measurements</b> is TIM5. The characteristics of this timer are shown in the table below. The FSM will give a value every <code>PORT_PARKING_SENSOR_TIMEOUT_MS</code> milliseconds.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parameter </th><th class="markdownTableHeadNone">Value  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Timer </td><td class="markdownTableBodyNone">TIM5  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Prescaler </td><td class="markdownTableBodyNone">(to be calculated for <code>PORT_PARKING_SENSOR_TIMEOUT_MS</code>)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Period </td><td class="markdownTableBodyNone">(to be calculated for <code>PORT_PARKING_SENSOR_TIMEOUT_MS</code>)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ISR </td><td class="markdownTableBodyNone">TIM5_IRQHandler()  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Priority </td><td class="markdownTableBodyNone">5  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Subpriority </td><td class="markdownTableBodyNone">0  </td></tr>
+</table>
+<p>You can start from the <a href="stm32f4__ultrasound_8c.html">HW dependent part of Version 2</a>.</p>
+<ul>
+<li>Here you can find the files needed for the control of the <b>ultrasonic transceiver</b>: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v2">Ultrasonic Transceiver</a>.</li>
+<li>Here you can find the <b>test files</b> for Version 2: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v2_test">V2 test files</a></li>
+</ul>
+<p>This is the FSM of the ultrasonic transceiver: </p><div class="image">
+<img src="fsm_v2.png" alt=""/>
+<div class="caption">
+FSM of the ultrasonic transceiver</div></div>
+   <h1><a class="anchor" id="autotoc_md3"></a>
+Version 3</h1>
+<p>In Version 3, the system adds the display, which is an RGB LED. The RGB LED is connected to the pins PB6 (red), PB8 (green), and PB9 (blue). The code uses the TIM4 timer to control the frequency of the <b>PWM</b> signal for each color. The RGB LED will show the distance to the object detected. The characteristics of the display are shown in the table below.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parameter </th><th class="markdownTableHeadNone">Value  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Pin LED red </td><td class="markdownTableBodyNone">PB6  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Pin LED green </td><td class="markdownTableBodyNone">PB8  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Pin LED blue </td><td class="markdownTableBodyNone">PB9  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Mode </td><td class="markdownTableBodyNone">Alternative  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Pull up/ down </td><td class="markdownTableBodyNone">No pull  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Timer </td><td class="markdownTableBodyNone">TIM4  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Channel LED red </td><td class="markdownTableBodyNone">(see the Alternate Function table in the datasheet)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Channel LED green </td><td class="markdownTableBodyNone">(see the Alternate Function table in the datasheet)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Channel LED blue </td><td class="markdownTableBodyNone">(see the Alternate Function table in the datasheet)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">PWM mode </td><td class="markdownTableBodyNone">PWM mode 1  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Prescaler </td><td class="markdownTableBodyNone">(to be calculated for a frequency of 50 Hz)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Period </td><td class="markdownTableBodyNone">(to be calculated for a frequency of 50 Hz)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Duty cycle LED red </td><td class="markdownTableBodyNone">(variable, depends on the color to show)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Duty cycle LED green </td><td class="markdownTableBodyNone">(variable, depends on the color to show)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Duty cycle LED blue </td><td class="markdownTableBodyNone">(variable, depends on the color to show)  </td></tr>
+</table>
+<p>You have a list full of colors in <a href="https://www.downtownuplighting.com/rgb-color-chart">www.downtownuplighting.com</a> although not all can be shown on an RGB LED.</p>
+<p>The following table shows the <b>duty cycle</b> values for each color in function of the distance. <b>Be careful, these values are not the ones that you put in the **CCRx</b> register!** They depend on the <code>PORT_DISPLAY_RGB_MAX_VALUE</code>. The values are shown in the table below.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Distance </th><th class="markdownTableHeadNone">Color </th><th class="markdownTableHeadNone">LED red </th><th class="markdownTableHeadNone">LED green </th><th class="markdownTableHeadNone">LED blue  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">$[0-25]$ cm </td><td class="markdownTableBodyNone">Red (<b>danger</b>) </td><td class="markdownTableBodyNone">100% </td><td class="markdownTableBodyNone">0% </td><td class="markdownTableBodyNone">0%  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">$(25-50]$ cm </td><td class="markdownTableBodyNone">Yellow (<b>warning</b>) </td><td class="markdownTableBodyNone">37% </td><td class="markdownTableBodyNone">37% </td><td class="markdownTableBodyNone">0%  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">$(50-150]$ cm </td><td class="markdownTableBodyNone">Green (<b>no~problem</b>) </td><td class="markdownTableBodyNone">0% </td><td class="markdownTableBodyNone">100% </td><td class="markdownTableBodyNone">0%  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">$(150-175]$ cm </td><td class="markdownTableBodyNone">Turquoise (<b>info</b>) </td><td class="markdownTableBodyNone">10% </td><td class="markdownTableBodyNone">35% </td><td class="markdownTableBodyNone">32%  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">$(175-200]$ cm </td><td class="markdownTableBodyNone">Blue (<b>OK</b>) </td><td class="markdownTableBodyNone">0% </td><td class="markdownTableBodyNone">0% </td><td class="markdownTableBodyNone">100%  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Other distances </td><td class="markdownTableBodyNone">Off (<b>inactive</b>) </td><td class="markdownTableBodyNone">0% </td><td class="markdownTableBodyNone">0% </td><td class="markdownTableBodyNone">0%  </td></tr>
+</table>
+<p>You can start from the <a href="stm32f4__display_8c.html">HW dependent part of Version 3</a>.</p>
+<ul>
+<li>Here you can find the files needed for the control of the <b>display</b>: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v3">Display</a>.</li>
+<li>Here you can find the <b>test files</b> for Version 3: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v3_test">V3 test files</a></li>
+</ul>
+<p>This is the FSM of the display: </p><div class="image">
+<img src="fsm_v3.png" alt=""/>
+<div class="caption">
+FSM of the display</div></div>
+   <h1><a class="anchor" id="autotoc_md4"></a>
+Version 4</h1>
+<p>In Version 4 the system completes its FSM to interact with the user button, the ultrasonic transceiver, and the display. The system will show the distance to the object detected in the display.</p>
+<p>There are no files for Version 4, and you have to create them from scratch. You can use the files of the previous versions as a reference.</p>
+<p>Check the <a href="fsm__urbanite_8c.html">HW dependent part of Version 4</a>.</p>
+<p>This is the FSM of the system: </p><div class="image">
+<img src="fsm_system.png" alt=""/>
+<div class="caption">
+FSM of the system</div></div>
+   <h1><a class="anchor" id="autotoc_md5"></a>
+Version 5</h1>
+<p>In Version 5 the user adds its own functions to the system. Check the manual of the system to know how to add your own functions.</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Getting Started</h1>
+<p>Download this project and place it in the <code>projects</code> folder of the MatrixMCU toolkit.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Prerequisites</h2>
+<p>Be sure that you fulfill the prerequisites of the MatrixMCU toolkit and it is up to date.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Document your code</h1>
 <p>Watch this video to better understand how to document your code with <b>Doxygen</b>:</p>
 <p><a href="https://youtu.be/VC7fExJJQSY?si=oIAZU_b2sRWhu3de" title="[MatrixMCU]. Documentación de código con Doxygen."><div class="image">
 <img src="doxygen_thumb.png" alt=""/>
 <div class="caption">
 Link to Doxygen tutorial</div></div>
     </a></p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Authors</h1>
 <ul>
-<li><b>Author 1</b> - email: <a href="#" onclick="location.href='mai'+'lto:'+'aut'+'ho'+'r@a'+'ut'+'hor'+'.e'+'s'; return false;">author@author.es</a></li>
-<li><b>Author 2</b> - email: <a href="#" onclick="location.href='mai'+'lto:'+'aut'+'ho'+'r@a'+'ut'+'hor'+'.e'+'s'; return false;">author@author.es</a></li>
+<li><b>Josué Pagán</b> - email: <a href="#" onclick="location.href='mai'+'lto:'+'j.p'+'ag'+'an@'+'up'+'m.e'+'s'; return false;">j.pagan@upm.es</a></li>
+<li><b>Román Cárdenas</b> - email: <a href="#" onclick="location.href='mai'+'lto:'+'r.c'+'ar'+'den'+'as'+'@up'+'m.'+'es'; return false;">r.cardenas@upm.es</a></li>
 </ul>
-<p>Write a brief descrition of your project <b>here</b>.</p>
-<p>You can add a frontpage image **(ensure you are the owner)** here. e.g.: a picture of the HW setup, an oscilloscope capture, etc.</p>
-<p><b>Images must be located in folder <code>docs/assets/imgs/</code> and can be included in the document awith the following Markdown format:</b></p>
-<div class="fragment"><div class="line">![Alternative text](docs/assets/imgs/image.png)</div>
-</div><!-- fragment --><p>It looks like this: </p><div class="image">
-<img src="image.png" alt=""/>
-<div class="caption">
-Alternative text</div></div>
-   <p><b>Add a public link to video of your property with a demo and explanation of your project.</b></p>
-<p>To add a link to a Youtube video you can use the following Markdown format:</p>
-<div class="fragment"><div class="line">[![Alternative text](docs/assets/imgs/image2.png)](https://youtu.be/VEDEO_ID &quot;Hover text.&quot;)</div>
-</div><!-- fragment --><p>It looks like this:</p>
-<p><a href="https://www.youtube.com/watch?v=CcbgLVfCXrw&amp;" title="Youtube video."><div class="image">
-<img src="image2.png" alt=""/>
-<div class="caption">
-Link to Blink tutorial</div></div>
-    </a></p>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Version 1</h1>
-<p>Brief description of version 1.</p>
+<h1><a class="anchor" id="autotoc_md10"></a>
+License</h1>
+<p>This project is licensed under the MIT License - see the LICENSE file for details.</p>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Acknowledgments</h1>
 <ul>
-<li>To make a text bold, use the <code>**</code> symbol consecutively. For example: <b>Bold text</b></li>
-<li>To make a text italic, use the <code>*</code> symbol consecutively. For example: <em>Italic text</em></li>
-<li>To make a text both italic and bold, use the <code>***</code> symbol consecutively. For example: <em><b>Italic and bold text</b></em></li>
+<li><b>Iván Ferández Martín</b>, <b>Sergio Esteban Romero</b>, and all professors of the <b>SDG2</b> subject.</li>
 </ul>
-<p>To add subsections, use the <code>#</code> symbol consecutively. For example:</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Subsection 1</h2>
-<p>Brief description of subsection 1.</p>
-<p>To add a list of items, use the <code>*</code> symbol consecutively. For example:</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+References</h1>
 <ul>
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
+<li><b>[1]</b>: <a href="https://moodle.upm.es/titulaciones/oficiales/course/view.php?id=785#section-0">Documentation available in the Moodle of the course</a></li>
+<li><b>[2]</b>: <a href="https://web.eece.maine.edu/~zhu/book/index.php">Embedded Systems with ARM Cortex-M Microcontrollers in Assembly Language and C (Fourth Edition)</a> for explanations and examples of use of the ARM Cortex-M microcontrollers in C with CMSIS.</li>
+<li><b>[3]</b>: <a href="https://ingenio.upm.es/primo-explore/fulldisplay?docid=34UPM_ALMA51126621660004212&amp;context=L&amp;vid=34UPM_VU1&amp;lang=es_ES&amp;search_scope=TAB1_SCOPE1&amp;adaptor=Local%20Search%20Engine&amp;tab=tab1&amp;query=any,contains,Programming%20with%20STM32:%20Getting%20Started%20with%20the%20Nucleo%20Board%20and%20C%2FC%2B%2B&amp;offset=0">Programming with STM32: Getting Started with the Nucleo Board and C/C++</a> for examples of use of the STM32 microcontrollers with the HAL of ST.</li>
+<li><b>[4]</b>: <a href="https://ingenio.upm.es/primo-explore/fulldisplay?docid=34UPM_ALMA2151866130004212&amp;context=L&amp;vid=34UPM_VU1&amp;lang=es_ES&amp;search_scope=TAB1_SCOPE1&amp;adaptor=Local%20Search%20Engine&amp;isFrbr=true&amp;tab=tab1&amp;query=any,contains,C%20Programming%20Language">The C Programming Language</a></li>
+<li><b>[5]</b>: <a href="https://ingenio.upm.es/primo-explore/fulldisplay?docid=34UPM_ALMA21107789140004212&amp;context=L&amp;vid=34UPM_VU1&amp;lang=es_ES&amp;search_scope=TAB1_SCOPE1&amp;adaptor=Local%20Search%20Engine&amp;isFrbr=true&amp;tab=tab1&amp;query=any,contains,Aspectos%20pr%C3%A1cticos%20de%20dise%C3%B1o%20y%20medida%20en%20Laboratorios%20de%20Electr%C3%B3nica&amp;offset=0">Aspectos prácticos de diseño y medida en Laboratorios de Electrónica</a> for the use of the oscilloscope and the function generator.</li>
+<li><b>[6]</b>: <a href="https://www.elektor.com/products/nucleo-boards-programming-with-the-stm32cubeide">Nucleo Boards Programming with th STM32CubeIDE</a> for examples of use of the STM32 microcontrollers with the STM32CubeIDE. </li>
 </ul>
-<p>To add a list of numbered items, use the <code>1.</code> symbol consecutively. For example:</p>
-<ol type="1">
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
-</ol>
-<p>To add a link to a webpage, use the following code:</p>
-<div class="fragment"><div class="line">Link to [Google](https://www.google.com).</div>
-</div><!-- fragment --><p>It looks like this: Link to <a href="https://www.google.com">Google</a>.</p>
-<p>You can add tables in the following way:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Column 1 </th><th class="markdownTableHeadNone">Column 2 </th><th class="markdownTableHeadNone">Column 3  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Value 1 </td><td class="markdownTableBodyNone">Value 2 </td><td class="markdownTableBodyNone">Value 3  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Value 4 </td><td class="markdownTableBodyNone">Value 5 </td><td class="markdownTableBodyNone">Value 6  </td></tr>
-</table>
-<p>To add a link to a <code>.c</code> or <code>.h</code> file, you can use the following code. You can add links to codes like this, with the simple use of the backtick symbol `:</p>
-<div class="fragment"><div class="line">Link to the `interr.c`.</div>
-</div><!-- fragment --><p>It looks like this: Link to the <code><a class="el" href="interr_8c.html" title="Interrupt service routines for the STM32F4 platform.">interr.c</a></code>.</p>
-<p>You can also change the name of the link, or point to another <code>.html</code> file. These are links to <code>.html</code> files that are automatically generated with the code documentation when running Doxygen and are located in the <code>docs/html/</code> folder.</p>
-<div class="fragment"><div class="line">Link to the [FSM of Version 1](fsm__button_8c.html).</div>
-</div><!-- fragment --><p>It looks like this: Link to the <a href="interr_8c.html">File with ISRs</a>.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Version 2</h1>
-<p>Brief description of version 2.</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
-Version N</h1>
-<p>Brief description of version N.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
-Information on project_template</h1>
-<p>Template repository for C projects</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
-File Organization</h1>
-<p>The application file organization is as follows:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Main Folder Structure </th><th class="markdownTableHeadNone">Description  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>.github/</code> </td><td class="markdownTableBodyNone">Configuration files for GitHub actions on <code>devel</code> and <code>main</code> branches (to do).  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>.vscode/</code> </td><td class="markdownTableBodyNone">Configuration files for the Visual Studio Code IDE.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>bin/</code> </td><td class="markdownTableBodyNone">Executables for the application and the tests.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>build/</code> </td><td class="markdownTableBodyNone">CMake and make build files.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>common/</code> </td><td class="markdownTableBodyNone">C source and header files of your project. These files must be platform-agnostic.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>port/</code> </td><td class="markdownTableBodyNone">C source and header files of your project. These files are platform-specific.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code><a class="el" href="main_8c.html" title="Main file of the program.">main.c</a></code> </td><td class="markdownTableBodyNone">The main routine of your project. It must contain a C <code>main</code> function from which your program starts running.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>test/</code> </td><td class="markdownTableBodyNone">Test sources and required data for testing.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>CMakeLists.txt</code> </td><td class="markdownTableBodyNone">CMake lists file. It specifies how to create the <code>Makefile</code> of the application using the <code>cmake</code> tool.  </td></tr>
-</table>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

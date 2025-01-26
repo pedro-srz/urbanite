@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Template: port/stm32f4/src/interr.c File Reference</title>
+<title>Urbanite: Parking aid system: port/stm32f4/src/interr.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Template
+   <div id="projectname">Urbanite: Parking aid system
    </div>
   </td>
  </tr>
@@ -91,15 +91,13 @@ $(document).ready(function(){initNavTree('interr_8c.html',''); initResizable(); 
 
 <p>Interrupt service routines for the STM32F4 platform.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="port__system_8h_source.html">port_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stm32f4__system_8h_source.html">stm32f4_system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="port__button_8h_source.html">port_button.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="port__ultrasound_8h_source.html">port_ultrasound.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stm32f4__button_8h_source.html">stm32f4_button.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stm32f4__ultrasound_8h_source.html">stm32f4_ultrasound.h</a>&quot;</code><br />
-</div>
-<p><a href="interr_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<div class="textblock"><code>#include &quot;<a class="el" href="port__system_8h.html">port_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f4__system_8h.html">stm32f4_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port__button_8h.html">port_button.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port__ultrasound_8h.html">port_ultrasound.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f4__button_8h.html">stm32f4_button.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f4__ultrasound_8h.html">stm32f4_ultrasound.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab5e09814056d617c521549e542639b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interr_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler</a> (void)</td></tr>
@@ -122,8 +120,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>TIM5_IRQHandler</b> (
 <div class="textblock"><p>Interrupt service routines for the STM32F4 platform. </p>
 <dl class="section author"><dt>Author</dt><dd>SDG2. Román Cárdenas (<a href="#" onclick="location.href='mai'+'lto:'+'r.c'+'ar'+'den'+'as'+'@up'+'m.'+'es'; return false;">r.car<span style="display: none;">.nosp@m.</span>dena<span style="display: none;">.nosp@m.</span>s@upm<span style="display: none;">.nosp@m.</span>.es</a>) and Josué Pagán (<a href="#" onclick="location.href='mai'+'lto:'+'j.p'+'ag'+'an@'+'up'+'m.e'+'s'; return false;">j.pag<span style="display: none;">.nosp@m.</span>an@u<span style="display: none;">.nosp@m.</span>pm.es</a>) </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-12-01 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="interr_8c_source.html">interr.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a738473a5b43f6c92b80ce1d3d6f77ed9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a738473a5b43f6c92b80ce1d3d6f77ed9">&#9670;&nbsp;</a></span>EXTI15_10_IRQHandler()</h2>
@@ -144,7 +140,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>TIM5_IRQHandler</b> (
 <p>This function handles Px10-Px15 global interrupts. </p>
 <p>First, this function identifies the line/ pin which has raised the interruption. Then, perform the desired action. Before leaving it cleans the interrupt pending register.</p>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos Version 1</b></p>
+<p><b>TODO alumnos Version 1</b></p>
 <p>✅ 1. Retrieve the values of the GPIO of the user button. Use the <a class="el" href="port__button_8h.html#a89a505ed0ba6c48b4ecdeea2a84779c6">PORT_PARKING_BUTTON_ID</a> index to get the port and pin from the <code>buttons_arr</code> using its getter function. <br  />
 ✅ 2. If the value is #HIGH means that the button as been released, therefore set the field <code>flag_pressed</code> to <code>false</code> <br  />
 ✅ 3. If the value is #LOW means that the button as been pressed, therefore set the field <code>flag_pressed</code> to <code>true</code> <br  />
@@ -154,12 +150,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>TIM5_IRQHandler</b> (
 </p>
 </blockquote>
 <blockquote class="doxtable">
-<p><b>TO-DO alumnos Version 4</b></p>
+<p><b>TODO alumnos Version 4</b></p>
 <p>✅ 1. Call the function <code><a class="el" href="port__system_8h.html#a2dca6b2c8ee48c36828b323f42c47fc8" title="Resume Tick increment.">port_system_systick_resume()</a></code> to resume the systick timer at the beginning of the ISR <br  />
 </p>
 </blockquote>
-
-<p class="definition">Definition at line <a class="el" href="interr_8c_source.html#l00054">54</a> of file <a class="el" href="interr_8c_source.html">interr.c</a>.</p>
 
 </div>
 </div>
@@ -182,8 +176,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>TIM5_IRQHandler</b> (
 <p>Interrupt service routine for the System tick timer (SysTick). </p>
 <dl class="section note"><dt>Note</dt><dd>This ISR is called when the SysTick timer generates an interrupt. The program flow jumps to this ISR and increments the tick counter by one millisecond.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd><b>The variable <code>msTicks</code> must be declared volatile!</b> Just because it is modified by a call of an ISR, in order to avoid <a href="https://en.wikipedia.org/wiki/Race_condition"><em>race conditions</em></a> . <b>Added to the definition</b> after <em>static</em>. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="interr_8c_source.html#l00030">30</a> of file <a class="el" href="interr_8c_source.html">interr.c</a>.</p>
 
 </div>
 </div>
