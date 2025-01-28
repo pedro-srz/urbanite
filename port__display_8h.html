@@ -113,20 +113,20 @@ Macros</h2></td></tr>
 <tr class="separator:afc9149f5de51bd9ac4f5ebbfa153f018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23c70d699a5a775bc2e1ebeb8603f630"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__display_8h.html#a23c70d699a5a775bc2e1ebeb8603f630">COLOR_BLUE</a></td></tr>
 <tr class="separator:a23c70d699a5a775bc2e1ebeb8603f630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4534b577b74a58b0f4b7be027af664e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__display_8h.html#a4534b577b74a58b0f4b7be027af664e0">COLOR_YELLOW</a>&#160;&#160;&#160;(<a class="el" href="structrgb__color__t.html">rgb_color_t</a>){<a class="el" href="port__display_8h.html#a79ef843986ea1021a63932f1fba0e4ab">PORT_DISPLAY_RGB_MAX_VALUE</a>, <a class="el" href="port__display_8h.html#a79ef843986ea1021a63932f1fba0e4ab">PORT_DISPLAY_RGB_MAX_VALUE</a>, 0}</td></tr>
+<tr class="memitem:a4534b577b74a58b0f4b7be027af664e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__display_8h.html#a4534b577b74a58b0f4b7be027af664e0">COLOR_YELLOW</a></td></tr>
 <tr class="separator:a4534b577b74a58b0f4b7be027af664e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa777bae5d7f4119da57cc77b369498f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__display_8h.html#aa777bae5d7f4119da57cc77b369498f8">COLOR_TURQUOISE</a>&#160;&#160;&#160;(<a class="el" href="structrgb__color__t.html">rgb_color_t</a>) { 0, <a class="el" href="port__display_8h.html#a79ef843986ea1021a63932f1fba0e4ab">PORT_DISPLAY_RGB_MAX_VALUE</a>, <a class="el" href="port__display_8h.html#a79ef843986ea1021a63932f1fba0e4ab">PORT_DISPLAY_RGB_MAX_VALUE</a> }</td></tr>
+<tr class="memitem:aa777bae5d7f4119da57cc77b369498f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__display_8h.html#aa777bae5d7f4119da57cc77b369498f8">COLOR_TURQUOISE</a></td></tr>
 <tr class="separator:aa777bae5d7f4119da57cc77b369498f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cb8d305059f6c44741bbb4e1c40fd3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__display_8h.html#a8cb8d305059f6c44741bbb4e1c40fd3d">COLOR_OFF</a>&#160;&#160;&#160;(<a class="el" href="structrgb__color__t.html">rgb_color_t</a>){0, 0, 0}</td></tr>
 <tr class="separator:a8cb8d305059f6c44741bbb4e1c40fd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7cf5c72c43f55717bb250d1ea884123f"><td class="memItemLeft" align="right" valign="top"><a id="a7cf5c72c43f55717bb250d1ea884123f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>port_display_init</b> (uint32_t display_id)</td></tr>
+<tr class="memitem:a7cf5c72c43f55717bb250d1ea884123f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__display_8h.html#a7cf5c72c43f55717bb250d1ea884123f">port_display_init</a> (uint32_t display_id)</td></tr>
+<tr class="memdesc:a7cf5c72c43f55717bb250d1ea884123f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the HW specifications of a given display.  <a href="port__display_8h.html#a7cf5c72c43f55717bb250d1ea884123f">More...</a><br /></td></tr>
 <tr class="separator:a7cf5c72c43f55717bb250d1ea884123f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb06ac1219695cbea44db56a316ef9eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb">port_display_set_rgb</a> (uint32_t display_id, <a class="el" href="structrgb__color__t.html">rgb_color_t</a> color)</td></tr>
-<tr class="memdesc:adb06ac1219695cbea44db56a316ef9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a color on the RGB LED.  <a href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb">More...</a><br /></td></tr>
+<tr class="memdesc:adb06ac1219695cbea44db56a316ef9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Capture/Compare register values for each channel of the RGB LED given a color.  <a href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb">More...</a><br /></td></tr>
 <tr class="separator:adb06ac1219695cbea44db56a316ef9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -201,7 +201,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_display_init</b>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define COLOR_TURQUOISE&#160;&#160;&#160;(<a class="el" href="structrgb__color__t.html">rgb_color_t</a>) { 0, <a class="el" href="port__display_8h.html#a79ef843986ea1021a63932f1fba0e4ab">PORT_DISPLAY_RGB_MAX_VALUE</a>, <a class="el" href="port__display_8h.html#a79ef843986ea1021a63932f1fba0e4ab">PORT_DISPLAY_RGB_MAX_VALUE</a> }</td>
+          <td class="memname">#define COLOR_TURQUOISE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -216,7 +216,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_display_init</b>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define COLOR_YELLOW&#160;&#160;&#160;(<a class="el" href="structrgb__color__t.html">rgb_color_t</a>){<a class="el" href="port__display_8h.html#a79ef843986ea1021a63932f1fba0e4ab">PORT_DISPLAY_RGB_MAX_VALUE</a>, <a class="el" href="port__display_8h.html#a79ef843986ea1021a63932f1fba0e4ab">PORT_DISPLAY_RGB_MAX_VALUE</a>, 0}</td>
+          <td class="memname">#define COLOR_YELLOW</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -255,6 +255,42 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_display_init</b>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a7cf5c72c43f55717bb250d1ea884123f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf5c72c43f55717bb250d1ea884123f">&#9670;&nbsp;</a></span>port_display_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void port_display_init </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>display_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure the HW specifications of a given display. </p>
+<p>Assuming we are using an STM32F4-based platform, this function configures must call the following functions:</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Retrieve the display configuration struct calling <code><a class="el" href="stm32f4__display_8c.html#a3b6c70bd891f8077f0e4f10e942cfab2" title="Get the display struct with the given ID.">_stm32f4_display_get()</a></code>. <br  />
+✅ 2. Call function <code><a class="el" href="stm32f4__system_8h.html#aca348a9998b93751c1440d62050b7d79" title="Configure the mode and pull of a GPIO.">stm32f4_system_gpio_config()</a></code> with the right arguments to configure each RGB LED as in alternate mode and no pull up neither pull down connection. <br  />
+✅ 3. Call function <code><a class="el" href="stm32f4__system_8h.html#aa1e7f52e13f7ac3361326af3d8022e18" title="Configure the alternate function of a GPIO.">stm32f4_system_gpio_config_alternate()</a></code> with the right arguments to configure the alternate function of the each RGB LED. <br  />
+✅ 4. Call function <code><a class="el" href="stm32f4__display_8c.html#a9c0fece31743de7ec25f14610121f37a" title="Configure the timer that controls the PWM of each one of the RGB LEDs of the display system.">_timer_pwm_config()</a></code> to configure the timer and the PWM signal of the display. <br  />
+✅ 5. Call function <code><a class="el" href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb" title="Set the Capture/Compare register values for each channel of the RGB LED given a color.">port_display_set_rgb()</a></code> to set the RGB LED to off. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">display_id</td><td>Display ID. This index is used to select the element of the <code>displays_arr[]</code> array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adb06ac1219695cbea44db56a316ef9eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb06ac1219695cbea44db56a316ef9eb">&#9670;&nbsp;</a></span>port_display_set_rgb()</h2>
 
@@ -281,16 +317,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>port_display_init</b>
       </table>
 </div><div class="memdoc">
 
-<p>Set a color on the RGB LED. </p>
-<p>This function receives integer values expected to be within the range [0, 255]. With this we can set any color by using PWM. The frequency of the PWM (timer) signal can be the same for the three LEDs. However each one need a dedicated channel. Any frequency higher than 25 Hz should be sufficient to avoid flicking. This would lead us to display up to 256^3=16.777.216 colors.</p>
+<p>Set the Capture/Compare register values for each channel of the RGB LED given a color. </p>
+<p>This function disables the timer associated to the RGB LEDs, sets the Capture/Compare register values for each channel of the RGB LED, and enables the timer.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This function is valid for any given RGB LED, however, each RGB LED has its own timer. Write the code in a conditional statement to check the display_id.</dd></dl>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. TODO </p>
-</blockquote>
+<p>✅ 1. Retrieve the individual RGB values from the <code>color</code> parameter and follow the flowchart to set the RGB LED color by configuring the PWM signals appropriately: </p><div class="image">
+<img src="port_display_set_rgb_flow_diagram.png" alt=""/>
+</div>
+ </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">display_id</td><td>ID. This index is used to select the element of the <code>displays_arr[]</code> array. </td></tr>
-    <tr><td class="paramname">color</td><td>RGB color to set on the LED. </td></tr>
+    <tr><td class="paramname">display_id</td><td>Display system identifier number. </td></tr>
+    <tr><td class="paramname">color</td><td>RGB color to set. </td></tr>
   </table>
   </dd>
 </dl>

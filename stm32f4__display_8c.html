@@ -107,17 +107,17 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3b6c70bd891f8077f0e4f10e942cfab2"><td class="memItemLeft" align="right" valign="top"><a id="a3b6c70bd891f8077f0e4f10e942cfab2"></a>
-<a class="el" href="structstm32f4__display__hw__t.html">stm32f4_display_hw_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_stm32f4_display_get</b> (uint32_t display_id)</td></tr>
+<tr class="memitem:a3b6c70bd891f8077f0e4f10e942cfab2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstm32f4__display__hw__t.html">stm32f4_display_hw_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__display_8c.html#a3b6c70bd891f8077f0e4f10e942cfab2">_stm32f4_display_get</a> (uint32_t display_id)</td></tr>
+<tr class="memdesc:a3b6c70bd891f8077f0e4f10e942cfab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the display struct with the given ID.  <a href="stm32f4__display_8c.html#a3b6c70bd891f8077f0e4f10e942cfab2">More...</a><br /></td></tr>
 <tr class="separator:a3b6c70bd891f8077f0e4f10e942cfab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c0fece31743de7ec25f14610121f37a"><td class="memItemLeft" align="right" valign="top"><a id="a9c0fece31743de7ec25f14610121f37a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>_timer_pwm_config</b> (uint32_t display_id)</td></tr>
+<tr class="memitem:a9c0fece31743de7ec25f14610121f37a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__display_8c.html#a9c0fece31743de7ec25f14610121f37a">_timer_pwm_config</a> (uint32_t display_id)</td></tr>
+<tr class="memdesc:a9c0fece31743de7ec25f14610121f37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the timer that controls the PWM of <b>each one</b> of the RGB LEDs of the display system.  <a href="stm32f4__display_8c.html#a9c0fece31743de7ec25f14610121f37a">More...</a><br /></td></tr>
 <tr class="separator:a9c0fece31743de7ec25f14610121f37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cf5c72c43f55717bb250d1ea884123f"><td class="memItemLeft" align="right" valign="top"><a id="a7cf5c72c43f55717bb250d1ea884123f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>port_display_init</b> (uint32_t display_id)</td></tr>
+<tr class="memitem:a7cf5c72c43f55717bb250d1ea884123f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__display_8c.html#a7cf5c72c43f55717bb250d1ea884123f">port_display_init</a> (uint32_t display_id)</td></tr>
+<tr class="memdesc:a7cf5c72c43f55717bb250d1ea884123f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the HW specifications of a given display.  <a href="stm32f4__display_8c.html#a7cf5c72c43f55717bb250d1ea884123f">More...</a><br /></td></tr>
 <tr class="separator:a7cf5c72c43f55717bb250d1ea884123f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb06ac1219695cbea44db56a316ef9eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__display_8c.html#adb06ac1219695cbea44db56a316ef9eb">port_display_set_rgb</a> (uint32_t display_id, <a class="el" href="structrgb__color__t.html">rgb_color_t</a> color)</td></tr>
-<tr class="memdesc:adb06ac1219695cbea44db56a316ef9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a color on the RGB LED.  <a href="stm32f4__display_8c.html#adb06ac1219695cbea44db56a316ef9eb">More...</a><br /></td></tr>
+<tr class="memdesc:adb06ac1219695cbea44db56a316ef9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Capture/Compare register values for each channel of the RGB LED given a color.  <a href="stm32f4__display_8c.html#adb06ac1219695cbea44db56a316ef9eb">More...</a><br /></td></tr>
 <tr class="separator:adb06ac1219695cbea44db56a316ef9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -131,6 +131,115 @@ Variables</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a3b6c70bd891f8077f0e4f10e942cfab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b6c70bd891f8077f0e4f10e942cfab2">&#9670;&nbsp;</a></span>_stm32f4_display_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstm32f4__display__hw__t.html">stm32f4_display_hw_t</a>* _stm32f4_display_get </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>display_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the display struct with the given ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">display_id</td><td>Button ID.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the display struct. </dd>
+<dd>
+NULL If the display ID is not valid. </dd></dl>
+
+</div>
+</div>
+<a id="a9c0fece31743de7ec25f14610121f37a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c0fece31743de7ec25f14610121f37a">&#9670;&nbsp;</a></span>_timer_pwm_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _timer_pwm_config </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>display_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure the timer that controls the PWM of <b>each one</b> of the RGB LEDs of the display system. </p>
+<p>This function is called by the <code><a class="el" href="stm32f4__display_8c.html#a7cf5c72c43f55717bb250d1ea884123f" title="Configure the HW specifications of a given display.">port_display_init()</a></code> public function to configure the timer that controls the PWM of the RGB LEDs of the display.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The timer is common for all the RGB LEDs of one RGB display despite each one has its own channel. If you introduce more RGB displays, you must configure a new timer for each one. Because of this, you **must encapsulate the configuration of the timer in a <code>switch</code> or <code>if</code> statement.*</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function does not set the duty cycle of the PWM signal. This is done in the <code><a class="el" href="stm32f4__display_8c.html#adb06ac1219695cbea44db56a316ef9eb" title="Set the Capture/Compare register values for each channel of the RGB LED given a color.">port_display_set_rgb()</a></code> function where the color is set.</dd></dl>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p><b>PWM timer setup</b></p>
+<p>✅ 1. Enable the clock source of the timer <br  />
+&#160;&#160;&#160;&#160;💡 To know if the source clock is <code>APB1</code> or <code>APB2</code>, check the clock tree in the user manual (<a href="https://www.st.com/en/microcontrollers-microprocessors/stm32f446re.html">Figure 3. STM32F446xC/E block diagram</a>) <br  />
+✅ 2. Disable the counter (register <code>CR1</code>) and enable the autoreload preaload (bit <code>ARPE</code>) ✅ 3. Reset the counter (register <code>CNT</code>), set the autoreload value (register <code>ARR</code>) and the prescaler (register <code>PSC</code>) for a frequency of 50 Hz. <br  />
+ <b>PWM mode configuration</b></p>
+<dl class="section note"><dt>Note</dt><dd>Check table "Table 11. Alternate function" in the datasheet to select the channel more alternate functions.</dd></dl>
+<p>✅ 5. Disable the output compare (register <code>CCER</code>) <b>for each one</b> of the corresponding channels. Take into account the channel number (1, 2, 3, or 4) and the channel enable bit (CCxE) <br  />
+✅ 6. Clear the P and NP bits (CCxP and CCxNP) of the output compare register (<code>CCER</code>) <b>for each one</b> of the corresponding channels . <br  />
+✅ 7. Set both (i) mode PWM 1, and (ii) enable preload (register CCMRx) <b>for each one</b> of the corresponding channels. <br  />
+&#160;&#160;&#160;&#160;💡 To set the mode PWM to <code>mode 1</code> you must set the bits <code>OCxM</code> in the <code>CCMRx</code> register to the corresponding values according to the explanations of the manufacturer. You can find it in the explanations for the TIMx_CCMRx register for timers TIM2-TIM5 in <a href="https://www.st.com/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">Sections 17.4.7 and 17.4.8 in the reference manual</a> <br  />
+&#160;&#160;&#160;&#160;💡 To enable the preload you must set the bit <code>OCxPE</code> to <code>1</code> in the same register. ✅ 8. Generate an update event (register <code>EGR</code>) by setting the <code>UG</code> bit. This will load the values of the <code>ARR</code> and <code>PSC</code> registers into the active registers. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">display_id</td><td>Display system identifier number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7cf5c72c43f55717bb250d1ea884123f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf5c72c43f55717bb250d1ea884123f">&#9670;&nbsp;</a></span>port_display_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void port_display_init </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>display_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure the HW specifications of a given display. </p>
+<p>Assuming we are using an STM32F4-based platform, this function configures must call the following functions:</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Retrieve the display configuration struct calling <code><a class="el" href="stm32f4__display_8c.html#a3b6c70bd891f8077f0e4f10e942cfab2" title="Get the display struct with the given ID.">_stm32f4_display_get()</a></code>. <br  />
+✅ 2. Call function <code><a class="el" href="stm32f4__system_8h.html#aca348a9998b93751c1440d62050b7d79" title="Configure the mode and pull of a GPIO.">stm32f4_system_gpio_config()</a></code> with the right arguments to configure each RGB LED as in alternate mode and no pull up neither pull down connection. <br  />
+✅ 3. Call function <code><a class="el" href="stm32f4__system_8h.html#aa1e7f52e13f7ac3361326af3d8022e18" title="Configure the alternate function of a GPIO.">stm32f4_system_gpio_config_alternate()</a></code> with the right arguments to configure the alternate function of the each RGB LED. <br  />
+✅ 4. Call function <code><a class="el" href="stm32f4__display_8c.html#a9c0fece31743de7ec25f14610121f37a" title="Configure the timer that controls the PWM of each one of the RGB LEDs of the display system.">_timer_pwm_config()</a></code> to configure the timer and the PWM signal of the display. <br  />
+✅ 5. Call function <code><a class="el" href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb" title="Set the Capture/Compare register values for each channel of the RGB LED given a color.">port_display_set_rgb()</a></code> to set the RGB LED to off. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">display_id</td><td>Display ID. This index is used to select the element of the <code>displays_arr[]</code> array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adb06ac1219695cbea44db56a316ef9eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb06ac1219695cbea44db56a316ef9eb">&#9670;&nbsp;</a></span>port_display_set_rgb()</h2>
 
@@ -157,16 +266,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set a color on the RGB LED. </p>
-<p>This function receives integer values expected to be within the range [0, 255]. With this we can set any color by using PWM. The frequency of the PWM (timer) signal can be the same for the three LEDs. However each one need a dedicated channel. Any frequency higher than 25 Hz should be sufficient to avoid flicking. This would lead us to display up to 256^3=16.777.216 colors.</p>
+<p>Set the Capture/Compare register values for each channel of the RGB LED given a color. </p>
+<p>This function disables the timer associated to the RGB LEDs, sets the Capture/Compare register values for each channel of the RGB LED, and enables the timer.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This function is valid for any given RGB LED, however, each RGB LED has its own timer. Write the code in a conditional statement to check the display_id.</dd></dl>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. TODO </p>
-</blockquote>
+<p>✅ 1. Retrieve the individual RGB values from the <code>color</code> parameter and follow the flowchart to set the RGB LED color by configuring the PWM signals appropriately: </p><div class="image">
+<img src="port_display_set_rgb_flow_diagram.png" alt=""/>
+</div>
+ </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">display_id</td><td>ID. This index is used to select the element of the <code>displays_arr[]</code> array. </td></tr>
-    <tr><td class="paramname">color</td><td>RGB color to set on the LED. </td></tr>
+    <tr><td class="paramname">display_id</td><td>Display system identifier number. </td></tr>
+    <tr><td class="paramname">color</td><td>RGB color to set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -195,7 +307,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Array of elements that represents the HW characteristics of the RGB LED of the display systems connected to the STM32F4 platform. </p>
-<p>This must be hidden from the user, so it is declared as static. To access the elements of this array, use the function <code>_stm32f4_display_get()</code>. </p>
+<p>This must be hidden from the user, so it is declared as static. To access the elements of this array, use the function <code><a class="el" href="stm32f4__display_8c.html#a3b6c70bd891f8077f0e4f10e942cfab2" title="Get the display struct with the given ID.">_stm32f4_display_get()</a></code>. </p>
 
 </div>
 </div>

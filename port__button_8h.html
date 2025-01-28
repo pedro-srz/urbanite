@@ -182,7 +182,7 @@ Functions</h2></td></tr>
 <p>This function is used to clear the pending interrupt of the button. It is called from the ISR to avoid unwanted interrupts.</p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Get the button configuration struct calling <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button status struct with the given ID.">_stm32f4_button_get()</a></code> <br  />
+<p>✅ 1. Get the button configuration struct calling <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button struct with the given ID.">_stm32f4_button_get()</a></code> <br  />
 ✅ 2. Get the pin of the button <br  />
 ✅ 3. Clear the corresponding bit of the PR register of the EXTI peripheral associated with the button pin <br  />
 </p>
@@ -216,7 +216,7 @@ Functions</h2></td></tr>
 <p>This function is used to disable the interrupts of the button. It is used in the unit tests to avoid unwanted interrupts.</p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Get the button configuration struct calling <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button status struct with the given ID.">_stm32f4_button_get()</a></code> <br  />
+<p>✅ 1. Get the button configuration struct calling <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button struct with the given ID.">_stm32f4_button_get()</a></code> <br  />
 ✅ 2. Get the pin of the button <br  />
 ✅ 3. Disable the EXTI line associated with the button pin by calling the function <code><a class="el" href="stm32f4__system_8h.html#ac6621c40ccd6adad9de3f3644e3cdadf" title="Disable interrupts of a GPIO line (pin)">stm32f4_system_gpio_exti_disable()</a></code> <br  />
 </p>
@@ -250,7 +250,7 @@ Functions</h2></td></tr>
 <p>This function is used to check if the interrupt line of the button is pending. It is called from the ISR to check if the button has been pressed.</p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Get the button configuration struct calling <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button status struct with the given ID.">_stm32f4_button_get()</a></code> <br  />
+<p>✅ 1. Get the button configuration struct calling <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button struct with the given ID.">_stm32f4_button_get()</a></code> <br  />
 ✅ 2. Get the pin of the button <br  />
 ✅ 3. Read the value of the PR register of the EXTI peripheral associated with the button pin <br  />
 ✅ 4. Return the value. <br  />
@@ -287,7 +287,7 @@ false </dd></dl>
 <p>Return the status of the button (pressed or not). </p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Return the value of the field <code>flag_pressed</code>. Call the function <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button status struct with the given ID.">_stm32f4_button_get()</a></code> to get the button struct. <br  />
+<p>✅ 1. Return the value of the field <code>flag_pressed</code>. Call the function <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button struct with the given ID.">_stm32f4_button_get()</a></code> to get the button struct. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -321,7 +321,7 @@ false If the button has not been pressed </dd></dl>
 <p>Get the value of the GPIO connected to the button. </p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Call function <code><a class="el" href="stm32f4__system_8h.html#a47b09fba35fdd4d084f678e58bdb8c4d" title="Read the digital value of a GPIO.">stm32f4_system_gpio_read()</a></code> with the right arguments to get the value of the button. Call the function <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button status struct with the given ID.">_stm32f4_button_get()</a></code> to get the button struct. <br  />
+<p>✅ 1. Call function <code><a class="el" href="stm32f4__system_8h.html#a47b09fba35fdd4d084f678e58bdb8c4d" title="Read the digital value of a GPIO.">stm32f4_system_gpio_read()</a></code> with the right arguments to get the value of the button. Call the function <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button struct with the given ID.">_stm32f4_button_get()</a></code> to get the button struct. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -355,10 +355,10 @@ false </dd></dl>
 <p>Configure the HW specifications of a given button. </p>
 <p>Assuming we are using an STM32F4-based platform, this function configures must call the following functions:</p>
 <blockquote class="doxtable">
-<p><b>TODO alumnos:</b></p>
-<p>✅ 1. Call function <code><a class="el" href="stm32f4__system_8h.html#aca348a9998b93751c1440d62050b7d79" title="Configure the mode and pull of a GPIO.">stm32f4_system_gpio_config()</a></code> with the right arguments to configure the button as input and no pull up neither pull down connection <br  />
-✅ 2. Call function <code><a class="el" href="stm32f4__system_8h.html#a98f4105a82f32c645f0b06424af5ef22" title="Configure the external interruption or event of a GPIO.">stm32f4_system_gpio_config_exti()</a></code> with the right arguments to configure interruption mode in both rising and falling edges, and enable the interrupt request <br  />
-✅ 3. Call function <code><a class="el" href="stm32f4__system_8h.html#a03d8c69cd44964e3f1ff05a2c79626b8" title="Enable interrupts of a GPIO line (pin)">stm32f4_system_gpio_exti_enable()</a></code> with the right parameters to enable the interrupt line and set the priority level to <code>1</code> and the subpriority level to <code>0</code> </p>
+<p><b>TODO alumnos:</b> ✅ 1. Retrieve the button configuration struct calling <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button struct with the given ID.">_stm32f4_button_get()</a></code> <br  />
+✅ 2. Call function <code><a class="el" href="stm32f4__system_8h.html#aca348a9998b93751c1440d62050b7d79" title="Configure the mode and pull of a GPIO.">stm32f4_system_gpio_config()</a></code> with the right arguments to configure the button as input and no pull up neither pull down connection <br  />
+✅ 3. Call function <code><a class="el" href="stm32f4__system_8h.html#a98f4105a82f32c645f0b06424af5ef22" title="Configure the external interruption or event of a GPIO.">stm32f4_system_gpio_config_exti()</a></code> with the right arguments to configure interruption mode in both rising and falling edges, and enable the interrupt request <br  />
+✅ 4. Call function <code><a class="el" href="stm32f4__system_8h.html#a03d8c69cd44964e3f1ff05a2c79626b8" title="Enable interrupts of a GPIO line (pin)">stm32f4_system_gpio_exti_enable()</a></code> with the right parameters to enable the interrupt line and set the priority level to <code>1</code> and the subpriority level to <code>0</code> </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -399,7 +399,7 @@ false </dd></dl>
 <p>This function is used to force the status of the button. It is used to simulate the button press in the tests.</p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Set the value of the field <code>flag_pressed</code>. Call the function <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button status struct with the given ID.">_stm32f4_button_get()</a></code> to get the button struct. <br  />
+<p>✅ 1. Set the value of the field <code>flag_pressed</code>. Call the function <code><a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478" title="Get the button struct with the given ID.">_stm32f4_button_get()</a></code> to get the button struct. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>

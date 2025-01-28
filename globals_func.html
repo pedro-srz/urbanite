@@ -85,11 +85,20 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 &#160;
 
 <h3><a id="index__5F"></a>- _ -</h3><ul>
+<li>_compute_display_levels()
+: <a class="el" href="fsm__display_8c.html#a7cf527f19c3406f4f2d8516ecd4e047c">fsm_display.c</a>
+</li>
 <li>_stm32f4_button_get()
 : <a class="el" href="stm32f4__button_8c.html#adf8fb86ad32ed825cfee1336a05b4478">stm32f4_button.c</a>
 </li>
+<li>_stm32f4_display_get()
+: <a class="el" href="stm32f4__display_8c.html#a3b6c70bd891f8077f0e4f10e942cfab2">stm32f4_display.c</a>
+</li>
 <li>_stm32f4_ultrasound_get()
 : <a class="el" href="stm32f4__ultrasound_8c.html#a25c1bd959768a66ebfdc3c4995b128a2">stm32f4_ultrasound.c</a>
+</li>
+<li>_timer_pwm_config()
+: <a class="el" href="stm32f4__display_8c.html#a9c0fece31743de7ec25f14610121f37a">stm32f4_display.c</a>
 </li>
 </ul>
 
@@ -111,10 +120,14 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 : <a class="el" href="fsm__urbanite_8c.html#a05439bd432881a570511d46a7d2ff699">fsm_urbanite.c</a>
 </li>
 <li>check_off()
-: <a class="el" href="fsm__urbanite_8c.html#a941bb12de41897bba2b612cc87b3164b">fsm_urbanite.c</a>
+: <a class="el" href="fsm__display_8c.html#a941bb12de41897bba2b612cc87b3164b">fsm_display.c</a>
+, <a class="el" href="fsm__urbanite_8c.html#a941bb12de41897bba2b612cc87b3164b">fsm_urbanite.c</a>
 </li>
 <li>check_on()
 : <a class="el" href="fsm__urbanite_8c.html#ab64512dbce31c38a36bff5e337f4fb8f">fsm_urbanite.c</a>
+</li>
+<li>check_set_new_color()
+: <a class="el" href="fsm__display_8c.html#ae0fec900c7e47e8e2c1fc497e2aeb482">fsm_display.c</a>
 </li>
 <li>check_timeout()
 : <a class="el" href="fsm__button_8c.html#ad6f02469ecb017e449a64fffc2feea43">fsm_button.c</a>
@@ -123,8 +136,17 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>do_set_color()
+: <a class="el" href="fsm__display_8c.html#ab3041b841563b8a02e45f0e7e3608b98">fsm_display.c</a>
+</li>
 <li>do_set_duration()
 : <a class="el" href="fsm__button_8c.html#afb3caa779f91f008bb89a419921ab83c">fsm_button.c</a>
+</li>
+<li>do_set_off()
+: <a class="el" href="fsm__display_8c.html#a93a8745b455e90e7dd7093adf9d90a06">fsm_display.c</a>
+</li>
+<li>do_set_on()
+: <a class="el" href="fsm__display_8c.html#a183fea0e00eeb6bbf497bc44b0dac02e">fsm_display.c</a>
 </li>
 <li>do_sleep_off()
 : <a class="el" href="fsm__urbanite_8c.html#a9d2922e21185739c528166e38ed8ab3b">fsm_urbanite.c</a>
@@ -197,13 +219,40 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 : <a class="el" href="fsm__button_8h.html#a911736d0a80d826cf083b94d049aacee">fsm_button.h</a>
 , <a class="el" href="fsm__button_8c.html#a911736d0a80d826cf083b94d049aacee">fsm_button.c</a>
 </li>
+<li>fsm_display_check_activity()
+: <a class="el" href="fsm__display_8h.html#a410aafc7e009641a9588f2b0fd8bf76f">fsm_display.h</a>
+, <a class="el" href="fsm__display_8c.html#a410aafc7e009641a9588f2b0fd8bf76f">fsm_display.c</a>
+</li>
+<li>fsm_display_destroy()
+: <a class="el" href="fsm__display_8h.html#aa4a55697e744379b93e16803110a1fd4">fsm_display.h</a>
+, <a class="el" href="fsm__display_8c.html#aa4a55697e744379b93e16803110a1fd4">fsm_display.c</a>
+</li>
 <li>fsm_display_fire()
 : <a class="el" href="fsm__display_8h.html#a339cb7a174b5bad645b83852aee8a6d7">fsm_display.h</a>
 , <a class="el" href="fsm__display_8c.html#a339cb7a174b5bad645b83852aee8a6d7">fsm_display.c</a>
 </li>
+<li>fsm_display_get_distance()
+: <a class="el" href="fsm__display_8h.html#ae686f4ca36df093005ac13a211fe5494">fsm_display.h</a>
+, <a class="el" href="fsm__display_8c.html#ae686f4ca36df093005ac13a211fe5494">fsm_display.c</a>
+</li>
+<li>fsm_display_get_status()
+: <a class="el" href="fsm__display_8h.html#ab78e6093f02263a5bfb8dd2e3c652791">fsm_display.h</a>
+, <a class="el" href="fsm__display_8c.html#ab78e6093f02263a5bfb8dd2e3c652791">fsm_display.c</a>
+</li>
+<li>fsm_display_init()
+: <a class="el" href="fsm__display_8c.html#ac29a05b18eea8186a41013d7aaa8a816">fsm_display.c</a>
+</li>
 <li>fsm_display_new()
 : <a class="el" href="fsm__display_8h.html#af8971b5e7c7e72e1d5f955b7ece4475b">fsm_display.h</a>
 , <a class="el" href="fsm__display_8c.html#af8971b5e7c7e72e1d5f955b7ece4475b">fsm_display.c</a>
+</li>
+<li>fsm_display_set_distance()
+: <a class="el" href="fsm__display_8h.html#ae671da305727370e77f1f688e8fb0564">fsm_display.h</a>
+, <a class="el" href="fsm__display_8c.html#ae671da305727370e77f1f688e8fb0564">fsm_display.c</a>
+</li>
+<li>fsm_display_set_status()
+: <a class="el" href="fsm__display_8h.html#a83d5e775845d1c91e63f74eebde0a603">fsm_display.h</a>
+, <a class="el" href="fsm__display_8c.html#aec43b0cbfa591536d64e13ceeb231283">fsm_display.c</a>
 </li>
 <li>fsm_ultrasound_check_activity()
 : <a class="el" href="fsm__ultrasound_8h.html#a24f4ccdcf05a371db248413cca46e845">fsm_ultrasound.h</a>
@@ -271,6 +320,10 @@ $(document).ready(function(){initNavTree('globals_func.html',''); initResizable(
 <li>port_button_set_pressed()
 : <a class="el" href="port__button_8h.html#ae76aab2e1d78bd730f0c2972f003a29b">port_button.h</a>
 , <a class="el" href="stm32f4__button_8c.html#ae76aab2e1d78bd730f0c2972f003a29b">stm32f4_button.c</a>
+</li>
+<li>port_display_init()
+: <a class="el" href="port__display_8h.html#a7cf5c72c43f55717bb250d1ea884123f">port_display.h</a>
+, <a class="el" href="stm32f4__display_8c.html#a7cf5c72c43f55717bb250d1ea884123f">stm32f4_display.c</a>
 </li>
 <li>port_display_set_rgb()
 : <a class="el" href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb">port_display.h</a>

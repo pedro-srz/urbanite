@@ -1,10 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"port__ultrasound_8h.html#a28e921af96b431d832fd574ee90b3baa":[2,0,1,0,3,15],
-"port__ultrasound_8h.html#a2d21bece407596a4e345734a65490983":[2,0,1,0,3,5],
-"port__ultrasound_8h.html#a385214eef040dbd4a4d9b1939000d14b":[2,0,1,0,3,4],
-"port__ultrasound_8h.html#a3a357780889c91db508c4a4258c7ef01":[2,0,1,0,3,0],
-"port__ultrasound_8h.html#a3c1fa21bfaacc552d9c3d38b05db217d":[2,0,1,0,3,13],
 "port__ultrasound_8h.html#a3fd8e4ff9c1aead8bbf9d63d4a132f0f":[2,0,1,0,3,3],
 "port__ultrasound_8h.html#a49b6593a8cc519fe0506fab4886ba80e":[2,0,1,0,3,11],
 "port__ultrasound_8h.html#a5ad08467d731e0f28da4e5a912cb0f1c":[2,0,1,0,3,12],

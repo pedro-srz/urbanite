@@ -107,53 +107,53 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa4f667e43b9cb514d45f92f3bcbd3a9a"><td class="memItemLeft" align="right" valign="top"><a id="aa4f667e43b9cb514d45f92f3bcbd3a9a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>_compute_display_levels</b> (<a class="el" href="structrgb__color__t.html">rgb_color_t</a> *p_color, <a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
-<tr class="separator:aa4f667e43b9cb514d45f92f3bcbd3a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0fec900c7e47e8e2c1fc497e2aeb482"><td class="memItemLeft" align="right" valign="top"><a id="ae0fec900c7e47e8e2c1fc497e2aeb482"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>check_set_new_color</b> (fsm_t *p_this)</td></tr>
+<tr class="memitem:a7cf527f19c3406f4f2d8516ecd4e047c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a7cf527f19c3406f4f2d8516ecd4e047c">_compute_display_levels</a> (<a class="el" href="structrgb__color__t.html">rgb_color_t</a> *p_color, uint32_t distance_cm)</td></tr>
+<tr class="memdesc:a7cf527f19c3406f4f2d8516ecd4e047c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set color levels of the RGB LEDs according to the distance.  <a href="fsm__display_8c.html#a7cf527f19c3406f4f2d8516ecd4e047c">More...</a><br /></td></tr>
+<tr class="separator:a7cf527f19c3406f4f2d8516ecd4e047c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0fec900c7e47e8e2c1fc497e2aeb482"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#ae0fec900c7e47e8e2c1fc497e2aeb482">check_set_new_color</a> (fsm_t *p_this)</td></tr>
+<tr class="memdesc:ae0fec900c7e47e8e2c1fc497e2aeb482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a new color has to be set.  <a href="fsm__display_8c.html#ae0fec900c7e47e8e2c1fc497e2aeb482">More...</a><br /></td></tr>
 <tr class="separator:ae0fec900c7e47e8e2c1fc497e2aeb482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e382225a9b12e32722e6d5c36dbea57"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a8e382225a9b12e32722e6d5c36dbea57">check_active</a> (fsm_t *p_this)</td></tr>
-<tr class="memdesc:a8e382225a9b12e32722e6d5c36dbea57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a new display measure has to be shown.  <a href="fsm__display_8c.html#a8e382225a9b12e32722e6d5c36dbea57">More...</a><br /></td></tr>
+<tr class="memdesc:a8e382225a9b12e32722e6d5c36dbea57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the display is set to be active (ON), independently if it is idle or not.  <a href="fsm__display_8c.html#a8e382225a9b12e32722e6d5c36dbea57">More...</a><br /></td></tr>
 <tr class="separator:a8e382225a9b12e32722e6d5c36dbea57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a941bb12de41897bba2b612cc87b3164b"><td class="memItemLeft" align="right" valign="top"><a id="a941bb12de41897bba2b612cc87b3164b"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>check_off</b> (fsm_t *p_this)</td></tr>
+<tr class="memitem:a941bb12de41897bba2b612cc87b3164b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a941bb12de41897bba2b612cc87b3164b">check_off</a> (fsm_t *p_this)</td></tr>
+<tr class="memdesc:a941bb12de41897bba2b612cc87b3164b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the display is set to be inactive (OFF).  <a href="fsm__display_8c.html#a941bb12de41897bba2b612cc87b3164b">More...</a><br /></td></tr>
 <tr class="separator:a941bb12de41897bba2b612cc87b3164b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a183fea0e00eeb6bbf497bc44b0dac02e"><td class="memItemLeft" align="right" valign="top"><a id="a183fea0e00eeb6bbf497bc44b0dac02e"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>do_set_on</b> (fsm_t *p_this)</td></tr>
+<tr class="memitem:a183fea0e00eeb6bbf497bc44b0dac02e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a183fea0e00eeb6bbf497bc44b0dac02e">do_set_on</a> (fsm_t *p_this)</td></tr>
+<tr class="memdesc:a183fea0e00eeb6bbf497bc44b0dac02e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the display system ON for the first time.  <a href="fsm__display_8c.html#a183fea0e00eeb6bbf497bc44b0dac02e">More...</a><br /></td></tr>
 <tr class="separator:a183fea0e00eeb6bbf497bc44b0dac02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3041b841563b8a02e45f0e7e3608b98"><td class="memItemLeft" align="right" valign="top"><a id="ab3041b841563b8a02e45f0e7e3608b98"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>do_set_color</b> (fsm_t *p_this)</td></tr>
+<tr class="memitem:ab3041b841563b8a02e45f0e7e3608b98"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#ab3041b841563b8a02e45f0e7e3608b98">do_set_color</a> (fsm_t *p_this)</td></tr>
+<tr class="memdesc:ab3041b841563b8a02e45f0e7e3608b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the color of the RGB LED according to the distance measured by the ultrasound sensor.  <a href="fsm__display_8c.html#ab3041b841563b8a02e45f0e7e3608b98">More...</a><br /></td></tr>
 <tr class="separator:ab3041b841563b8a02e45f0e7e3608b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93a8745b455e90e7dd7093adf9d90a06"><td class="memItemLeft" align="right" valign="top"><a id="a93a8745b455e90e7dd7093adf9d90a06"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>do_set_off</b> (fsm_t *p_this)</td></tr>
+<tr class="memitem:a93a8745b455e90e7dd7093adf9d90a06"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a93a8745b455e90e7dd7093adf9d90a06">do_set_off</a> (fsm_t *p_this)</td></tr>
+<tr class="memdesc:a93a8745b455e90e7dd7093adf9d90a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the display system OFF.  <a href="fsm__display_8c.html#a93a8745b455e90e7dd7093adf9d90a06">More...</a><br /></td></tr>
 <tr class="separator:a93a8745b455e90e7dd7093adf9d90a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac29a05b18eea8186a41013d7aaa8a816"><td class="memItemLeft" align="right" valign="top"><a id="ac29a05b18eea8186a41013d7aaa8a816"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_init</b> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm_display, uint32_t display_id)</td></tr>
+<tr class="memitem:ac29a05b18eea8186a41013d7aaa8a816"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#ac29a05b18eea8186a41013d7aaa8a816">fsm_display_init</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm_display, uint32_t display_id)</td></tr>
+<tr class="memdesc:ac29a05b18eea8186a41013d7aaa8a816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a display system FSM.  <a href="fsm__display_8c.html#ac29a05b18eea8186a41013d7aaa8a816">More...</a><br /></td></tr>
 <tr class="separator:ac29a05b18eea8186a41013d7aaa8a816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8971b5e7c7e72e1d5f955b7ece4475b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#af8971b5e7c7e72e1d5f955b7ece4475b">fsm_display_new</a> (uint32_t display_id)</td></tr>
-<tr class="memdesc:af8971b5e7c7e72e1d5f955b7ece4475b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a display system FSM.  <a href="fsm__display_8c.html#af8971b5e7c7e72e1d5f955b7ece4475b">More...</a><br /></td></tr>
+<tr class="memdesc:af8971b5e7c7e72e1d5f955b7ece4475b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new display FSM.  <a href="fsm__display_8c.html#af8971b5e7c7e72e1d5f955b7ece4475b">More...</a><br /></td></tr>
 <tr class="separator:af8971b5e7c7e72e1d5f955b7ece4475b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4a55697e744379b93e16803110a1fd4"><td class="memItemLeft" align="right" valign="top"><a id="aa4a55697e744379b93e16803110a1fd4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_destroy</b> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memitem:aa4a55697e744379b93e16803110a1fd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#aa4a55697e744379b93e16803110a1fd4">fsm_display_destroy</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:aa4a55697e744379b93e16803110a1fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a display FSM.  <a href="fsm__display_8c.html#aa4a55697e744379b93e16803110a1fd4">More...</a><br /></td></tr>
 <tr class="separator:aa4a55697e744379b93e16803110a1fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a339cb7a174b5bad645b83852aee8a6d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a339cb7a174b5bad645b83852aee8a6d7">fsm_display_fire</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
-<tr class="memdesc:a339cb7a174b5bad645b83852aee8a6d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire the display system FSM.  <a href="fsm__display_8c.html#a339cb7a174b5bad645b83852aee8a6d7">More...</a><br /></td></tr>
+<tr class="memdesc:a339cb7a174b5bad645b83852aee8a6d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire the display FSM.  <a href="fsm__display_8c.html#a339cb7a174b5bad645b83852aee8a6d7">More...</a><br /></td></tr>
 <tr class="separator:a339cb7a174b5bad645b83852aee8a6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae686f4ca36df093005ac13a211fe5494"><td class="memItemLeft" align="right" valign="top"><a id="ae686f4ca36df093005ac13a211fe5494"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_get_distance</b> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memitem:ae686f4ca36df093005ac13a211fe5494"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#ae686f4ca36df093005ac13a211fe5494">fsm_display_get_distance</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:ae686f4ca36df093005ac13a211fe5494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distance of the last object detected by the ultrasound sensor.  <a href="fsm__display_8c.html#ae686f4ca36df093005ac13a211fe5494">More...</a><br /></td></tr>
 <tr class="separator:ae686f4ca36df093005ac13a211fe5494"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c5b967c941aa17e58774324d348dff6"><td class="memItemLeft" align="right" valign="top"><a id="a8c5b967c941aa17e58774324d348dff6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_set_distance</b> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm, int32_t distance_cm)</td></tr>
-<tr class="separator:a8c5b967c941aa17e58774324d348dff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab78e6093f02263a5bfb8dd2e3c652791"><td class="memItemLeft" align="right" valign="top"><a id="ab78e6093f02263a5bfb8dd2e3c652791"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_get_status</b> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memitem:ae671da305727370e77f1f688e8fb0564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#ae671da305727370e77f1f688e8fb0564">fsm_display_set_distance</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm, uint32_t distance_cm)</td></tr>
+<tr class="memdesc:ae671da305727370e77f1f688e8fb0564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the display system to show the distance in cm.  <a href="fsm__display_8c.html#ae671da305727370e77f1f688e8fb0564">More...</a><br /></td></tr>
+<tr class="separator:ae671da305727370e77f1f688e8fb0564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab78e6093f02263a5bfb8dd2e3c652791"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#ab78e6093f02263a5bfb8dd2e3c652791">fsm_display_get_status</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:ab78e6093f02263a5bfb8dd2e3c652791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the status of the display FSM.  <a href="fsm__display_8c.html#ab78e6093f02263a5bfb8dd2e3c652791">More...</a><br /></td></tr>
 <tr class="separator:ab78e6093f02263a5bfb8dd2e3c652791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec43b0cbfa591536d64e13ceeb231283"><td class="memItemLeft" align="right" valign="top"><a id="aec43b0cbfa591536d64e13ceeb231283"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_set_status</b> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm, bool status)</td></tr>
+<tr class="memitem:aec43b0cbfa591536d64e13ceeb231283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#aec43b0cbfa591536d64e13ceeb231283">fsm_display_set_status</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm, bool status)</td></tr>
+<tr class="memdesc:aec43b0cbfa591536d64e13ceeb231283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the status of the display FSM.  <a href="fsm__display_8c.html#aec43b0cbfa591536d64e13ceeb231283">More...</a><br /></td></tr>
 <tr class="separator:aec43b0cbfa591536d64e13ceeb231283"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a410aafc7e009641a9588f2b0fd8bf76f"><td class="memItemLeft" align="right" valign="top"><a id="a410aafc7e009641a9588f2b0fd8bf76f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_display_check_activity</b> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memitem:a410aafc7e009641a9588f2b0fd8bf76f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a410aafc7e009641a9588f2b0fd8bf76f">fsm_display_check_activity</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a410aafc7e009641a9588f2b0fd8bf76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the display system is active.  <a href="fsm__display_8c.html#a410aafc7e009641a9588f2b0fd8bf76f">More...</a><br /></td></tr>
 <tr class="separator:a410aafc7e009641a9588f2b0fd8bf76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -167,6 +167,51 @@ Variables</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Sistemas Digitales II </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-01 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a7cf527f19c3406f4f2d8516ecd4e047c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf527f19c3406f4f2d8516ecd4e047c">&#9670;&nbsp;</a></span>_compute_display_levels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _compute_display_levels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structrgb__color__t.html">rgb_color_t</a> *&#160;</td>
+          <td class="paramname"><em>p_color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>distance_cm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set color levels of the RGB LEDs according to the distance. </p>
+<p>This function sets the levels of an RGB LED according to the distance measured by the ultrasound sensor. This RGB LED structure is later passed to the <code><a class="el" href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb" title="Set the Capture/Compare register values for each channel of the RGB LED given a color.">port_display_set_rgb()</a></code> function to set the color of the RGB LED.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Be careful! The RGB LED has a maximum value of <code>PORT_DISPLAY_RGB_MAX_VALUE</code>. The duty cycle of the PWM signal must be set according to the levels of the RGB LED.</dd></dl>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Set the levels of the RGB LED according to the distance measured by the ultrasound sensor. To do so, follow the flowchart: </p><div class="image">
+<img src="compute_display_levels_flow_diagram.png" alt=""/>
+</div>
+ </blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_color</td><td>Pointer to an <code><a class="el" href="structrgb__color__t.html" title="Structure to define an RGB color.">rgb_color_t</a></code> struct that will store the levels of the RGB LED. </td></tr>
+    <tr><td class="paramname">distance_cm</td><td>Distance measured by the ultrasound sensor in centimeters. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8e382225a9b12e32722e6d5c36dbea57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e382225a9b12e32722e6d5c36dbea57">&#9670;&nbsp;</a></span>check_active()</h2>
 
@@ -191,10 +236,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check if a new display measure has to be shown. </p>
+<p>Check if the display is set to be active (ON), independently if it is idle or not. </p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Return <code>true</code> if the display system has been indicated to be active. Otherwise, return <code>false</code> <br  />
+<p>✅ 1. Return the flag <code>status</code> <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -203,9 +248,277 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true If the display system has been indicated to be active </dd>
+<dl class="section return"><dt>Returns</dt><dd>true If the display system has been indicated to be active independently if it is idle or not. </dd>
 <dd>
-false If the display system has been indicated to be inactive </dd></dl>
+false If the display system has been indicated to be inactive. </dd></dl>
+
+</div>
+</div>
+<a id="a941bb12de41897bba2b612cc87b3164b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941bb12de41897bba2b612cc87b3164b">&#9670;&nbsp;</a></span>check_off()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool check_off </td>
+          <td>(</td>
+          <td class="paramtype">fsm_t *&#160;</td>
+          <td class="paramname"><em>p_this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the display is set to be inactive (OFF). </p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Return the inverse of the flag <code>status</code> <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct than contains an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the display system has been indicated to be inactive. </dd>
+<dd>
+false If the display system has been indicated to be active. </dd></dl>
+
+</div>
+</div>
+<a id="ae0fec900c7e47e8e2c1fc497e2aeb482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0fec900c7e47e8e2c1fc497e2aeb482">&#9670;&nbsp;</a></span>check_set_new_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool check_set_new_color </td>
+          <td>(</td>
+          <td class="paramtype">fsm_t *&#160;</td>
+          <td class="paramname"><em>p_this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a new color has to be set. </p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Return the flag <code>new_color</code> <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct than contains an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If a new color has to be set </dd>
+<dd>
+false If a new color does not have to be set </dd></dl>
+
+</div>
+</div>
+<a id="ab3041b841563b8a02e45f0e7e3608b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3041b841563b8a02e45f0e7e3608b98">&#9670;&nbsp;</a></span>do_set_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void do_set_color </td>
+          <td>(</td>
+          <td class="paramtype">fsm_t *&#160;</td>
+          <td class="paramname"><em>p_this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the color of the RGB LED according to the distance measured by the ultrasound sensor. </p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Compute the levels of the RGB LEDs according to the distance and set the display level <br  />
+✅ 2. Call function <code><a class="el" href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb" title="Set the Capture/Compare register values for each channel of the RGB LED given a color.">port_display_set_rgb()</a></code> with the RGB LED ID and the color <br  />
+✅ 3. Reset the flag <code>new_color</code> to indicate that the color has been set <br  />
+✅ 4. Set the display system to idle. In this case, the display system is active, but while the distance is not changed, the display system is idle and can enter in a low power mode <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct than contains an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a93a8745b455e90e7dd7093adf9d90a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a8745b455e90e7dd7093adf9d90a06">&#9670;&nbsp;</a></span>do_set_off()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void do_set_off </td>
+          <td>(</td>
+          <td class="paramtype">fsm_t *&#160;</td>
+          <td class="paramname"><em>p_this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Turn the display system OFF. </p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Call function <code><a class="el" href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb" title="Set the Capture/Compare register values for each channel of the RGB LED given a color.">port_display_set_rgb()</a></code> with the RGB LED ID with no color (<code>COLOR_OFF</code>). <br  />
+✅ 2. Reset the flag <code>idle</code> to indicate that the display system is not idle <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct than contains an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a183fea0e00eeb6bbf497bc44b0dac02e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a183fea0e00eeb6bbf497bc44b0dac02e">&#9670;&nbsp;</a></span>do_set_on()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void do_set_on </td>
+          <td>(</td>
+          <td class="paramtype">fsm_t *&#160;</td>
+          <td class="paramname"><em>p_this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Turn the display system ON for the first time. </p>
+<dl class="section warning"><dt>Warning</dt><dd>In this version the display starts ON with no color. This is: the LED is turned ON but no color is set. In future versions you can set a default color at the beginning.</dd></dl>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Call function <code><a class="el" href="port__display_8h.html#adb06ac1219695cbea44db56a316ef9eb" title="Set the Capture/Compare register values for each channel of the RGB LED given a color.">port_display_set_rgb()</a></code> with the RGB LED ID with no color (all the duty cycles to 0). <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_this</td><td>Pointer to an <code>fsm_t</code> struct than contains an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a410aafc7e009641a9588f2b0fd8bf76f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a410aafc7e009641a9588f2b0fd8bf76f">&#9670;&nbsp;</a></span>fsm_display_check_activity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fsm_display_check_activity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the display system is active. </p>
+<p>This function checks if the display system is active.</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos Version 4:</b></p>
+<p>✅ 1. Return <code>true</code> if the display system is active and it is not idle. Otherwise, return <code>false</code>. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the display system is active. </dd>
+<dd>
+false If the display system is inactive. </dd></dl>
+
+</div>
+</div>
+<a id="aa4a55697e744379b93e16803110a1fd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a55697e744379b93e16803110a1fd4">&#9670;&nbsp;</a></span>fsm_display_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fsm_display_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroy a display FSM. </p>
+<p>This function destroys a display FSM and frees the memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -225,16 +538,139 @@ false If the display system has been indicated to be inactive </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Fire the display system FSM. </p>
-<p>This function is used to fire the display system FSM. It is used to check the transitions and execute the actions of the display system FSM.</p>
+<p>Fire the display FSM. </p>
+<p>This function is used to fire the display FSM. It is used to check the transitions and execute the actions of the display FSM.</p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Call the <code>fsm_fire()</code> function with the pointer to the display system FSM <br  />
+<p>✅ 1. Call the <code>fsm_fire()</code> function. Pass the address of the <code>fsm_t</code> struct. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td></td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae686f4ca36df093005ac13a211fe5494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae686f4ca36df093005ac13a211fe5494">&#9670;&nbsp;</a></span>fsm_display_get_distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t fsm_display_get_distance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the distance of the last object detected by the ultrasound sensor. </p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Retrieve and return the field <code>distance_cm</code> <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint32_t Distance measured by the ultrasound sensor in centimeters. </dd></dl>
+
+</div>
+</div>
+<a id="ab78e6093f02263a5bfb8dd2e3c652791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab78e6093f02263a5bfb8dd2e3c652791">&#9670;&nbsp;</a></span>fsm_display_get_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fsm_display_get_status </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the status of the display FSM. </p>
+<p>This function returns the status of the display system.</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Retrieve and return the field <code>status</code>. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the display system has been indicated to be active. </dd>
+<dd>
+false If the display system has been indicated to be paused. </dd></dl>
+
+</div>
+</div>
+<a id="ac29a05b18eea8186a41013d7aaa8a816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac29a05b18eea8186a41013d7aaa8a816">&#9670;&nbsp;</a></span>fsm_display_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void fsm_display_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm_display</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>display_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize a display system FSM. </p>
+<p>This function initializes the default values of the FSM struct and calls to the <code>port</code> to initialize the associated HW given the ID.</p>
+<p>The FSM stores the display level of the display system. The user should set it using the function <code><a class="el" href="fsm__display_8c.html#ae671da305727370e77f1f688e8fb0564" title="Set the display system to show the distance in cm.">fsm_display_set_distance()</a></code>.</p>
+<dl class="section attention"><dt>Attention</dt><dd>This display system is agnostic to the ultrasound sensor or any other sensor. It only shows the status of the display system set by the user. It does not matter if the display is for a parking sensor, a door sensor, or any other sensor. The display system only shows a status according to a distance set by the user.</dd></dl>
+<p>The FSM contains information of the RGB LED ID. This ID is a unique identifier that is managed by the user in the <code>port</code>. That is where the user provides identifiers and HW information for all the RGB LEDs on his system. The FSM does not have to know anything of the underlying HW.</p>
+<dl class="section note"><dt>Note</dt><dd>Both unit and integration tests (example) are provided for this ultrasound library are available in this GitHub repository: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v3_test">https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v3_test</a></dd></dl>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Call the <code>fsm_init()</code> to initialize the FSM. Pass the address of the <code>fsm_t</code> struct and the transition table. <br  />
+✅ 2. Initialize the ''distance_id<code>. \n ✅ 3. Set the</code>distance_cm<code>to</code>-1<code>or any other invalid value in the range of the distance. \n ✅ 4. Initialize the flags</code>new_color<code>,</code>status<code>, and</code>idle<code>to</code>false<code>. \n ✅ 5. Call function</code><a class="el" href="port__display_8h.html#a7cf5c72c43f55717bb250d1ea884123f" title="Configure the HW specifications of a given display.">port_display_init()</a>` to initialize the HW. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm_display</td><td>Pointer to the display FSM. </td></tr>
+    <tr><td class="paramname">display_id</td><td>Unique display identifier number. </td></tr>
   </table>
   </dd>
 </dl>
@@ -257,27 +693,102 @@ false If the display system has been indicated to be inactive </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize a display system FSM. </p>
-<p>The display system HW is an RGB LED that shows the status of the display system. The display system has 5 levels: <code>INACTIVE</code>, <code>OK</code>, <code>INFO</code>, <code>WARNING</code>, and <code>DANGER</code>.</p>
-<p>This function initializes the default values of the FSM struct and calls to the <code>port</code> to initialize the associated HW given the ID.</p>
-<p>The FSM stores the display level of the display system. The user should set it using the function <code>fsm_display_set_display()</code>.</p>
-<p>At start and reset, the display level must be <code>INACTIVE</code>.</p>
-<dl class="section attention"><dt>Attention</dt><dd>The user or main FSM of the whole system is required to set the display level. This display system is agnostic to the ultrasound sensor or any other sensor. It only shows the status of the display system set by the user. It does not matter if the display is for a parking sensor, a door sensor, or any other sensor. The display system only shows the status set by the user.</dd></dl>
-<p>The FSM contains information of the RGB LED ID. This ID is a unique identifier that is managed by the user in the <code>port</code>. That is where the user provides identifiers and HW information for all the RGB LEDs on his system. The FSM does not have to know anything of the underlying HW.</p>
-<dl class="section note"><dt>Note</dt><dd>Both unit and integration tests (example) are provided for this ultrasound library are available in this GitHub repository: <a href="https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v3_test">https://github.com/sdg2DieUpm/urbanite/tree/urbanite_v3_test</a></dd></dl>
-<blockquote class="doxtable">
-<p><b>TODO alumnos:</b></p>
-<p>✅ 1. Initialize the fields <code>display_id</code> and <code>p_fsm</code> with the received values. <br  />
-✅ 2. Set the <code>distance_cm</code> to <code>-1</code> or any other negative value <br  />
-✅ 3. Call function <code>port_display_init()</code> </p>
-</blockquote>
+<p>Create a new display FSM. </p>
+<p>This function creates a new display FSM with the given display ID.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">display_id</td><td>Unique display identifier number.</td></tr>
+    <tr><td class="paramname">display_id</td><td>Button ID. Must be unique. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>fsm_display_t* Pointer to the display system FSM. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>fsm_display_t* Pointer to the display FSM. </dd></dl>
+
+</div>
+</div>
+<a id="ae671da305727370e77f1f688e8fb0564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae671da305727370e77f1f688e8fb0564">&#9670;&nbsp;</a></span>fsm_display_set_distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fsm_display_set_distance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>distance_cm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the display system to show the distance in cm. </p>
+<p>This function is used to set the display system to show the distance in cm.</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Set the distance in cm in the display system FSM. <br  />
+✅ 2. Set the <code>new_color</code> field accordingly to indicate that a new color has to be set. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">distance_cm</td><td>Distance in cm to show in the display system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aec43b0cbfa591536d64e13ceeb231283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec43b0cbfa591536d64e13ceeb231283">&#9670;&nbsp;</a></span>fsm_display_set_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fsm_display_set_status </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pause</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the status of the display FSM. </p>
+<p>This function is used to set the status of the display system. Indicating if the display system is active or paused.</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Update the field <code>status</code> with the received value <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">pause</td><td>Status of the display system. <code>true</code> if the display system is paused, <code>false</code> if the display system is active. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -304,7 +815,7 @@ false If the display system has been indicated to be inactive </dd></dl>
 
 <p>Array representing the transitions table of the FSM display. </p>
 <div class="image">
-<img src="fsm_display.png" alt=""/>
+<img src="fsm_v3.png" alt=""/>
 </div>
  
 </div>
