@@ -302,7 +302,7 @@ Functions</h2></td></tr>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -329,10 +329,14 @@ false If the display system is inactive. </dd></dl>
 </div><div class="memdoc">
 
 <p>Destroy a display FSM. </p>
-<p>This function destroys a display FSM and frees the memory.</p>
+<p>This function destroys a display FSM and frees the memory. </p><blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Implement this function analogously to the <code><a class="el" href="fsm__button_8h.html#ace4aa8054f212e21a1e517faebe27126" title="Destroy a button FSM.">fsm_button_destroy()</a></code> function. <br  />
+</p>
+</blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -364,7 +368,7 @@ false If the display system is inactive. </dd></dl>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -395,7 +399,7 @@ false If the display system is inactive. </dd></dl>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -420,7 +424,7 @@ false If the display system is inactive. </dd></dl>
 </div><div class="memdoc">
 
 <p>Get the status of the display FSM. </p>
-<p>This function returns the status of the display system.</p>
+<p>This function returns the status of the display system. This function might be used for testing and debugging purposes.</p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
 <p>✅ 1. Retrieve and return the field <code>status</code>. <br  />
@@ -428,7 +432,7 @@ false If the display system is inactive. </dd></dl>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -458,7 +462,7 @@ false If the display system has been indicated to be paused. </dd></dl>
 <p>This function creates a new display FSM with the given display ID.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">display_id</td><td>Button ID. Must be unique. </td></tr>
+    <tr><td class="paramname">display_id</td><td>Display ID. Must be unique. </td></tr>
   </table>
   </dd>
 </dl>
@@ -502,7 +506,7 @@ false If the display system has been indicated to be paused. </dd></dl>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
     <tr><td class="paramname">distance_cm</td><td>Distance in cm to show in the display system. </td></tr>
   </table>
   </dd>
@@ -545,7 +549,7 @@ false If the display system has been indicated to be paused. </dd></dl>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
     <tr><td class="paramname">pause</td><td>Status of the display system. <code>true</code> if the display system is paused, <code>false</code> if the display system is active. </td></tr>
   </table>
   </dd>
