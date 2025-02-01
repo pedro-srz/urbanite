@@ -325,7 +325,7 @@ NULL If the ultrasound ID is not valid. </dd></dl>
 <p>Configure the timer that controls the duration of the trigger signal. </p>
 <p>This function configures the timer to generate internal interrupts to control the raise and fall of the trigger signal. The duration of the trigger signal is defined in the <code>PORT_PARKING_SENSOR_TRIGGER_UP_US</code> macro. This function is called by the <code><a class="el" href="stm32f4__ultrasound_8c.html#acfa7c7fa4ee94431efa746fceaf2a770" title="Configure the HW specifications of a given ultrasound sensor.">port_ultrasound_init()</a></code> public function to configure the timer that controls the duration of the trigger signal.</p>
 <p><b>Use the timer indicated in the <a href="index.html">main page</a>.</b></p>
-<p>**There are 2 ways to calculate the <code>ARR</code> and <code>PSC</code> values. ** You can implement any of them to configure the timer duration according to the <code>PORT_PARKING_SENSOR_TRIGGER_UP_US</code> macro. ** Do not set the values directly! **</p>
+<p><b>There are 2 ways to calculate the <code>ARR</code> and <code>PSC</code> values.</b> You can implement any of them to configure the timer duration according to the <code>PORT_PARKING_SENSOR_TRIGGER_UP_US</code> macro. <b>Do not set the values directly!</b></p>
 <p><b>Option 1. Efficient algorithm.</b> <br  />
 This option is the most efficient way to calculate the <code>ARR</code> and <code>PSC</code> values. It is based on the fact that the <code>ARR</code> value is near or equal to its maximum value (65535.0). And only one update of the <code>PSC</code> is needed. This eliminates the need for a loop, which could be slow if <code>ARR</code> is much larger than 0xFFFF. <br  />
 <br  />
@@ -349,7 +349,7 @@ An arbitrary example of C code: <div class="fragment"><div class="line"><span cl
 ✅ 4. Clear the update interrupt flag (bit <code>UIF</code> of the register <code>SR</code>) to avoid an unwanted interrupt. <br  />
 ✅ 5. Set the counter of the timer to 0 (register <code>CNT</code>) to start counting from 0. <br  />
 ✅ 6. Compute the prescaler and the auto-reload register to set the duration of the trigger signal. The duration of the trigger signal is defined in the <code>PORT_PARKING_SENSOR_TRIGGER_UP_US</code> macro. Use any of the two options to calculate the <code>ARR</code> and <code>PSC</code> values:</p>
-<p>💡 <b>Option 1. Efficient algorithm.</b> <br  />
+<p><b>Option 1. Efficient algorithm.</b> <br  />
 &#160;&#160;&#160;&#160; ➡️ <b>6a</b>. Convert <code>SystemCoreClock</code> to double and store them in local variables. This is to ensure that the subsequent calculations are performed in floating-point arithmetic. <br  />
 &#160;&#160;&#160;&#160; ➡️ <b>6b</b>. Compute an initial value for the <code>PSC</code> register considering the maximum value of <code>ARR</code> (65535.0). Store it in a local variable of type <code>double</code>. <br  />
 &#160;&#160;&#160;&#160;💡 Use all variable and numbers as <code>double</code> (i.e., use 1.0 instead of 1). <br  />
@@ -362,7 +362,7 @@ An arbitrary example of C code: <div class="fragment"><div class="line"><span cl
 &#160;&#160;&#160;&#160; ➡️ <b>6e</b>. Continue in ✅ 7. <br  />
 <br  />
  <br  />
-💡 <b>Option 2. Iterative algorithm.</b> <br  />
+<b>Option 2. Iterative algorithm.</b> <br  />
 &#160;&#160;&#160;&#160; ➡️ <b>6a</b>. Convert <code>SystemCoreClock</code> to double and store them in local variables. This is to ensure that the subsequent calculations are performed in floating-point arithmetic. <br  />
 &#160;&#160;&#160;&#160; ➡️ <b>6b</b>. Compute an initial value for the <code>ARR</code> register considering a minimum value of <code>PSC</code> (0.0). Store it in a local variable of type <code>double</code>. <br  />
 &#160;&#160;&#160;&#160;&#160;&#160;💡 Use all variable and numbers as <code>double</code> (i.e., use 1.0 instead of 1). <br  />
@@ -370,10 +370,8 @@ An arbitrary example of C code: <div class="fragment"><div class="line"><span cl
 &#160;&#160;&#160;&#160; ➡️ <b>6c</b>. If the value of <code>ARR</code> is greater than 0xFFFF (or 65535.0), increment the <code>PSC</code> by 1.0 and recalculate <code>ARR</code>. This is to ensure that <code>ARR</code> does not exceed 0xFFFF. <br  />
 &#160;&#160;&#160;&#160; ➡️ <b>6d</b>. Do this in an iterative <code>while(){}</code> loop. <br  />
 &#160;&#160;&#160;&#160; ➡️ <b>6e</b>. Continue in ✅ 7. <br  />
-</p>
-</blockquote>
-<blockquote class="doxtable">
-<p>✅ 7. Load the values computed for <code>ARR</code> and <code>PSC</code> into the corresponding registers of the timer. <br  />
+<br  />
+✅ 7. Load the values computed for <code>ARR</code> and <code>PSC</code> into the corresponding registers of the timer. <br  />
 &#160;&#160;&#160;&#160;💡 Ensure that values are rounded before casting. <br  />
 ✅ 8. The <code>PSC</code> and <code>ARR</code> values are currently in the preload registers. To load them into the active registers we need an update event. We achieve this by setting the <code>UG</code> bit of the <code>EGR</code> register. It is important to do this at the end of the configuration of the timer. <br  />
 ✅ 9. Enable the interrupts of the timer by setting the <code>UIE</code> bit of the <code>DIER</code> register. <br  />

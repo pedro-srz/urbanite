@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('fsm__urbanite_8h.html',''); initResiza
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a64b0a4709cbabcac3099cf9ed010cb7f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__urbanite_8h.html#a64b0a4709cbabcac3099cf9ed010cb7f">fsm_urbanite_t</a></td></tr>
-<tr class="memdesc:a64b0a4709cbabcac3099cf9ed010cb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure that contains the information of a distance measurement system.  <a href="fsm__urbanite_8h.html#a64b0a4709cbabcac3099cf9ed010cb7f">More...</a><br /></td></tr>
+<tr class="memdesc:a64b0a4709cbabcac3099cf9ed010cb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure that contains the information of the Urbanite FSM.  <a href="fsm__urbanite_8h.html#a64b0a4709cbabcac3099cf9ed010cb7f">More...</a><br /></td></tr>
 <tr class="separator:a64b0a4709cbabcac3099cf9ed010cb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -128,8 +128,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a7089a009a41131be554fca56de57bdfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__urbanite_8h.html#a7089a009a41131be554fca56de57bdfb">fsm_urbanite_fire</a> (<a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a7089a009a41131be554fca56de57bdfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire the Urbanite FSM.  <a href="fsm__urbanite_8h.html#a7089a009a41131be554fca56de57bdfb">More...</a><br /></td></tr>
 <tr class="separator:a7089a009a41131be554fca56de57bdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a932fc306dcc6c89fb66a29f1c8a82b50"><td class="memItemLeft" align="right" valign="top"><a id="a932fc306dcc6c89fb66a29f1c8a82b50"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_urbanite_destroy</b> (<a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *p_fsm)</td></tr>
+<tr class="memitem:a932fc306dcc6c89fb66a29f1c8a82b50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__urbanite_8h.html#a932fc306dcc6c89fb66a29f1c8a82b50">fsm_urbanite_destroy</a> (<a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a932fc306dcc6c89fb66a29f1c8a82b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy an Urbanite FSM.  <a href="fsm__urbanite_8h.html#a932fc306dcc6c89fb66a29f1c8a82b50">More...</a><br /></td></tr>
 <tr class="separator:a932fc306dcc6c89fb66a29f1c8a82b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -149,7 +149,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_urbanite_destroy<
       </table>
 </div><div class="memdoc">
 
-<p>Structure that contains the information of a distance measurement system. </p>
+<p>Structure that contains the information of the Urbanite FSM. </p>
 
 </div>
 </div>
@@ -182,6 +182,38 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_urbanite_destroy<
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a932fc306dcc6c89fb66a29f1c8a82b50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a932fc306dcc6c89fb66a29f1c8a82b50">&#9670;&nbsp;</a></span>fsm_urbanite_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fsm_urbanite_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__urbanite__t.html">fsm_urbanite_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroy an Urbanite FSM. </p>
+<p>This function destroys an Urbanite FSM and frees the memory.</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Implement this function analogously to the <code><a class="el" href="fsm__button_8h.html#ace4aa8054f212e21a1e517faebe27126" title="Destroy a button FSM.">fsm_button_destroy()</a></code>, <code><a class="el" href="fsm__ultrasound_8h.html#ad3058bd02199823fbdf00b996002cb1b" title="Destroy an ultrasound FSM.">fsm_ultrasound_destroy()</a></code> and <code><a class="el" href="fsm__display_8h.html#aa4a55697e744379b93e16803110a1fd4" title="Destroy a display FSM.">fsm_display_destroy()</a></code> functions. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Urbanite FSM.">fsm_urbanite_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a7089a009a41131be554fca56de57bdfb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7089a009a41131be554fca56de57bdfb">&#9670;&nbsp;</a></span>fsm_urbanite_fire()</h2>
 
@@ -207,7 +239,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_urbanite_destroy<
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to the <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Ultrasound FSM.">fsm_urbanite_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">p_fsm</td><td>Pointer to the <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Urbanite FSM.">fsm_urbanite_t</a></code> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -259,32 +291,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fsm_urbanite_destroy<
 </div><div class="memdoc">
 
 <p>Create a new Urbanite FSM. </p>
-<p>This FSM implements a system that measures the distance to the nearest obstacle and shows it on a display. The display is a RGB LED that changes its color depending on the distance to the obstacle. The system is activated by pressing a button. The system is deactivated by pressing the same button for the same time.</p>
-<p>The basic implementation of this FSM assumes that the system is mounted on a car and the distance is measured by an ultrasound sensor located at the rear of the car. The display is located on the dashboard of the car. The button is assumed that activates when the driver is parking the car. The system can add more sensors and displays to cover more areas of the car.</p>
-<p>A short press of the button deactivates the display if it disturbs the driver, but the system continues measuring the distance. In case the driver wants to activate the display again, he must press the button again and the display will show the last distance measured. A long press of the button deactivates the ultrasounds and the displays.</p>
-<p>When the system is OFF it does not measure the distance and the display is OFF. The system is in a low power mode.</p>
-<p>To better understand the system, please watch the following video:</p>
-<p> 
-<iframe width="854" height="480" src="https://www.youtube.com/embed/cUdxMichHwM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-<p>This is the HW diagram of the system:</p>
-<div class="image">
-<img src="urbanite_fritzing.png" alt=""/>
-</div>
-<p>This function initializes the default values of the FSM struct and calls to the <code>port</code> to initialize the HWs associated to the devices.</p>
+<p>This function creates a new Urbanite FSM with the given button, ultrasound, display FSMs and the required times for configuration.</p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Call function <code>fsm_init()</code> with the received pointer to <code>fsm_t</code> and the transition table <br  />
-✅ 2. Initialize the fields <code>p_fsm_button</code>, <code>on_off_press_time_ms</code> <code>p_fsm_ultrasound_rear</code>, and <code>p_fsm_display_rear</code> of <code>p_fsm_urbanite</code> with the received values <br  />
+<p>✅ 1. Allocate memory for the <code><a class="el" href="structfsm__urbanite__t.html" title="Structure to define the Urbanite FSM.">fsm_urbanite_t</a></code> struct in the same way as the <code><a class="el" href="fsm__button_8h.html#af3bb8322bc7b726104949160c9b47276" title="Create a new button FSM.">fsm_button_new()</a></code>, <code><a class="el" href="fsm__ultrasound_8h.html#a7b1a051459a4fd05d84a8e6f07e8b678" title="Create a new ultrasound FSM.">fsm_ultrasound_new()</a></code> and <code><a class="el" href="fsm__display_8h.html#af8971b5e7c7e72e1d5f955b7ece4475b" title="Create a new display FSM.">fsm_display_new()</a></code> functions. <br  />
+✅ 2. Initialize the <code>fsm_t</code> struct of the Urbanite FSM by calling the <code><a class="el" href="fsm__urbanite_8c.html#a10d874543e8591ed9615a47b008dab3d" title="Create a new Urbanite FSM.">fsm_urbanite_init()</a></code> function. <br  />
+✅ 3. Return the pointer to the Urbanite FSM once it has been created and initialized. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_fsm_button</td><td>Pointer to the button FSM that activates the system and disables the display if it disturbs the driver. </td></tr>
-    <tr><td class="paramname">on_off_press_time_ms</td><td>Button press time in milliseconds to turn the system ON or OFF </td></tr>
-    <tr><td class="paramname">pause_display_time_ms</td><td>Time in milliseconds to pause the display after a short press of the button </td></tr>
-    <tr><td class="paramname">p_fsm_ultrasound_rear</td><td>Pointer to the ultrasound FSM that measures the distance to the rear obstacle. </td></tr>
-    <tr><td class="paramname">p_fsm_display_rear</td><td>Pointer to the display FSM that shows the distance to the rear obstacle.</td></tr>
+    <tr><td class="paramname">p_fsm_button</td><td>Pointer to the button FSM to interact with the Urbanite. </td></tr>
+    <tr><td class="paramname">on_off_press_time_ms</td><td>Time in ms to consider ON/OFF of the Urbanite parking aid system. </td></tr>
+    <tr><td class="paramname">pause_display_time_ms</td><td>Time in ms to pause the display system. </td></tr>
+    <tr><td class="paramname">p_fsm_ultrasound_rear</td><td>Pointer to the rear ultrasound FSM. </td></tr>
+    <tr><td class="paramname">p_fsm_display_rear</td><td>Pointer to the rear display FSM. </td></tr>
   </table>
   </dd>
 </dl>
