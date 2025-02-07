@@ -20,9 +20,11 @@ var stm32f4__ultrasound_8c =
     [ "port_ultrasound_set_trigger_end", "stm32f4__ultrasound_8c.html#a28e921af96b431d832fd574ee90b3baa", null ],
     [ "port_ultrasound_set_trigger_ready", "stm32f4__ultrasound_8c.html#aae5b7c5a7e58b8498b58258ce9ae4e15", null ],
     [ "port_ultrasound_start_measurement", "stm32f4__ultrasound_8c.html#ae567e86e69a1e7a150cb7044feae0d55", null ],
+    [ "port_ultrasound_start_new_measurement_timer", "stm32f4__ultrasound_8c.html#a90d426fefd1b7fead277685f1ba97d16", null ],
     [ "port_ultrasound_stop_echo_timer", "stm32f4__ultrasound_8c.html#aab634b73c4b5c25b55e6fb8c8ec45445", null ],
     [ "port_ultrasound_stop_new_measurement_timer", "stm32f4__ultrasound_8c.html#aef2ce87e9dba405678eecbf46c9e11c7", null ],
     [ "port_ultrasound_stop_trigger_timer", "stm32f4__ultrasound_8c.html#ad359ec117f8b709a95dd81c1d31167f2", null ],
     [ "port_ultrasound_stop_ultrasound", "stm32f4__ultrasound_8c.html#ae6445d417d1b2390226787925d264d66", null ],
+    [ "stm32f4_ultrasound_set_new_trigger_gpio", "stm32f4__ultrasound_8c.html#aac57a3d65d27792e2949367fffd46627", null ],
     [ "ultrasounds_arr", "stm32f4__ultrasound_8c.html#ab2d00832e8d089dbc740ccb37880ffc2", null ]
 ];

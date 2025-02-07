@@ -118,6 +118,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aab634b73c4b5c25b55e6fb8c8ec45445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__ultrasound_8h.html#aab634b73c4b5c25b55e6fb8c8ec45445">port_ultrasound_stop_echo_timer</a> (uint32_t ultrasound_id)</td></tr>
 <tr class="memdesc:aab634b73c4b5c25b55e6fb8c8ec45445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the timer that controls the echo signal.  <a href="port__ultrasound_8h.html#aab634b73c4b5c25b55e6fb8c8ec45445">More...</a><br /></td></tr>
 <tr class="separator:aab634b73c4b5c25b55e6fb8c8ec45445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae39fb90fcdafc89fe2214ad7ada98344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__ultrasound_8h.html#ae39fb90fcdafc89fe2214ad7ada98344">port_ultrasound_start_new_measurement_timer</a> (void)</td></tr>
+<tr class="memdesc:ae39fb90fcdafc89fe2214ad7ada98344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the timer that controls the new measurement.  <a href="port__ultrasound_8h.html#ae39fb90fcdafc89fe2214ad7ada98344">More...</a><br /></td></tr>
+<tr class="separator:ae39fb90fcdafc89fe2214ad7ada98344"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6572229cb01aefb04cc50c4582bb174"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__ultrasound_8h.html#ad6572229cb01aefb04cc50c4582bb174">port_ultrasound_stop_new_measurement_timer</a> (void)</td></tr>
 <tr class="memdesc:ad6572229cb01aefb04cc50c4582bb174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the timer that controls the new measurement.  <a href="port__ultrasound_8h.html#ad6572229cb01aefb04cc50c4582bb174">More...</a><br /></td></tr>
 <tr class="separator:ad6572229cb01aefb04cc50c4582bb174"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -761,13 +764,14 @@ false </dd></dl>
 
 <p>Start a new measurement of the ultrasound sensor. </p>
 <p>This function prepares the timer of the trigger and the timer of the echo signal to start a new measurement. It also enables the timer that controls the new measurement.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The timers that control the trigger and the time of a new measurement are common for all the ultrasound sensors in the system, but the timer that controls the echo signal is specific for each ultrasound sensor and must be configured separately (within a conditional statement).</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The timer that controls the time of a new measurement is common for all the ultrasound sensors in the system, but the timers that controls the trigger and echo signal are specific for each ultrasound sensor and must be configured separately (within a conditional statement).</dd></dl>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
 <p>✅ 1. Reset the flag <code>trigger_ready</code> to indicate that a new measurement has started. <br  />
-✅ 2. Reset the counters (<code>CNT</code>) of the trigger timer, the echo timer, and the new measurement timer. Enclose the configuration of the echo timer within a conditional statement. <br  />
+✅ 2. Reset the counters (<code>CNT</code>) of the trigger timer, the echo timer, and the new measurement timer. Enclose the configuration of the trigger and echo timers within a conditional statement. <br  />
 ✅ 3. Set the trigger pin to high. You can use the <code>BSRR</code> or call the <code><a class="el" href="stm32f4__system_8h.html#af46cdd939024e157ed6f7468edaee4e3" title="Write a digital value in a GPIO atomically.">stm32f4_system_gpio_write()</a></code> function. <br  />
-✅ 4. Enable the timers of the new measurement, the trigger timer, and the echo timer (register <code>CR1</code> of the timers). Enclose the configuration of the echo timer within a conditional statement. <br  />
+✅ 4. Enable the timers interrupts in the NVIC using the <code>NVIC_EnableIRQ()</code> function and the <code>TIMx_IRQn</code> interrupts. <br  />
+ ✅ 5. Enable the timers of the new measurement, the trigger timer, and the echo timer (register <code>CR1</code> of the timers). Enclose the configuration of the trigger and echo timer within a conditional statement. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -776,6 +780,33 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ae39fb90fcdafc89fe2214ad7ada98344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae39fb90fcdafc89fe2214ad7ada98344">&#9670;&nbsp;</a></span>port_ultrasound_start_new_measurement_timer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void port_ultrasound_start_new_measurement_timer </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start the timer that controls the new measurement. </p>
+<p>This function starts the timer that controls the new measurement.</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Enable the interrupt of the new measurement timer in the NVIC. <br  />
+✅ 2. Enable the new measurement timer (register <code>CR1</code> of the timer). <br  />
+</p>
+</blockquote>
 
 </div>
 </div>
@@ -858,7 +889,7 @@ false </dd></dl>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
 <p>✅ 1. Set the trigger pin to low. You can use the <code>BSRR</code> or call the <code><a class="el" href="stm32f4__system_8h.html#af46cdd939024e157ed6f7468edaee4e3" title="Write a digital value in a GPIO atomically.">stm32f4_system_gpio_write()</a></code> function. <br  />
-✅ 2. Disable the trigger timer (register <code>CR1</code> of the timer). <br  />
+✅ 2. Disable the trigger timer (register <code>CR1</code> of the timer). Enclose the configuration of the echo timer within a conditional statement. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>

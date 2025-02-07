@@ -546,6 +546,7 @@ false If the ultrasound system has been indicated to be paused. </dd></dl>
 ✅ 3. Reset the field <code>distance_cm</code>. <br  />
 ✅ 4. Call function <code><a class="el" href="port__ultrasound_8h.html#aba9e7b923969aca6331b16832fbee4f8" title="Reset the time ticks of the echo signal.">port_ultrasound_reset_echo_ticks()</a></code> with the right parameters. <br  />
 ✅ 5. Call function <code><a class="el" href="port__ultrasound_8h.html#aae5b7c5a7e58b8498b58258ce9ae4e15" title="Set the readiness of the trigger signal.">port_ultrasound_set_trigger_ready()</a></code> with the right parameters to indicate that the ultrasound sensor is ready to start a new measurement. <br  />
+✅ 6. Call function <code><a class="el" href="port__ultrasound_8h.html#ae39fb90fcdafc89fe2214ad7ada98344" title="Start the timer that controls the new measurement.">port_ultrasound_start_new_measurement_timer()</a></code> to force the new measurement timer to start to provoke the first interrupt. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>

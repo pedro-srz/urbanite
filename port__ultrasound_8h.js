@@ -18,6 +18,7 @@ var port__ultrasound_8h =
     [ "port_ultrasound_set_trigger_end", "port__ultrasound_8h.html#a28e921af96b431d832fd574ee90b3baa", null ],
     [ "port_ultrasound_set_trigger_ready", "port__ultrasound_8h.html#aae5b7c5a7e58b8498b58258ce9ae4e15", null ],
     [ "port_ultrasound_start_measurement", "port__ultrasound_8h.html#ae567e86e69a1e7a150cb7044feae0d55", null ],
+    [ "port_ultrasound_start_new_measurement_timer", "port__ultrasound_8h.html#ae39fb90fcdafc89fe2214ad7ada98344", null ],
     [ "port_ultrasound_stop_echo_timer", "port__ultrasound_8h.html#aab634b73c4b5c25b55e6fb8c8ec45445", null ],
     [ "port_ultrasound_stop_new_measurement_timer", "port__ultrasound_8h.html#ad6572229cb01aefb04cc50c4582bb174", null ],
     [ "port_ultrasound_stop_trigger_timer", "port__ultrasound_8h.html#ad359ec117f8b709a95dd81c1d31167f2", null ],

@@ -132,6 +132,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aab634b73c4b5c25b55e6fb8c8ec45445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__ultrasound_8c.html#aab634b73c4b5c25b55e6fb8c8ec45445">port_ultrasound_stop_echo_timer</a> (uint32_t ultrasound_id)</td></tr>
 <tr class="memdesc:aab634b73c4b5c25b55e6fb8c8ec45445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the timer that controls the echo signal.  <a href="stm32f4__ultrasound_8c.html#aab634b73c4b5c25b55e6fb8c8ec45445">More...</a><br /></td></tr>
 <tr class="separator:aab634b73c4b5c25b55e6fb8c8ec45445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d426fefd1b7fead277685f1ba97d16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__ultrasound_8c.html#a90d426fefd1b7fead277685f1ba97d16">port_ultrasound_start_new_measurement_timer</a> ()</td></tr>
+<tr class="memdesc:a90d426fefd1b7fead277685f1ba97d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the timer that controls the new measurement.  <a href="stm32f4__ultrasound_8c.html#a90d426fefd1b7fead277685f1ba97d16">More...</a><br /></td></tr>
+<tr class="separator:a90d426fefd1b7fead277685f1ba97d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef2ce87e9dba405678eecbf46c9e11c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__ultrasound_8c.html#aef2ce87e9dba405678eecbf46c9e11c7">port_ultrasound_stop_new_measurement_timer</a> ()</td></tr>
 <tr class="memdesc:aef2ce87e9dba405678eecbf46c9e11c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the timer that controls the new measurement.  <a href="stm32f4__ultrasound_8c.html#aef2ce87e9dba405678eecbf46c9e11c7">More...</a><br /></td></tr>
 <tr class="separator:aef2ce87e9dba405678eecbf46c9e11c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,6 +180,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3c1fa21bfaacc552d9c3d38b05db217d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__ultrasound_8c.html#a3c1fa21bfaacc552d9c3d38b05db217d">port_ultrasound_set_echo_overflows</a> (uint32_t ultrasound_id, uint32_t echo_overflows)</td></tr>
 <tr class="memdesc:a3c1fa21bfaacc552d9c3d38b05db217d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of overflows of the echo signal timer.  <a href="stm32f4__ultrasound_8c.html#a3c1fa21bfaacc552d9c3d38b05db217d">More...</a><br /></td></tr>
 <tr class="separator:a3c1fa21bfaacc552d9c3d38b05db217d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac57a3d65d27792e2949367fffd46627"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__ultrasound_8c.html#aac57a3d65d27792e2949367fffd46627">stm32f4_ultrasound_set_new_trigger_gpio</a> (uint32_t ultrasound_id, GPIO_TypeDef *p_port, uint8_t pin)</td></tr>
+<tr class="memdesc:aac57a3d65d27792e2949367fffd46627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary function to change the GPIO and pin of the trigger pin of an ultrasound transceiver. This function is used for testing purposes mainly although it can be used in the final implementation if needed.  <a href="stm32f4__ultrasound_8c.html#aac57a3d65d27792e2949367fffd46627">More...</a><br /></td></tr>
+<tr class="separator:aac57a3d65d27792e2949367fffd46627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -261,7 +267,7 @@ NULL If the ultrasound ID is not valid. </dd></dl>
 ✅ 10. Set the priority of the timer interrupt in the NVIC using the <code>NVIC_SetPriority()</code> function and the <code>TIMx_IRQn</code> interrupt with the level of priority and sub-priority shown in the <a href="index.html">main page</a>. <br  />
 </p>
 </blockquote>
-<dl class="section note"><dt>Note</dt><dd>Do not enable the timer yet. This will be done when the trigger signal must be sent.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Do not enable the timer yet. This will be done when the trigger signal must be sent. Do not enable the timer interrupt yet. This will be done when the trigger signal must be sent.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ultrasound_id</td><td>Ultrasound ID. This ID is used to configure the timer that controls the echo signal of the ultrasound sensor. </td></tr>
@@ -295,7 +301,7 @@ NULL If the ultrasound ID is not valid. </dd></dl>
 <p>✅ 1. Follow the same steps as in the <code><a class="el" href="stm32f4__ultrasound_8c.html#ac4c3b91c72ccc14205bff17fb07c8a58" title="Configure the timer that controls the duration of the trigger signal.">_timer_trigger_setup()</a></code> function to configure the timer that controls the duration of the new measurement. <br  />
 </p>
 </blockquote>
-<dl class="section note"><dt>Note</dt><dd>Do not enable the timer yet. This will be done when the trigger signal must be sent. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Do not enable the timer yet. This will be done when the trigger signal must be sent. Do not enable the timer interrupt yet. This will be done when the trigger signal must be sent. </dd></dl>
 
 </div>
 </div>
@@ -346,9 +352,8 @@ An arbitrary example of C code: <div class="fragment"><div class="line"><span cl
 <p>✅ 1. Enable the clock of the timer that controls the trigger signal. Check the reference manual of the STM32F4 to know if the timer is connected to the APB1 or APB2 bus (i.e. <code>RCC-&gt;APB1ENR</code> or <code>RCC-&gt;APB2ENR</code>). <br  />
 ✅ 2. Disable the counter of the timer (register <code>CR1</code> of the timer) because we want to configure it. <br  />
 ✅ 3. Enable the autoreload preload (bit <code>ARPE</code> of the register <code>CR1</code>) to enable the autoreload register. <br  />
-✅ 4. Clear the update interrupt flag (bit <code>UIF</code> of the register <code>SR</code>) to avoid an unwanted interrupt. <br  />
-✅ 5. Set the counter of the timer to 0 (register <code>CNT</code>) to start counting from 0. <br  />
-✅ 6. Compute the prescaler and the auto-reload register to set the duration of the trigger signal. The duration of the trigger signal is defined in the <code>PORT_PARKING_SENSOR_TRIGGER_UP_US</code> macro. Use any of the two options to calculate the <code>ARR</code> and <code>PSC</code> values:</p>
+✅ 4. Set the counter of the timer to 0 (register <code>CNT</code>) to start counting from 0. <br  />
+✅ 5. Compute the prescaler and the auto-reload register to set the duration of the trigger signal. The duration of the trigger signal is defined in the <code>PORT_PARKING_SENSOR_TRIGGER_UP_US</code> macro. Use any of the two options to calculate the <code>ARR</code> and <code>PSC</code> values:</p>
 <p><b>Option 1. Efficient algorithm.</b> <br  />
 &#160;&#160;&#160;&#160; ➡️ <b>6a</b>. Convert <code>SystemCoreClock</code> to double and store them in local variables. This is to ensure that the subsequent calculations are performed in floating-point arithmetic. <br  />
 &#160;&#160;&#160;&#160; ➡️ <b>6b</b>. Compute an initial value for the <code>PSC</code> register considering the maximum value of <code>ARR</code> (65535.0). Store it in a local variable of type <code>double</code>. <br  />
@@ -371,12 +376,12 @@ An arbitrary example of C code: <div class="fragment"><div class="line"><span cl
 &#160;&#160;&#160;&#160; ➡️ <b>6d</b>. Do this in an iterative <code>while(){}</code> loop. <br  />
 &#160;&#160;&#160;&#160; ➡️ <b>6e</b>. Continue in ✅ 7. <br  />
 <br  />
-✅ 7. Load the values computed for <code>ARR</code> and <code>PSC</code> into the corresponding registers of the timer. <br  />
+✅ 6. Load the values computed for <code>ARR</code> and <code>PSC</code> into the corresponding registers of the timer. <br  />
 &#160;&#160;&#160;&#160;💡 Ensure that values are rounded before casting. <br  />
-✅ 8. The <code>PSC</code> and <code>ARR</code> values are currently in the preload registers. To load them into the active registers we need an update event. We achieve this by setting the <code>UG</code> bit of the <code>EGR</code> register. It is important to do this at the end of the configuration of the timer. <br  />
-✅ 9. Enable the interrupts of the timer by setting the <code>UIE</code> bit of the <code>DIER</code> register. <br  />
-✅ 10. Set the priority of the timer interrupt in the NVIC using the <code>NVIC_SetPriority()</code> function and the <code>TIMx_IRQn</code> interrupt with the level of priority and sub-priority shown in the <a href="index.html">main page</a>. <br  />
-✅ 11. Enable the timer interrupt in the NVIC using the <code>NVIC_EnableIRQ()</code> function and the <code>TIMx_IRQn</code> interrupt. <br  />
+✅ 7. The <code>PSC</code> and <code>ARR</code> values are currently in the preload registers. To load them into the active registers we need an update event. We achieve this by setting the <code>UG</code> bit of the <code>EGR</code> register. It is important to do this at the end of the configuration of the timer. <br  />
+✅ 8. Clear the update interrupt flag (bit <code>UIF</code> of the register <code>SR</code>) to avoid an unwanted interrupt. <br  />
+ ✅ 9. Enable the interrupts of the timer by setting the <code>UIE</code> bit of the <code>DIER</code> register. <br  />
+✅ 10. Set the priority of the timer interrupt in the NVIC using the <code>NVIC_SetPriority()</code> function and the <code>TIMx_IRQn</code> interrupt with the level of priority and sub-priority shown in the <a href="index.html">main page</a>. <b>Do not enable the timer interrupt yet. This will be done when the trigger signal must be sent.</b> <br  />
 </p>
 </blockquote>
 <dl class="section note"><dt>Note</dt><dd>Do not enable the timer yet. This will be done when the trigger signal must be sent. </dd></dl>
@@ -929,13 +934,14 @@ false </dd></dl>
 
 <p>Start a new measurement of the ultrasound sensor. </p>
 <p>This function prepares the timer of the trigger and the timer of the echo signal to start a new measurement. It also enables the timer that controls the new measurement.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The timers that control the trigger and the time of a new measurement are common for all the ultrasound sensors in the system, but the timer that controls the echo signal is specific for each ultrasound sensor and must be configured separately (within a conditional statement).</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The timer that controls the time of a new measurement is common for all the ultrasound sensors in the system, but the timers that controls the trigger and echo signal are specific for each ultrasound sensor and must be configured separately (within a conditional statement).</dd></dl>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
 <p>✅ 1. Reset the flag <code>trigger_ready</code> to indicate that a new measurement has started. <br  />
-✅ 2. Reset the counters (<code>CNT</code>) of the trigger timer, the echo timer, and the new measurement timer. Enclose the configuration of the echo timer within a conditional statement. <br  />
+✅ 2. Reset the counters (<code>CNT</code>) of the trigger timer, the echo timer, and the new measurement timer. Enclose the configuration of the trigger and echo timers within a conditional statement. <br  />
 ✅ 3. Set the trigger pin to high. You can use the <code>BSRR</code> or call the <code><a class="el" href="stm32f4__system_8h.html#af46cdd939024e157ed6f7468edaee4e3" title="Write a digital value in a GPIO atomically.">stm32f4_system_gpio_write()</a></code> function. <br  />
-✅ 4. Enable the timers of the new measurement, the trigger timer, and the echo timer (register <code>CR1</code> of the timers). Enclose the configuration of the echo timer within a conditional statement. <br  />
+✅ 4. Enable the timers interrupts in the NVIC using the <code>NVIC_EnableIRQ()</code> function and the <code>TIMx_IRQn</code> interrupts. <br  />
+ ✅ 5. Enable the timers of the new measurement, the trigger timer, and the echo timer (register <code>CR1</code> of the timers). Enclose the configuration of the trigger and echo timer within a conditional statement. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -944,6 +950,33 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a90d426fefd1b7fead277685f1ba97d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d426fefd1b7fead277685f1ba97d16">&#9670;&nbsp;</a></span>port_ultrasound_start_new_measurement_timer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void port_ultrasound_start_new_measurement_timer </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start the timer that controls the new measurement. </p>
+<p>This function starts the timer that controls the new measurement.</p>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Enable the interrupt of the new measurement timer in the NVIC. <br  />
+✅ 2. Enable the new measurement timer (register <code>CR1</code> of the timer). <br  />
+</p>
+</blockquote>
 
 </div>
 </div>
@@ -1026,7 +1059,7 @@ false </dd></dl>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
 <p>✅ 1. Set the trigger pin to low. You can use the <code>BSRR</code> or call the <code><a class="el" href="stm32f4__system_8h.html#af46cdd939024e157ed6f7468edaee4e3" title="Write a digital value in a GPIO atomically.">stm32f4_system_gpio_write()</a></code> function. <br  />
-✅ 2. Disable the trigger timer (register <code>CR1</code> of the timer). <br  />
+✅ 2. Disable the trigger timer (register <code>CR1</code> of the timer). Enclose the configuration of the echo timer within a conditional statement. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1061,6 +1094,50 @@ false </dd></dl>
 <p>✅ 1. Call all the 4 functions to stop the trigger timer, the echo timer, the new measurement timer, and to reset the echo ticks. <br  />
 </p>
 </blockquote>
+
+</div>
+</div>
+<a id="aac57a3d65d27792e2949367fffd46627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac57a3d65d27792e2949367fffd46627">&#9670;&nbsp;</a></span>stm32f4_ultrasound_set_new_trigger_gpio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stm32f4_ultrasound_set_new_trigger_gpio </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ultrasound_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GPIO_TypeDef *&#160;</td>
+          <td class="paramname"><em>p_port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Auxiliary function to change the GPIO and pin of the trigger pin of an ultrasound transceiver. This function is used for testing purposes mainly although it can be used in the final implementation if needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ultrasound_id</td><td>ID of the trigger signal to change. </td></tr>
+    <tr><td class="paramname">p_port</td><td>New GPIO port for the trigger signal. </td></tr>
+    <tr><td class="paramname">pin</td><td>New GPIO pin for the trigger signal. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

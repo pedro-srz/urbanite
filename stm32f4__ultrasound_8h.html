@@ -83,7 +83,8 @@ $(document).ready(function(){initNavTree('stm32f4__ultrasound_8h.html',''); init
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">stm32f4_ultrasound.h File Reference</div>  </div>
 </div><!--header-->
@@ -104,6 +105,12 @@ Macros</h2></td></tr>
 <tr class="separator:a012b26cc3c5af1b7afba1681f2cc194b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54572c9cb75af22a2a6bf5e94d9c63ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__ultrasound_8h.html#a54572c9cb75af22a2a6bf5e94d9c63ce">STM32F4_REAR_PARKING_SENSOR_ECHO_PIN</a></td></tr>
 <tr class="separator:a54572c9cb75af22a2a6bf5e94d9c63ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aac57a3d65d27792e2949367fffd46627"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f4__ultrasound_8h.html#aac57a3d65d27792e2949367fffd46627">stm32f4_ultrasound_set_new_trigger_gpio</a> (uint32_t ultrasound_id, GPIO_TypeDef *p_port, uint8_t pin)</td></tr>
+<tr class="memdesc:aac57a3d65d27792e2949367fffd46627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary function to change the GPIO and pin of the trigger pin of an ultrasound transceiver. This function is used for testing purposes mainly although it can be used in the final implementation if needed.  <a href="stm32f4__ultrasound_8h.html#aac57a3d65d27792e2949367fffd46627">More...</a><br /></td></tr>
+<tr class="separator:aac57a3d65d27792e2949367fffd46627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header for <a class="el" href="stm32f4__ultrasound_8c.html" title="Portable functions to interact with the ultrasound FSM library. All portable functions must be implem...">stm32f4_ultrasound.c</a> file. </p>
@@ -167,6 +174,51 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Ultrasound trigger signal GPIO pin </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aac57a3d65d27792e2949367fffd46627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac57a3d65d27792e2949367fffd46627">&#9670;&nbsp;</a></span>stm32f4_ultrasound_set_new_trigger_gpio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stm32f4_ultrasound_set_new_trigger_gpio </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ultrasound_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GPIO_TypeDef *&#160;</td>
+          <td class="paramname"><em>p_port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Auxiliary function to change the GPIO and pin of the trigger pin of an ultrasound transceiver. This function is used for testing purposes mainly although it can be used in the final implementation if needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ultrasound_id</td><td>ID of the trigger signal to change. </td></tr>
+    <tr><td class="paramname">p_port</td><td>New GPIO port for the trigger signal. </td></tr>
+    <tr><td class="paramname">pin</td><td>New GPIO pin for the trigger signal. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
