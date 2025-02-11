@@ -43,3 +43,9 @@ fsm_ultrasound_t *fsm_ultrasound_new(uint32_t ultrasound_id)
     fsm_ultrasound_init(p_fsm_ultrasound, ultrasound_id);                  /* Initialize the FSM */
     return p_fsm_ultrasound;
 }
+
+// Other auxiliary functions
+void fsm_ultrasound_set_state(fsm_ultrasound_t *p_fsm, int8_t state)
+{
+    p_fsm->f.current_state = state;
+}
