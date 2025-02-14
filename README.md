@@ -14,17 +14,17 @@ You must organize the test files accordingly to the project structure. The stude
 It looks like this:
 
 📂**example**  
- ┣ 📜CMakeLists.txt
- ┃ 📑example_v1.c
- ┗ 📑*example_v2.c*
- ...
+ ┣ 📜CMakeLists.txt  
+ ┃ 📑example_v1.c  
+ ┗ 📑*example_v2.c*  
+ ...  
  📂**test**  
  ┣ 📂**stm32f4**  
  ┃ ┣ 📜CMakeLists.txt  
- ┃ ┃ 📑test_port_button.c
+ ┃ ┃ 📑test_port_button.c  
  ┃ ┗ 📑*test_port_ultrasound.c*  
  ┣ 📜CMakeLists.txt  
- ┃ 📑test_fsm_button.c
+ ┃ 📑test_fsm_button.c  
  ┗ 📑*test_fsm_ultrasound.c*  
 
 ## Unit tests
