@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('fsm__ultrasound_8h.html',''); initResi
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;fsm.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -158,6 +159,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ac3cc99234b724f7e5d83af686669cc29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#ac3cc99234b724f7e5d83af686669cc29">fsm_ultrasound_start</a> (<a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:ac3cc99234b724f7e5d83af686669cc29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the ultrasound sensor.  <a href="fsm__ultrasound_8h.html#ac3cc99234b724f7e5d83af686669cc29">More...</a><br /></td></tr>
 <tr class="separator:ac3cc99234b724f7e5d83af686669cc29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b2d118cfc28dd224ce8b6852e5dc539"><td class="memItemLeft" align="right" valign="top">fsm_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#a6b2d118cfc28dd224ce8b6852e5dc539">fsm_ultrasound_get_inner_fsm</a> (<a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a6b2d118cfc28dd224ce8b6852e5dc539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the inner FSM of the ultrasound.  <a href="fsm__ultrasound_8h.html#a6b2d118cfc28dd224ce8b6852e5dc539">More...</a><br /></td></tr>
+<tr class="separator:a6b2d118cfc28dd224ce8b6852e5dc539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d12215f8ae3a2d9f8a2d7e67edbd3d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#a42d12215f8ae3a2d9f8a2d7e67edbd3d">fsm_ultrasound_get_state</a> (<a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a42d12215f8ae3a2d9f8a2d7e67edbd3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the ultrasound FSM.  <a href="fsm__ultrasound_8h.html#a42d12215f8ae3a2d9f8a2d7e67edbd3d">More...</a><br /></td></tr>
+<tr class="separator:a42d12215f8ae3a2d9f8a2d7e67edbd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39cfce05f1ba4444e2f1eb8933fca43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#aa39cfce05f1ba4444e2f1eb8933fca43">fsm_ultrasound_set_state</a> (<a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm, int8_t state)</td></tr>
+<tr class="memdesc:aa39cfce05f1ba4444e2f1eb8933fca43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the state of the ultrasound FSM.  <a href="fsm__ultrasound_8h.html#aa39cfce05f1ba4444e2f1eb8933fca43">More...</a><br /></td></tr>
+<tr class="separator:aa39cfce05f1ba4444e2f1eb8933fca43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f4ccdcf05a371db248413cca46e845"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__ultrasound_8h.html#a24f4ccdcf05a371db248413cca46e845">fsm_ultrasound_check_activity</a> (<a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a24f4ccdcf05a371db248413cca46e845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the ultrasound sensor is doing a distance measurement.  <a href="fsm__ultrasound_8h.html#a24f4ccdcf05a371db248413cca46e845">More...</a><br /></td></tr>
 <tr class="separator:a24f4ccdcf05a371db248413cca46e845"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -346,6 +356,43 @@ false </dd></dl>
 
 </div>
 </div>
+<a id="a6b2d118cfc28dd224ce8b6852e5dc539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2d118cfc28dd224ce8b6852e5dc539">&#9670;&nbsp;</a></span>fsm_ultrasound_get_inner_fsm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fsm_t* fsm_ultrasound_get_inner_fsm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the inner FSM of the ultrasound. </p>
+<p>This function returns the inner FSM of the ultrasound.</p>
+<blockquote class="doxtable">
+<p>&#160;&#160;&#160;&#160;💡 This function is important because the struct is private and external functions such as those of the unit tests cannot access the inner FSM directly. <br  />
+ </p>
+</blockquote>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Return the address of the <code>f</code> field of the struct. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__ultrasound__t.html" title="Structure to define the Ultrasound FSM.">fsm_ultrasound_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>fsm_t* Pointer to the inner FSM. </dd></dl>
+
+</div>
+</div>
 <a id="ab233523a804cd278c15f551da0fb466b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab233523a804cd278c15f551da0fb466b">&#9670;&nbsp;</a></span>fsm_ultrasound_get_new_measurement_ready()</h2>
 
@@ -416,6 +463,43 @@ false If the <code>port</code> indicates that the trigger signal is not ready to
 
 </div>
 </div>
+<a id="a42d12215f8ae3a2d9f8a2d7e67edbd3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42d12215f8ae3a2d9f8a2d7e67edbd3d">&#9670;&nbsp;</a></span>fsm_ultrasound_get_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t fsm_ultrasound_get_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the state of the ultrasound FSM. </p>
+<p>This function returns the current state of the ultrasound FSM.</p>
+<blockquote class="doxtable">
+<p>&#160;&#160;&#160;&#160;💡 This function is important because the struct is private and external functions such as those of the unit tests cannot access the state of the FSM directly. <br  />
+</p>
+</blockquote>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Retrieve and return the field <code>current_state</code> of the FSM (field <code>f</code> of the struct). <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__ultrasound__t.html" title="Structure to define the Ultrasound FSM.">fsm_ultrasound_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint32_t Current state of the ultrasound FSM. </dd></dl>
+
+</div>
+</div>
 <a id="a978809b04a388ca74bd1a5c3e3aeaa45"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a978809b04a388ca74bd1a5c3e3aeaa45">&#9670;&nbsp;</a></span>fsm_ultrasound_get_status()</h2>
 
@@ -476,6 +560,48 @@ false If the ultrasound system has been indicated to be paused. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>fsm_ultrasound_t* Pointer to the ultrasound FSM. </dd></dl>
+
+</div>
+</div>
+<a id="aa39cfce05f1ba4444e2f1eb8933fca43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39cfce05f1ba4444e2f1eb8933fca43">&#9670;&nbsp;</a></span>fsm_ultrasound_set_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fsm_ultrasound_set_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__ultrasound__t.html">fsm_ultrasound_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the state of the ultrasound FSM. </p>
+<p>This function sets the current state of the ultrasound FSM.</p>
+<blockquote class="doxtable">
+<p>&#160;&#160;&#160;&#160;💡 This function is important because the struct is private and external functions such as those of the unit tests cannot access the state of the FSM directly. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__ultrasound__t.html" title="Structure to define the Ultrasound FSM.">fsm_ultrasound_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">state</td><td>New state of the ultrasound FSM. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

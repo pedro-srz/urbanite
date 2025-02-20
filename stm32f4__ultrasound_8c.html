@@ -942,7 +942,7 @@ false </dd></dl>
 ✅ 2. Reset the counters (<code>CNT</code>) of the trigger timer, the echo timer, and the new measurement timer. Enclose the configuration of the trigger and echo timers within a conditional statement. <br  />
 ✅ 3. Set the trigger pin to high. You can use the <code>BSRR</code> or call the <code><a class="el" href="stm32f4__system_8h.html#af46cdd939024e157ed6f7468edaee4e3" title="Write a digital value in a GPIO atomically.">stm32f4_system_gpio_write()</a></code> function. <br  />
 ✅ 4. Enable the timers interrupts in the NVIC using the <code>NVIC_EnableIRQ()</code> function and the <code>TIMx_IRQn</code> interrupts. <br  />
- ✅ 5. Enable the timers of the new measurement, the trigger timer, and the echo timer (register <code>CR1</code> of the timers). Enclose the configuration of the trigger and echo timer within a conditional statement. <br  />
+✅ 5. Enable the timers of the new measurement, the trigger timer, and the echo timer (register <code>CR1</code> of the timers). Enclose the configuration of the trigger and echo timer within a conditional statement. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>

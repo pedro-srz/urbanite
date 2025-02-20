@@ -99,6 +99,8 @@ $(document).ready(function(){initNavTree('port__ultrasound_8h.html',''); initRes
 Macros</h2></td></tr>
 <tr class="memitem:aea2cc53bb1758ff046eb83a4d6af8b3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__ultrasound_8h.html#aea2cc53bb1758ff046eb83a4d6af8b3a">PORT_REAR_PARKING_SENSOR_ID</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:aea2cc53bb1758ff046eb83a4d6af8b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a4662c1d28efc83a2f626a3f911093"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__ultrasound_8h.html#a58a4662c1d28efc83a2f626a3f911093">PORT_PARKING_SENSOR_TRIGGER_UP_US</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a58a4662c1d28efc83a2f626a3f911093"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a357780889c91db508c4a4258c7ef01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__ultrasound_8h.html#a3a357780889c91db508c4a4258c7ef01">PORT_PARKING_SENSOR_TIMEOUT_MS</a></td></tr>
 <tr class="separator:a3a357780889c91db508c4a4258c7ef01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa752310fe8d31623627b4e4ce01c8e96"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port__ultrasound_8h.html#aa752310fe8d31623627b4e4ce01c8e96">SPEED_OF_SOUND_MS</a>&#160;&#160;&#160;343</td></tr>
@@ -184,6 +186,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Time in ms to wait for the next measurement </p>
+
+</div>
+</div>
+<a id="a58a4662c1d28efc83a2f626a3f911093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a4662c1d28efc83a2f626a3f911093">&#9670;&nbsp;</a></span>PORT_PARKING_SENSOR_TRIGGER_UP_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PORT_PARKING_SENSOR_TRIGGER_UP_US&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Duration in microseconds of the trigger signal </p>
 
 </div>
 </div>
@@ -771,7 +788,7 @@ false </dd></dl>
 ✅ 2. Reset the counters (<code>CNT</code>) of the trigger timer, the echo timer, and the new measurement timer. Enclose the configuration of the trigger and echo timers within a conditional statement. <br  />
 ✅ 3. Set the trigger pin to high. You can use the <code>BSRR</code> or call the <code><a class="el" href="stm32f4__system_8h.html#af46cdd939024e157ed6f7468edaee4e3" title="Write a digital value in a GPIO atomically.">stm32f4_system_gpio_write()</a></code> function. <br  />
 ✅ 4. Enable the timers interrupts in the NVIC using the <code>NVIC_EnableIRQ()</code> function and the <code>TIMx_IRQn</code> interrupts. <br  />
- ✅ 5. Enable the timers of the new measurement, the trigger timer, and the echo timer (register <code>CR1</code> of the timers). Enclose the configuration of the trigger and echo timer within a conditional statement. <br  />
+✅ 5. Enable the timers of the new measurement, the trigger timer, and the echo timer (register <code>CR1</code> of the timers). Enclose the configuration of the trigger and echo timer within a conditional statement. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>

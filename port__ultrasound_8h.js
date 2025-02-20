@@ -1,6 +1,7 @@
 var port__ultrasound_8h =
 [
     [ "PORT_PARKING_SENSOR_TIMEOUT_MS", "port__ultrasound_8h.html#a3a357780889c91db508c4a4258c7ef01", null ],
+    [ "PORT_PARKING_SENSOR_TRIGGER_UP_US", "port__ultrasound_8h.html#a58a4662c1d28efc83a2f626a3f911093", null ],
     [ "PORT_REAR_PARKING_SENSOR_ID", "port__ultrasound_8h.html#aea2cc53bb1758ff046eb83a4d6af8b3a", null ],
     [ "SPEED_OF_SOUND_MS", "port__ultrasound_8h.html#aa752310fe8d31623627b4e4ce01c8e96", null ],
     [ "port_ultrasound_get_echo_end_tick", "port__ultrasound_8h.html#a3fd8e4ff9c1aead8bbf9d63d4a132f0f", null ],
