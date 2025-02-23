@@ -43,3 +43,10 @@ void stm32f4_ultrasound_set_new_trigger_gpio(uint32_t ultrasound_id, GPIO_TypeDe
     p_ultrasound->p_trigger_port = p_port;
     p_ultrasound->trigger_pin = pin;
 }
+
+void stm32f4_ultrasound_set_new_echo_gpio(uint32_t ultrasound_id, GPIO_TypeDef *p_port, uint8_t pin)
+{
+    stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
+    p_ultrasound->p_echo_port = p_port;
+    p_ultrasound->echo_pin = pin;
+}
