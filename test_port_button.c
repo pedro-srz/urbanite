@@ -21,7 +21,7 @@
 
 /* Defines and enums ----------------------------------------------------------*/
 /* Defines */
-#define PORT_PARKING_BUTTON_ID 0   /*!< Button identifier @hideinitializer */
+#define TEST_PORT_PARKING_BUTTON_ID 0   /*!< Button identifier @hideinitializer */
 #define LD2_PORT GPIOA
 #define LD2_PIN 5
 #define LD2_DELAY_MS 100
@@ -39,7 +39,7 @@ void tearDown(void)
 
 void test_identifiers(void)
 {
-    UNITY_TEST_ASSERT_EQUAL_INT(0, PORT_PARKING_BUTTON_ID, __LINE__, "ERROR: PORT_BUTTON_0_ID must be 0");
+    UNITY_TEST_ASSERT_EQUAL_INT(0, PORT_PARKING_BUTTON_ID, __LINE__, "ERROR: PORT_REAR_PARKING_DISPLAY_ID must be 0");
 }
 
 void test_pins(void)
@@ -55,7 +55,7 @@ void _test_regs(void)
     uint32_t prev_gpio_pupd = STM32F4_PARKING_BUTTON_GPIO->PUPDR;
 
     // Call configuration function
-    port_button_init(PORT_PARKING_BUTTON_ID);
+    port_button_init(TEST_PORT_PARKING_BUTTON_ID);
 
     // Check that the mode is configured correctly
     uint32_t button_mode = ((STM32F4_PARKING_BUTTON_GPIO->MODER) >> (STM32F4_PARKING_BUTTON_PIN * 2)) & GPIO_MODER_MODER0_Msk;
@@ -99,7 +99,7 @@ void _test_exti(void)
     uint32_t prev_gpio_imr = EXTI->IMR;
 
     // Call configuration function
-    port_button_init(PORT_PARKING_BUTTON_ID);
+    port_button_init(TEST_PORT_PARKING_BUTTON_ID);
 
     // Check that the EXTI CR is configured correctly (EXTI both edges)
     uint32_t button_exticr = ((SYSCFG->EXTICR[STM32F4_PARKING_BUTTON_PIN / 4]) >> ((STM32F4_PARKING_BUTTON_PIN % 4) * 4)) & 0xF;
@@ -205,7 +205,7 @@ void test_button_port_generalization(void)
     // Change the GPIO and pin in the buttons_arr array to a different one
     GPIO_TypeDef *p_expected_gpio_port = GPIOB;
     uint8_t expected_gpio_pin = 6;
-    stm32f4_button_set_new_gpio(PORT_PARKING_BUTTON_ID, p_expected_gpio_port, expected_gpio_pin);
+    stm32f4_button_set_new_gpio(TEST_PORT_PARKING_BUTTON_ID, p_expected_gpio_port, expected_gpio_pin);
 
     // TEST init function
     // Enable RCC for the specific GPIO
@@ -263,7 +263,7 @@ void test_button_port_generalization(void)
     uint32_t expected_priority = NVIC_GetPriority(EXTI15_10_IRQn);
 
     // Call configuration function
-    port_button_init(PORT_PARKING_BUTTON_ID);
+    port_button_init(TEST_PORT_PARKING_BUTTON_ID);
 
     // Check that the expected GPIO peripheral has not been modified. Otherwise, the port driver is not generalizing the GPIO peripheral and it is not working with the buttons_arr array but with the specific GPIO nad pin.
     uint32_t curr_gpio_mode = STM32F4_PARKING_BUTTON_GPIO->MODER;
