@@ -41,7 +41,7 @@
 #define REAR_ECHO_TIMER_CCER_CCE TIM_CCER_CC2E           /*!< Echo signal timer capture/compare channel @hideinitializer */
 #define REAR_ECHO_TIMER_DIER_CCIE TIM_DIER_CC2IE         /*!< Echo signal timer enable capture/compare channel interrupt @hideinitializer */
 #define REAR_ECHO_TIMER_IRQ TIM2_IRQn                    /*!< Echo signal timer IRQ @hideinitializer */
-#define REAR_ECHO_TIMER_IRQ_PRIO 1                       /*!< Echo signal timer IRQ priority @hideinitializer */
+#define REAR_ECHO_TIMER_IRQ_PRIO 3                       /*!< Echo signal timer IRQ priority @hideinitializer */
 #define REAR_ECHO_TIMER_IRQ_SUBPRIO 0                    /*!< Echo signal timer IRQ subpriority @hideinitializer */
 #define REAR_ECHO_TIMER_PER_BUS RCC->APB1ENR             /*!< Echo signal timer peripheral bus @hideinitializer */
 #define REAR_ECHO_TIMER_PER_BUS_MASK RCC_APB1ENR_TIM2EN  /*!< Echo signal timer peripheral bus mask @hideinitializer */
@@ -51,7 +51,7 @@
 #define MEASUREMENT_TIMER_PER_BUS RCC->APB1ENR            /*!< Ultrasound measurement timer peripheral bus @hideinitializer */
 #define MEASUREMENT_TIMER_PER_BUS_MASK RCC_APB1ENR_TIM5EN /*!< Ultrasound measurement timer peripheral bus mask @hideinitializer */
 #define MEASUREMENT_TIMER_IRQ TIM5_IRQn                   /*!< Ultrasound measurement timer IRQ @hideinitializer */
-#define MEASUREMENT_TIMER_IRQ_PRIO 3                      /*!< Ultrasound measurement timer IRQ priority @hideinitializer */
+#define MEASUREMENT_TIMER_IRQ_PRIO 5                      /*!< Ultrasound measurement timer IRQ priority @hideinitializer */
 #define MEASUREMENT_TIMER_IRQ_SUBPRIO 0                   /*!< Ultrasound measurement timer IRQ subpriority @hideinitializer */
 
 #define GPIOA_STLINK_MODER_MASK 0xFC000000 /*!< Mask to clear the bits of the GPIOA pins used by the ST-LINK in the MODER register */
@@ -561,24 +561,32 @@ void test_start_measurement(void)
     // Call port function to start the measurement
     port_ultrasound_start_measurement(PORT_REAR_PARKING_SENSOR_ID);
 
+    // Retrieve the current configuration of the NVIC interrupts before disabling them
+    uint32_t tim_trigger_irq = NVIC->ISER[REAR_TRIGGER_TIMER_IRQ / 32] & (1 << (REAR_TRIGGER_TIMER_IRQ % 32));
+    uint32_t tim_echo_irq = NVIC->ISER[REAR_ECHO_TIMER_IRQ / 32] & (1 << (REAR_ECHO_TIMER_IRQ % 32));
+    uint32_t tim_meas_irq = NVIC->ISER[MEASUREMENT_TIMER_IRQ / 32] & (1 << (MEASUREMENT_TIMER_IRQ % 32));
+
+    // Disable all interrupts to avoid any interference
+    NVIC_DisableIRQ(REAR_TRIGGER_TIMER_IRQ);
+    NVIC_DisableIRQ(REAR_ECHO_TIMER_IRQ);
+    NVIC_DisableIRQ(MEASUREMENT_TIMER_IRQ);
+
     // Check that the trigger pin has been set to high
     uint32_t trigger_pin = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO->ODR & (1 << STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN);
+    
     UNITY_TEST_ASSERT_EQUAL_UINT32(1 << STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN, trigger_pin, __LINE__, "ERROR: The trigger pin must be set to high after starting the measurement");
 
     // Check that NVIC interrupts have been enabled for all the timers
-    uint32_t tim_trigger_irq = NVIC->ISER[REAR_TRIGGER_TIMER_IRQ / 32] & (1 << (REAR_TRIGGER_TIMER_IRQ % 32));
     UNITY_TEST_ASSERT_EQUAL_UINT32(1 << (REAR_TRIGGER_TIMER_IRQ % 32), tim_trigger_irq, __LINE__, "ERROR: The NVIC interrupt for the ULTRASOUND trigger timer has not been enabled");
 
-    uint32_t tim_echo_irq = NVIC->ISER[REAR_ECHO_TIMER_IRQ / 32] & (1 << (REAR_ECHO_TIMER_IRQ % 32));
     UNITY_TEST_ASSERT_EQUAL_UINT32(1 << (REAR_ECHO_TIMER_IRQ % 32), tim_echo_irq, __LINE__, "ERROR: The NVIC interrupt for the ULTRASOUND echo timer has not been enabled");
 
-    uint32_t tim_meas_irq = NVIC->ISER[MEASUREMENT_TIMER_IRQ / 32] & (1 << (MEASUREMENT_TIMER_IRQ % 32));
     UNITY_TEST_ASSERT_EQUAL_UINT32(1 << (MEASUREMENT_TIMER_IRQ % 32), tim_meas_irq, __LINE__, "ERROR: The NVIC interrupt for the ULTRASOUND measurement timer has not been enabled");
 
     // Check that all the timers have been enabled
     uint32_t tim_trigger_en = (REAR_TRIGGER_TIMER->CR1) & TIM_CR1_CEN_Msk;
     UNITY_TEST_ASSERT_EQUAL_UINT32(TIM_CR1_CEN_Msk, tim_trigger_en, __LINE__, "ERROR: The ULTRASOUND trigger timer has not been enabled");
-    
+
     uint32_t tim_echo_en = (REAR_ECHO_TIMER->CR1) & TIM_CR1_CEN_Msk;
     UNITY_TEST_ASSERT_EQUAL_UINT32(TIM_CR1_CEN_Msk, tim_echo_en, __LINE__, "ERROR: The ULTRASOUND echo timer has not been enabled");
 
@@ -586,9 +594,8 @@ void test_start_measurement(void)
     UNITY_TEST_ASSERT_EQUAL_UINT32(TIM_CR1_CEN_Msk, tim_meas_en, __LINE__, "ERROR: The ULTRASOUND measurement timer has not been enabled");
 }
 
-
 /**
- * @brief Test the generalization of the button port driver. Particularly, test that the port driver functions work with the ultrasounds_arr array and not with the specific GPIOx peripheral.
+ * @brief Test the generalization of the trigger port driver. Particularly, test that the port driver functions work with the ultrasounds_arr array and not with the specific GPIOx peripheral.
  *
  */
 void test_trigger_port_generalization(void)
@@ -620,7 +627,7 @@ void test_trigger_port_generalization(void)
     EXTI->EMR = 0;
     EXTI->IMR = 0;
 
-    STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO->MODER |= (STM32F4_GPIO_MODE_OUT << (STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN * 2U));     // Wrong configuration to check that the GPIO is not being modified
+    STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO->MODER |= (STM32F4_GPIO_MODE_IN << (STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN * 2U));      // Wrong configuration to check that the GPIO is not being modified
     STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO->PUPDR |= (STM32F4_GPIO_PUPDR_PULLUP << (STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN * 2U)); // Wrong configuration to check that the GPIO is not being modified
 
     // Disable RCC for the specific GPIO
@@ -641,7 +648,7 @@ void test_trigger_port_generalization(void)
     stm32f4_system_gpio_config(p_expected_gpio_port, expected_gpio_pin, STM32F4_GPIO_MODE_OUT, STM32F4_GPIO_PUPDR_NOPULL);
     uint32_t expected_gpio_mode = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO->MODER;
     uint32_t expected_gpio_pupd = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO->PUPDR;
-    
+
     // Call configuration function
     port_ultrasound_init(PORT_REAR_PARKING_SENSOR_ID);
 
@@ -649,8 +656,74 @@ void test_trigger_port_generalization(void)
     uint32_t curr_gpio_mode = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO->MODER;
     uint32_t curr_gpio_pupd = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO->PUPDR;
 
-    UNITY_TEST_ASSERT_EQUAL_UINT32(expected_gpio_mode, curr_gpio_mode, __LINE__, "ERROR: The configuration function is not generalizing the GPIO and/or pin but working with the specific GPIO and pin");
-    UNITY_TEST_ASSERT_EQUAL_UINT32(expected_gpio_pupd, curr_gpio_pupd, __LINE__, "ERROR: The configuration function is not generalizing the GPIO and/or pin but working with the specific GPIO and pin");
+    UNITY_TEST_ASSERT_EQUAL_UINT32(expected_gpio_mode, curr_gpio_mode, __LINE__, "ERROR: The configuration function is not generalizing the GPIO and/or pin but working with the specific GPIO and pin for the trigger signal");
+    UNITY_TEST_ASSERT_EQUAL_UINT32(expected_gpio_pupd, curr_gpio_pupd, __LINE__, "ERROR: The configuration function is not generalizing the GPIO and/or pin but working with the specific GPIO and pin for the trigger signal");
+}
+
+
+/**
+ * @brief Test the generalization of the echo port driver. Particularly, test that the port driver functions work with the ultrasounds_arr array and not with the specific GPIOx peripheral.
+ */
+void test_echo_port_generalization(void)
+{
+    // Change the GPIO and pin in the ultrasounds_arr array to a different one
+    GPIO_TypeDef *p_expected_gpio_port = GPIOC;
+    uint8_t expected_gpio_pin = 6;
+    stm32f4_ultrasound_set_new_echo_gpio(PORT_REAR_PARKING_SENSOR_ID, p_expected_gpio_port, expected_gpio_pin);
+
+    // TEST init function
+    // Enable RCC for the specific GPIO
+    if (STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO == GPIOA)
+    {
+        RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; /* GPIOA_CLK_ENABLE */
+    }
+    else if (STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO == GPIOB)
+    {
+        RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN; /* GPIOB_CLK_ENABLE */
+    }
+    else if (STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO == GPIOC)
+    {
+        RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN; /* GPIOC_CLK_ENABLE */
+    }
+
+    // Clean/set all configurations
+    SYSCFG->EXTICR[STM32F4_REAR_PARKING_SENSOR_ECHO_PIN / 4] = 0;
+    EXTI->RTSR = 0;
+    EXTI->FTSR = 0;
+    EXTI->EMR = 0;
+    EXTI->IMR = 0;
+
+    STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO->MODER |= (STM32F4_GPIO_MODE_OUT << (STM32F4_REAR_PARKING_SENSOR_ECHO_PIN * 2U));     // Wrong configuration to check that the GPIO is not being modified
+    STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO->PUPDR |= (STM32F4_GPIO_PUPDR_PULLUP << (STM32F4_REAR_PARKING_SENSOR_ECHO_PIN * 2U)); // Wrong configuration to check that the GPIO is not being modified
+
+    // Disable RCC for the specific GPIO
+    if (STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO == GPIOA)
+    {
+        RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOAEN;
+    }
+    else if (STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO == GPIOB)
+    {
+        RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOBEN;
+    }
+    else if (STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO == GPIOC)
+    {
+        RCC->AHB1ENR &= ~RCC_AHB1ENR_GPIOCEN;
+    }
+
+    // Expected configuration of the GPIO
+    stm32f4_system_gpio_config(p_expected_gpio_port, expected_gpio_pin, STM32F4_GPIO_MODE_IN, STM32F4_GPIO_PUPDR_NOPULL);
+    uint32_t expected_gpio_mode = STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO->MODER;
+    uint32_t expected_gpio_pupd = STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO->PUPDR;
+
+    // Call configuration function
+    port_ultrasound_init(PORT_REAR_PARKING_SENSOR_ID);
+
+    // Check that the expected GPIO peripheral has not been modified. Otherwise, the port driver is not generalizing the GPIO peripheral and it is not working with the ultrasounds_arr array but with the specific GPIO nad pin.
+    uint32_t curr_gpio_mode = STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO->MODER;
+    uint32_t curr_gpio_pupd = STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO->PUPDR;
+
+    UNITY_TEST_ASSERT_EQUAL_UINT32(expected_gpio_mode, curr_gpio_mode, __LINE__, "ERROR: The configuration function is not generalizing the GPIO and/or pin but working with the specific GPIO and pin for the echo signal");
+    UNITY_TEST_ASSERT_EQUAL_UINT32(expected_gpio_pupd, curr_gpio_pupd, __LINE__, "ERROR: The configuration function is not generalizing the GPIO and/or pin but working with the specific GPIO and pin for the echo signal");
 }
 
 int main(void)
@@ -681,6 +754,12 @@ int main(void)
     RUN_TEST(test_meas_timer_duration);
     RUN_TEST(test_meas_timer_timeout);
 
+    // Test start measurement
     RUN_TEST(test_start_measurement);
+
+    // Test generalization of the port driver
+    RUN_TEST(test_trigger_port_generalization);
+    RUN_TEST(test_echo_port_generalization);
+
     exit(UNITY_END());
 }
