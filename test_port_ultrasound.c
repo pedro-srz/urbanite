@@ -64,7 +64,6 @@ void setUp(void)
 {
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
-    // stm32f4_system_gpio_exti_disable(STM32F4_PARKING_BUTTON_PIN); // Disable interrupt of the wrong configuration to avoid interrupt calls
 }
 
 void tearDown(void)
