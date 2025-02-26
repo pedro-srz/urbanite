@@ -25,6 +25,7 @@ var stm32f4__ultrasound_8c =
     [ "port_ultrasound_stop_new_measurement_timer", "stm32f4__ultrasound_8c.html#aef2ce87e9dba405678eecbf46c9e11c7", null ],
     [ "port_ultrasound_stop_trigger_timer", "stm32f4__ultrasound_8c.html#ad359ec117f8b709a95dd81c1d31167f2", null ],
     [ "port_ultrasound_stop_ultrasound", "stm32f4__ultrasound_8c.html#ae6445d417d1b2390226787925d264d66", null ],
+    [ "stm32f4_ultrasound_set_new_echo_gpio", "stm32f4__ultrasound_8c.html#a0541d07a49194ce3d7630969617f488c", null ],
     [ "stm32f4_ultrasound_set_new_trigger_gpio", "stm32f4__ultrasound_8c.html#aac57a3d65d27792e2949367fffd46627", null ],
     [ "ultrasounds_arr", "stm32f4__ultrasound_8c.html#ab2d00832e8d089dbc740ccb37880ffc2", null ]
 ];

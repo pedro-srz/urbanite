@@ -141,9 +141,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a339cb7a174b5bad645b83852aee8a6d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a339cb7a174b5bad645b83852aee8a6d7">fsm_display_fire</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a339cb7a174b5bad645b83852aee8a6d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire the display FSM.  <a href="fsm__display_8c.html#a339cb7a174b5bad645b83852aee8a6d7">More...</a><br /></td></tr>
 <tr class="separator:a339cb7a174b5bad645b83852aee8a6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae686f4ca36df093005ac13a211fe5494"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#ae686f4ca36df093005ac13a211fe5494">fsm_display_get_distance</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
-<tr class="memdesc:ae686f4ca36df093005ac13a211fe5494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distance of the last object detected by the ultrasound sensor.  <a href="fsm__display_8c.html#ae686f4ca36df093005ac13a211fe5494">More...</a><br /></td></tr>
-<tr class="separator:ae686f4ca36df093005ac13a211fe5494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae671da305727370e77f1f688e8fb0564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#ae671da305727370e77f1f688e8fb0564">fsm_display_set_distance</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm, uint32_t distance_cm)</td></tr>
 <tr class="memdesc:ae671da305727370e77f1f688e8fb0564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the display system to show the distance in cm.  <a href="fsm__display_8c.html#ae671da305727370e77f1f688e8fb0564">More...</a><br /></td></tr>
 <tr class="separator:ae671da305727370e77f1f688e8fb0564"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +153,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a410aafc7e009641a9588f2b0fd8bf76f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a410aafc7e009641a9588f2b0fd8bf76f">fsm_display_check_activity</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a410aafc7e009641a9588f2b0fd8bf76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the display system is active.  <a href="fsm__display_8c.html#a410aafc7e009641a9588f2b0fd8bf76f">More...</a><br /></td></tr>
 <tr class="separator:a410aafc7e009641a9588f2b0fd8bf76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a20e9bca8e1225c03d5dbe9ec7108bd"><td class="memItemLeft" align="right" valign="top">fsm_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a8a20e9bca8e1225c03d5dbe9ec7108bd">fsm_display_get_inner_fsm</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a8a20e9bca8e1225c03d5dbe9ec7108bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the inner FSM of the display.  <a href="fsm__display_8c.html#a8a20e9bca8e1225c03d5dbe9ec7108bd">More...</a><br /></td></tr>
+<tr class="separator:a8a20e9bca8e1225c03d5dbe9ec7108bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337c4f977d4d1a0d10751f75a991c6e9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a337c4f977d4d1a0d10751f75a991c6e9">fsm_display_get_state</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a337c4f977d4d1a0d10751f75a991c6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the display FSM.  <a href="fsm__display_8c.html#a337c4f977d4d1a0d10751f75a991c6e9">More...</a><br /></td></tr>
+<tr class="separator:a337c4f977d4d1a0d10751f75a991c6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695745da92dce8c3d9d49042605532de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__display_8c.html#a695745da92dce8c3d9d49042605532de">fsm_display_set_state</a> (<a class="el" href="structfsm__display__t.html">fsm_display_t</a> *p_fsm, int8_t state)</td></tr>
+<tr class="memdesc:a695745da92dce8c3d9d49042605532de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the state of the display FSM.  <a href="fsm__display_8c.html#a695745da92dce8c3d9d49042605532de">More...</a><br /></td></tr>
+<tr class="separator:a695745da92dce8c3d9d49042605532de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -515,7 +521,7 @@ false If the display system is inactive. </dd></dl>
 <p>Destroy a display FSM. </p>
 <p>This function destroys a display FSM and frees the memory. </p><blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Implement this function analogously to the <code><a class="el" href="fsm__button_8h.html#ace4aa8054f212e21a1e517faebe27126" title="Destroy a button FSM.">fsm_button_destroy()</a></code> function. <br  />
+<p>✅ 1. Implement this function analogously to the <code><a class="el" href="fsm__display_8h.html#aa4a55697e744379b93e16803110a1fd4" title="Destroy a display FSM.">fsm_display_destroy()</a></code> function. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -559,14 +565,14 @@ false If the display system is inactive. </dd></dl>
 
 </div>
 </div>
-<a id="ae686f4ca36df093005ac13a211fe5494"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae686f4ca36df093005ac13a211fe5494">&#9670;&nbsp;</a></span>fsm_display_get_distance()</h2>
+<a id="a8a20e9bca8e1225c03d5dbe9ec7108bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a20e9bca8e1225c03d5dbe9ec7108bd">&#9670;&nbsp;</a></span>fsm_display_get_inner_fsm()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t fsm_display_get_distance </td>
+          <td class="memname">fsm_t* fsm_display_get_inner_fsm </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
           <td class="paramname"><em>p_fsm</em></td><td>)</td>
@@ -575,10 +581,15 @@ false If the display system is inactive. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Get the distance of the last object detected by the ultrasound sensor. </p>
+<p>Get the inner FSM of the display. </p>
+<p>This function returns the inner FSM of the display.</p>
+<blockquote class="doxtable">
+<p>&#160;&#160;&#160;&#160;💡 This function is important because the struct is private and external functions such as those of the unit tests cannot access the inner FSM directly. <br  />
+ </p>
+</blockquote>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Retrieve and return the field <code>distance_cm</code> <br  />
+<p>✅ 1. Return the address of the <code>f</code> field of the struct. <br  />
 </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -587,7 +598,44 @@ false If the display system is inactive. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint32_t Distance measured by the ultrasound sensor in centimeters. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>fsm_t* Pointer to the inner FSM. </dd></dl>
+
+</div>
+</div>
+<a id="a337c4f977d4d1a0d10751f75a991c6e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337c4f977d4d1a0d10751f75a991c6e9">&#9670;&nbsp;</a></span>fsm_display_get_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t fsm_display_get_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the state of the display FSM. </p>
+<p>This function returns the current state of the display FSM.</p>
+<blockquote class="doxtable">
+<p>&#160;&#160;&#160;&#160;💡 This function is important because the struct is private and external functions such as those of the unit tests cannot access the state of the FSM directly. <br  />
+</p>
+</blockquote>
+<blockquote class="doxtable">
+<p><b>TODO alumnos:</b></p>
+<p>✅ 1. Retrieve and return the field <code>current_state</code> of the FSM (field <code>f</code> of the struct). <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint32_t Current state of the display FSM. </dd></dl>
 
 </div>
 </div>
@@ -748,6 +796,48 @@ false If the display system has been indicated to be paused. </dd></dl>
   <table class="params">
     <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
     <tr><td class="paramname">distance_cm</td><td>Distance in cm to show in the display system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a695745da92dce8c3d9d49042605532de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a695745da92dce8c3d9d49042605532de">&#9670;&nbsp;</a></span>fsm_display_set_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fsm_display_set_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__display__t.html">fsm_display_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fsm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the state of the display FSM. </p>
+<p>This function sets the current state of the display FSM.</p>
+<blockquote class="doxtable">
+<p>&#160;&#160;&#160;&#160;💡 This function is important because the struct is private and external functions such as those of the unit tests cannot access the state of the FSM directly. <br  />
+</p>
+</blockquote>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__display__t.html" title="Structure of the Display FSM.">fsm_display_t</a></code> struct. </td></tr>
+    <tr><td class="paramname">state</td><td>New state of the display FSM. </td></tr>
   </table>
   </dd>
 </dl>

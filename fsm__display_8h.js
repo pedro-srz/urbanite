@@ -14,9 +14,11 @@ var fsm__display_8h =
     [ "fsm_display_check_activity", "fsm__display_8h.html#a410aafc7e009641a9588f2b0fd8bf76f", null ],
     [ "fsm_display_destroy", "fsm__display_8h.html#aa4a55697e744379b93e16803110a1fd4", null ],
     [ "fsm_display_fire", "fsm__display_8h.html#a339cb7a174b5bad645b83852aee8a6d7", null ],
-    [ "fsm_display_get_distance", "fsm__display_8h.html#ae686f4ca36df093005ac13a211fe5494", null ],
+    [ "fsm_display_get_inner_fsm", "fsm__display_8h.html#a8a20e9bca8e1225c03d5dbe9ec7108bd", null ],
+    [ "fsm_display_get_state", "fsm__display_8h.html#a337c4f977d4d1a0d10751f75a991c6e9", null ],
     [ "fsm_display_get_status", "fsm__display_8h.html#ab78e6093f02263a5bfb8dd2e3c652791", null ],
     [ "fsm_display_new", "fsm__display_8h.html#af8971b5e7c7e72e1d5f955b7ece4475b", null ],
     [ "fsm_display_set_distance", "fsm__display_8h.html#ae671da305727370e77f1f688e8fb0564", null ],
+    [ "fsm_display_set_state", "fsm__display_8h.html#a695745da92dce8c3d9d49042605532de", null ],
     [ "fsm_display_set_status", "fsm__display_8h.html#a83d5e775845d1c91e63f74eebde0a603", null ]
 ];
