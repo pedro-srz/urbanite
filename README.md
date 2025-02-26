@@ -7,7 +7,7 @@ Unit tests are located in the `test` folder. Example tests are located in the `e
 **Attention**
 You must organize the test files accordingly to the project structure. The student must **save the `test` files as follows**.
 
-The test of the PORT part is complete in the files `test_port_ultrasound_full.c`. Because it is large, it is divided into three parts: `test_port_ultrasound_timer_trigger.c`, `test_port_ultrasound_timer_echo.c`, and `test_port_ultrasound_timer_measurements.c`. If you prefer, you can use the `test_port_ultrasound_full.c` file, or test each part separately while developing the project step by step.
+The test of the PORT part is complete in the files `test_port_ultrasound.c`. Because it is large, it is divided into three parts: `test_port_ultrasound_timer_trigger.c`, `test_port_ultrasound_timer_echo.c`, and `test_port_ultrasound_timer_measurements.c`. If you prefer, you can use the `test_port_ultrasound_full.c` file, or test each part separately while developing the project step by step.
 
 - Save the file `test_port_ultrasound_*.c` in the `test/stm32f4` folder.
 - Save the file `test_fsm_ultrasound.c` directly in the `test` folder.
