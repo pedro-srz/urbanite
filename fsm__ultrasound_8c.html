@@ -267,7 +267,7 @@ Variables</h2></td></tr>
 <p>Check if the ultrasound sensor has received the init (rising edge in the input capture) of the echo signal. </p>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
-<p>✅ 1. Call function <code><a class="el" href="port__ultrasound_8h.html#a0fd9a038cc72fa00a6175f706be08bb3" title="Get the status of the echo signal.">port_ultrasound_get_echo_received()</a></code> to retrieve the time tick of the echo signal <br  />
+<p>✅ 1. Call function <code><a class="el" href="port__ultrasound_8h.html#a385214eef040dbd4a4d9b1939000d14b" title="Get the time tick when the init of echo signal was received.">port_ultrasound_get_echo_init_tick()</a></code> to retrieve the time tick of the echo signal <br  />
 ✅ 2. Return <code>true</code> if the time tick is higher than 0. Otherwise, return <code>false</code> <br  />
 </p>
 </blockquote>
@@ -535,7 +535,7 @@ false </dd></dl>
 ✅ 4. Store the distance in the array of distances in the position of the index. <br  />
 ✅ 5. If the array is full, sort the array by calling the function <code>qsort()</code>. This function sorts the array in ascending order and receives the array, the number of elements of the array (<code>FSM_ULTRASOUND_NUM_MEASUREMENTS</code>), the size of each element (sizeof(uint32_t)), and the compare function. <br  />
 </p><div class="fragment"><div class="line">qsort(p_fsm-&gt;distance_arr, <a class="code" href="fsm__ultrasound_8h.html#a39422c42295f8c6febe61fe7b8e4ec0f">FSM_ULTRASOUND_NUM_MEASUREMENTS</a>, <span class="keyword">sizeof</span>(uint32_t), <a class="code" href="fsm__ultrasound_8c.html#ad98d5e7eea441416fa818ab16624f4d9">_compare</a>);</div>
-</div><!-- fragment --><p> ✅ 6. If the array is full, compute the median of the array. Make sure to consider if the number of measurements <code>FSM_ULTRASOUND_NUM_MEASUREMENTS</code> is even or odd. <br  />
+</div><!-- fragment --><p> ✅ 6. If the array is full, compute the median of the array and store it in the field <code>distance_cm</code>. Make sure to consider if the number of measurements <code>FSM_ULTRASOUND_NUM_MEASUREMENTS</code> is even or odd. <br  />
  ✅ 7. If the array is full, set the flag <code>new_measurement</code> to indicate that a new measurement is ready. <br  />
 ✅ 8. Increase the distance index. If the index is higher or equal <code>FSM_ULTRASOUND_NUM_MEASUREMENTS</code>, reset the index. You can use the modulo operator to do this. <br  />
 ✅ 9. Call function <code><a class="el" href="port__ultrasound_8h.html#aab634b73c4b5c25b55e6fb8c8ec45445" title="Stop the timer that controls the echo signal.">port_ultrasound_stop_echo_timer()</a></code> to stop the timer that controls the input capture of the echo signal. <br  />
