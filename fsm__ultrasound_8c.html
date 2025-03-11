@@ -1284,6 +1284,7 @@ false If the ultrasound system has been indicated to be paused. </dd></dl>
 </div><div class="memdoc">
 
 <p>Array representing the transitions table of the FSM ultrasound. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The order of the transitions is important. The FSM will check the transitions in the order they are defined in this array. In state <code>SET_DISTANCE</code>, the FSM will first check if a new measurement is ready (<code><a class="el" href="fsm__ultrasound_8c.html#af8d3343c597464e2347b6bb35c51bdbe" title="Check if a new measurement is ready.">check_new_measurement()</a></code>), then if the ultrasound sensor is off (<code><a class="el" href="fsm__ultrasound_8c.html#a941bb12de41897bba2b612cc87b3164b" title="Check if the ultrasound sensor has been set to be inactive (OFF).">check_off()</a></code>). If the order is changed, the FSM may not work as expected and may finish measurements before time.</dd></dl>
 <div class="image">
 <img src="fsm_v2.png" alt=""/>
 </div>
