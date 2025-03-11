@@ -126,6 +126,8 @@ void test_echo_received_and_distance(void)
     uint32_t init_ticks[FSM_ULTRASOUND_NUM_MEASUREMENTS] = {1, 64371, 3, 63208, 5};
     uint32_t end_ticks[FSM_ULTRASOUND_NUM_MEASUREMENTS] = {584, 3, 1752, 4, 2920};
     uint32_t overflows[FSM_ULTRASOUND_NUM_MEASUREMENTS] = {0, 1, 0, 1, 0};
+    uint32_t expected_time_diff_ticks[FSM_ULTRASOUND_NUM_MEASUREMENTS] = {583, 1168, 1749, 2332, 2915};
+    uint32_t expected_distance[FSM_ULTRASOUND_NUM_MEASUREMENTS] = {10, 20, 30, 40, 50};
     uint32_t expected_median = 30;
 
     // Set some values to the echo signal ticks
@@ -139,7 +141,7 @@ void test_echo_received_and_distance(void)
         port_ultrasound_set_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID, end_ticks[i]);
         port_ultrasound_set_echo_overflows(PORT_REAR_PARKING_SENSOR_ID, overflows[i]);
 
-        printf("Init tick: %ld, End tick: %ld, Overflows: %ld\n", init_ticks[i], end_ticks[i], overflows[i]);
+        printf("Init tick: %ld, End tick: %ld, Overflows: %ld.\n\tExpected time diff: %ld ticks, Expected distance: %ld cm.\n", init_ticks[i], end_ticks[i], overflows[i], expected_time_diff_ticks[i], expected_distance[i]);
 
         // Check the transition
         fsm_ultrasound_fire(p_fsm_ultrasound);
