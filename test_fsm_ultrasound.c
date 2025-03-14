@@ -136,6 +136,7 @@ void test_echo_received_and_distance(void)
         // Set the state to WAIT_ECHO_END
         fsm_ultrasound_set_state(p_fsm_ultrasound, WAIT_ECHO_END); // Avoids jumping to the next state
 
+        port_ultrasound_stop_ultrasound(PORT_REAR_PARKING_SENSOR_ID); // Avoid unwanted interrupts
         port_ultrasound_set_echo_received(PORT_REAR_PARKING_SENSOR_ID, true);
         port_ultrasound_set_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID, init_ticks[i]);
         port_ultrasound_set_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID, end_ticks[i]);
