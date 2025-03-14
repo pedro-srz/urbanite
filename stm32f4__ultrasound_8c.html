@@ -259,16 +259,17 @@ NULL If the ultrasound ID is not valid. </dd></dl>
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
 <p>✅ 1. Enable the clock of the timer that controls the echo signal. Check the reference manual of the STM32F4 to know if the timer is connected to the APB1 or APB2 bus (i.e. <code>RCC-&gt;APB1ENR</code> or <code>RCC-&gt;APB2ENR</code>). <br  />
-✅ 2. Set the values of the prescaler and the auto-reload registers. Configure PSC for a resolution of 1 us (1 MHz) and ARR high enough to avoid too many overflows, e.g. it maximum value. <br  />
-✅ 3. Set the auto-reload preload bit (ARPE) in the control register (CR1) to enable the auto-reload register. Also enable the update generation bit (UG) in the event generation register (EGR) to force the update of the registers. <br  />
-✅ 4. Set the direction as input in the Capture/Compare mode register (CCMRx). <code>x</code> is 1 for channels 1 and 2, and 2 for channels 3 and 4. Check the table "Table 11. Alternate function" in the datasheet to identify the channel related to timer associated to the pin of the echo signal. <br  />
- ✅ 5. Disable digital filtering by clearing the ICxF bits in the Capture/Compare mode register (CCMRx). <br  />
-✅ 6. Select the edge of the active transition in the Capture/Compare enable register (CCER). Set the bits CCxNP and CCxP to detect both rising and falling edges. <br  />
-✅ 7. Program the input prescaler to capture each valid transition. Set the ICxPSC bits in the Capture/Compare mode register (CCMRx) to 0. <br  />
-✅ 8. Enable the Capture/compare enable register (CCER) for the corresponding channel. <br  />
-✅ 9. Enable the Capture/Compare interrupts bit (CCxIE) for the corresponding channel in the DMA/interrupt enable register (DIER). <br  />
-✅ 10. Enable the update interrupt bit (UIE) in the DMA/interrupt enable register (DIER). <br  />
-✅ 11. Set the priority of the timer interrupt in the NVIC using the <code>NVIC_SetPriority()</code> function and the <code>TIMx_IRQn</code> interrupt with the level of priority and sub-priority shown in the <a href="index.html">main page</a>. <br  />
+✅ 2. Disable the counter of the timer (register <code>CR1</code> of the timer) because we want to configure it. <br  />
+✅ 3. Set the values of the prescaler and the auto-reload registers. Configure PSC for a resolution of 1 us (1 MHz) and ARR high enough to avoid too many overflows, e.g. it maximum value. <br  />
+✅ 4. Set the auto-reload preload bit (ARPE) in the control register (CR1) to enable the auto-reload register. Also enable the update generation bit (UG) in the event generation register (EGR) to force the update of the registers. <br  />
+✅ 5. Set the direction as input in the Capture/Compare mode register (CCMRx). <code>x</code> is 1 for channels 1 and 2, and 2 for channels 3 and 4. Check the table "Table 11. Alternate function" in the datasheet to identify the channel related to timer associated to the pin of the echo signal. <br  />
+ ✅ 6. Disable digital filtering by clearing the ICxF bits in the Capture/Compare mode register (CCMRx). <br  />
+✅ 7. Select the edge of the active transition in the Capture/Compare enable register (CCER). Set the bits CCxNP and CCxP to detect both rising and falling edges. <br  />
+✅ 8. Program the input prescaler to capture each valid transition. Set the ICxPSC bits in the Capture/Compare mode register (CCMRx) to 0. <br  />
+✅ 9. Enable the Capture/compare enable register (CCER) for the corresponding channel. <br  />
+✅ 10. Enable the Capture/Compare interrupts bit (CCxIE) for the corresponding channel in the DMA/interrupt enable register (DIER). <br  />
+✅ 11. Enable the update interrupt bit (UIE) in the DMA/interrupt enable register (DIER). <br  />
+✅ 12. Set the priority of the timer interrupt in the NVIC using the <code>NVIC_SetPriority()</code> function and the <code>TIMx_IRQn</code> interrupt with the level of priority and sub-priority shown in the <a href="index.html">main page</a>. <br  />
 </p>
 </blockquote>
 <dl class="section note"><dt>Note</dt><dd><b>Do not enable the timer yet</b>. This will be done when the trigger signal must be sent. <b>Do not enable the timer interrupt yet</b>. This will be done when the trigger signal must be sent.</dd></dl>
