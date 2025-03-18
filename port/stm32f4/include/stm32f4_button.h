@@ -18,7 +18,7 @@
 
 /* Defines and enums ----------------------------------------------------------*/
 /* Defines */
-#define STM32F4_PARKING_BUTTON_GPIO "GPIOPC" /*!< Button GPIO port.*/
+#define STM32F4_PARKING_BUTTON_GPIO "GPIOC" /*!< Button GPIO port.*/
 #define STM32F4_PARKING_BUTTON_PIN 13 /*!< Button GPIO pin*/
 
 /* Function prototypes and explanation -------------------------------------------------*/
