@@ -21,7 +21,7 @@
  
  /* Function prototypes and explanation -------------------------------------------------*/
  void port_button_init(uint32_t button_id); /*!< Configure the HW specifications of a given button.*/
- bool port_button_get_pressed(uint32_t button_id); /*!< 	Return the status of the button (pressed or not).*/
+ bool port_button_get_pressed(uint32_t button_id); /*!< Return the status of the button (pressed or not).*/
  bool port_button_get_value(uint32_t button_id); /*!< Get the value of the GPIO connected to the button.*/
  void port_button_set_pressed(uint32_t button_id, bool pressed); /*!< Set the status of the button (pressed or not).< */
  bool port_button_get_pending_interrupt(uint32_t button_id); /*!< Get the status of the interrupt line connected to the button.*/
