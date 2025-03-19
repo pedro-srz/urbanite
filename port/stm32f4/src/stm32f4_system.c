@@ -24,6 +24,8 @@ extern void initialise_monitor_handles(void);
                                                          4 bits for subpriority */
 #define NVIC_PRIORITY_GROUP_4 ((uint32_t)0x00000003) /*!< 4 bits for pre-emption priority, \
                                                          0 bit  for subpriority */
+#define HIGH 1U /*!< High value */
+#define LOW 0U  /*!< Low value */
 /* Power */
 #define POWER_REGULATOR_VOLTAGE_SCALE3 0x01 /*!< Scale 3 mode: the maximum value of fHCLK is 120 MHz. */
 
@@ -195,7 +197,29 @@ void port_system_set_millis(uint32_t ms)
 // ------------------------------------------------------
 //------------------------------------------------------
 // GPIO RELATED FUNCTIONS
+bool stm32f4_system_gpio_read(GPIO_TypeDef *p_port, uint8_t pin)
+{
+  return (p_port->IDR & BIT_POS_TO_MASK(pin)) != 0;
+}
+
+void stm32f4_system_gpio_write(GPIO_TypeDef *p_port, uint8_t pin, bool value)
+{
+  if (value)
+  {
+    p_port->BSRR = BIT_POS_TO_MASK(pin);
+  }
+  else
+  {
+    p_port->BSRR = BIT_POS_TO_MASK(pin) << 16;
+  }
+}
+
+void stm32f4_system_gpio_toggle(GPIO_TypeDef *p_port, uint8_t pin)
+{
+  stm32f4_system_gpio_read(p_port, pin) ? stm32f4_system_gpio_write(p_port, pin, LOW) : stm32f4_system_gpio_write(p_port, pin, HIGH);
+}
 //------------------------------------------------------
+
 void stm32f4_system_gpio_config(GPIO_TypeDef *p_port, uint8_t pin, uint8_t mode, uint8_t pupd)
 {
   if (p_port == GPIOA)
