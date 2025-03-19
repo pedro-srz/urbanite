@@ -9,9 +9,25 @@
 #include "stm32f4_system.h"
 
 // Include headers of different port elements:
+#include "stm32f4_button.c"
 
 //------------------------------------------------------
 // INTERRUPT SERVICE ROUTINES
+void EXTI15_10_IRQHandler(void)
+{
+    /* ISR parking button */
+    if (port_button_get_pending_interrupt(PORT_PARKING_BUTTON_ID))
+    {
+        // Clear the pending interrupt for the button pin
+        port_button_clear_pending_interrupt(PORT_PARKING_BUTTON_ID);
+
+        // Get the pressed status for the button pin
+        bool pressed = port_button_get_pressed(PORT_PARKING_BUTTON_ID);
+
+        // Set the flag to false
+        port_button_set_pressed(PORT_PARKING_BUTTON_ID, pressed);
+    }
+}
 //------------------------------------------------------
 /**
  * @brief Interrupt service routine for the System tick timer (SysTick).

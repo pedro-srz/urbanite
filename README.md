@@ -1,9 +1,9 @@
-# Título del proyecto
+# Urbanite Project
 
 ## Authors
 
-* **Alumno 1** - email: [alumno@alumno.es](mailto:alumno@alumno.es)
-* **Alumno 2** - email: [alumno@alumno.es](mailto:alumno@alumno.es)
+* **Alumno 1** - email: [pe.suarez@alumnos.upm.es](mailto:pe.suarez@alumnos.upm.es)
+* **Alumno 2** - email: [nicolas.roman@alumnos.upm.es](mailto:nicolas.roman@alumnos.upm.es)
 
 Ponga una breve descripción del proyecto **aquí** en castellano e inglés.
 
