@@ -25,6 +25,7 @@
 #define BUTTON_NOPU_NOPD 0
 #define PRIORITY_LEVEL_1 1
 #define SUBPRIORITY_LEVEL_0 0
+#define RISING_AND_FALLING_AND_IRQ 11
 
 /* Typedefs --------------------------------------------------------------------*/
 typedef struct
@@ -77,7 +78,7 @@ void port_button_init(uint32_t button_id)
     // Retrieve the button struct using the private function and the button ID
     stm32f4_button_hw_t *p_button = _stm32f4_button_get(button_id);
     stm32f4_system_gpio_config(p_button->p_port, p_button->pin, BUTTON_INPUT_MODE, BUTTON_NOPU_NOPD);
-    stm32f4_system_gpio_config_exti(p_button->p_port, p_button->pin, STM32F4_TRIGGER_ENABLE_INTERR_REQ);
+    stm32f4_system_gpio_config_exti(p_button->p_port, p_button->pin, RISING_AND_FALLING_AND_IRQ);
     stm32f4_system_gpio_exti_enable(p_button->pin, PRIORITY_LEVEL_1, SUBPRIORITY_LEVEL_0);
 }
 

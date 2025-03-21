@@ -44,4 +44,6 @@ void EXTI15_10_IRQHandler(void)
  */
 void SysTick_Handler(void)
 {
+    // Increment the System tick counter in 1 count
+    port_system_set_millis(port_system_get_millis() + 1);
 }

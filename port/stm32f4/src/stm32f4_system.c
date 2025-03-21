@@ -182,12 +182,12 @@ void port_system_delay_until_ms(uint32_t *p_t, uint32_t ms)
 
 uint32_t port_system_get_millis()
 {
-  return 0;
+  return msTicks; /* ms */
 }
 
 void port_system_set_millis(uint32_t ms)
 {
-
+  msTicks = ms;
 }
 
 // ------------------------------------------------------
