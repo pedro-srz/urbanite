@@ -17,7 +17,7 @@
  /* Defines and enums ----------------------------------------------------------*/
  /* Defines */
 #define PORT_PARKING_BUTTON_ID 0 /*!< User button identifier that represents the rear button (activation of the parking aid system).*/
-#define PORT_PARKING_BUTTON_DEBOUNCE_TIME_MS 100 /*!< Button debounce time in milliseconds.*/
+#define PORT_PARKING_BUTTON_DEBOUNCE_TIME_MS 150 /*!< Button debounce time in milliseconds.*/
  
  /* Function prototypes and explanation -------------------------------------------------*/
  void port_button_init(uint32_t button_id); /*!< Configure the HW specifications of a given button.*/

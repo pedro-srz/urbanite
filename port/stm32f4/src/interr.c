@@ -16,18 +16,18 @@
 void EXTI15_10_IRQHandler(void)
 {
     /* ISR parking button */
-    if (port_button_get_pending_interrupt(PORT_PARKING_BUTTON_ID))
+    if (port_button_get_value(PORT_PARKING_BUTTON_ID))
     {
-        // Clear the pending interrupt for the button pin
-        port_button_clear_pending_interrupt(PORT_PARKING_BUTTON_ID);
-
-        // Get the pressed status for the button pin
-        bool pressed = port_button_get_pressed(PORT_PARKING_BUTTON_ID);
-
         // Set the flag to false
-        port_button_set_pressed(PORT_PARKING_BUTTON_ID, pressed);
+        port_button_set_pressed(PORT_PARKING_BUTTON_ID, !port_button_get_value(PORT_PARKING_BUTTON_ID));
+    } else {
+        // Set the flag to true
+        port_button_set_pressed(PORT_PARKING_BUTTON_ID, !port_button_get_value(PORT_PARKING_BUTTON_ID));
     }
+    // Clear the pending interrupt for the button pin
+    port_button_clear_pending_interrupt(PORT_PARKING_BUTTON_ID);
 }
+
 //------------------------------------------------------
 /**
  * @brief Interrupt service routine for the System tick timer (SysTick).

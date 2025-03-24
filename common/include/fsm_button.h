@@ -22,9 +22,8 @@
 /* Defines and enums ----------------------------------------------------------*/
 /* Enums */
 /*! Button FSM states */
-enum {  
-  	FSM_BUTTON,
-    BUTTON_RELEASED = 0,
+enum FSM_BUTTON {
+    BUTTON_RELEASED,
     BUTTON_RELEASED_WAIT,
     BUTTON_PRESSED,
     BUTTON_PRESSED_WAIT

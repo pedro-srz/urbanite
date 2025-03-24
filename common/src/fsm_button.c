@@ -84,7 +84,7 @@ static void do_store_tick_pressed(fsm_t *p_this)
 {
     fsm_button_t *p_fsm = (fsm_button_t *)(p_this);
     p_fsm->tick_pressed = port_system_get_millis();
-    p_fsm->next_timeout = p_fsm->tick_pressed + p_fsm->debounce_time;
+    p_fsm->next_timeout = port_system_get_millis() + p_fsm->debounce_time;
 }
 
 /**
@@ -100,9 +100,9 @@ static void do_set_duration(fsm_t *p_this)
 }
 
 static fsm_trans_t fsm_trans_button[] = {
-    {BUTTON_RELEASED, check_button_pressed, BUTTON_PRESSED, do_store_tick_pressed},
-    {BUTTON_PRESSED, check_button_released, BUTTON_RELEASED_WAIT, do_set_duration},
+    {BUTTON_RELEASED, check_button_pressed, BUTTON_PRESSED_WAIT, do_store_tick_pressed},
     {BUTTON_PRESSED_WAIT, check_timeout, BUTTON_PRESSED, NULL},
+    {BUTTON_PRESSED, check_button_released, BUTTON_RELEASED_WAIT, do_set_duration},
     {BUTTON_RELEASED_WAIT, check_timeout, BUTTON_RELEASED, NULL},
     {-1, NULL, -1, NULL},
 };
@@ -111,8 +111,11 @@ static fsm_trans_t fsm_trans_button[] = {
 void fsm_button_init(fsm_button_t *p_fsm_button, uint32_t debounce_time, uint32_t button_id)
 {
     fsm_init(&p_fsm_button->f, fsm_trans_button);
-
-    /* TODO alumnos: */
+    p_fsm_button->debounce_time = debounce_time;
+    p_fsm_button->button_id = button_id;
+    p_fsm_button->tick_pressed = 0;
+    p_fsm_button->duration = 0;
+    port_button_init(button_id);
 }
 
 /* Public functions -----------------------------------------------------------*/
@@ -146,15 +149,16 @@ uint32_t fsm_button_get_state(fsm_button_t *p_fsm)
 
 uint32_t fsm_button_get_duration(fsm_button_t *p_fsm)
 {
+    
     return p_fsm->duration;
-}
-
-uint32_t fsm_button_press_duration(fsm_button_t *p_fsm)
-{
-    return p_fsm->tick_pressed;
 }
 
 uint32_t fsm_button_get_debounce_time_ms(fsm_button_t *p_fsm)
 {
     return p_fsm->debounce_time;
+}
+
+void fsm_button_reset_duration(fsm_button_t *p_fsm)
+{
+    p_fsm->duration = 0;
 }
