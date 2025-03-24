@@ -12,6 +12,7 @@
 /* HW dependent includes */
 #include "port_button.h"
 #include "port_system.h"
+#include <stddef.h>
 
 /* Project includes */
 #include "fsm_button.h"
@@ -99,6 +100,14 @@ static void do_set_duration(fsm_t *p_this)
     p_fsm->next_timeout = port_system_get_millis() + p_fsm->debounce_time;
 }
 
+static fsm_trans_t fsm_trans_button[] = {
+    {BUTTON_RELEASED, check_button_pressed, BUTTON_PRESSED, do_store_tick_pressed},
+    {BUTTON_PRESSED, check_button_released, BUTTON_RELEASED_WAIT, do_set_duration},
+    {BUTTON_PRESSED_WAIT, check_timeout, BUTTON_PRESSED, NULL},
+    {BUTTON_RELEASED_WAIT, check_timeout, BUTTON_RELEASED, NULL},
+    {-1, NULL, -1, NULL},
+};
+
 /* Other auxiliary functions */
 void fsm_button_init(fsm_button_t *p_fsm_button, uint32_t debounce_time, uint32_t button_id)
 {
@@ -134,4 +143,19 @@ fsm_t *fsm_button_get_inner_fsm(fsm_button_t *p_fsm)
 uint32_t fsm_button_get_state(fsm_button_t *p_fsm)
 {
     return p_fsm->f.current_state;
+}
+
+uint32_t fsm_button_get_duration(fsm_button_t *p_fsm)
+{
+    return p_fsm->duration;
+}
+
+uint32_t fsm_button_press_duration(fsm_button_t *p_fsm)
+{
+    return p_fsm->tick_pressed;
+}
+
+uint32_t fsm_button_get_debounce_time_ms(fsm_button_t *p_fsm)
+{
+    return p_fsm->debounce_time;
 }
