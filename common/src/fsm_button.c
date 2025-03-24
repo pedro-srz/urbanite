@@ -12,7 +12,6 @@
 /* HW dependent includes */
 #include "port_button.h"
 #include "port_system.h"
-#include <stddef.h>
 
 /* Project includes */
 #include "fsm_button.h"

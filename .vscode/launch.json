@@ -115,8 +115,8 @@
       "configFiles": [
         "${workspaceFolder}/../../openocd/stm32f4x.cfg"
       ],
-      "preLaunchTask": "cortex-debug: Clean and Build (stm32f405rg)",  // PORTABILITY: change this to your platform
-      "svdFile": "${workspaceFolder}/../../svd/STM32F405RG.svd", // PORTABILITY: change this to your platform
+      "preLaunchTask": "cortex-debug: Clean and Build (stm32f446re)",  // PORTABILITY: change this to your platform
+      "svdFile": "${workspaceFolder}/../../svd/STM32F446RE.svd", // PORTABILITY: change this to your platform
     },
   ],
   "inputs": [
