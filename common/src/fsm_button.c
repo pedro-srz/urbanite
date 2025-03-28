@@ -99,6 +99,11 @@ static void do_set_duration(fsm_t *p_this)
     p_fsm->next_timeout = port_system_get_millis() + p_fsm->debounce_time;
 }
 
+/**
+ * @brief Button FSM to reset the duration of the button press.
+ * 
+ * @param p_this Pointer to the FSM.
+ */
 static fsm_trans_t fsm_trans_button[] = {
     {BUTTON_RELEASED, check_button_pressed, BUTTON_PRESSED_WAIT, do_store_tick_pressed},
     {BUTTON_PRESSED_WAIT, check_timeout, BUTTON_PRESSED, NULL},
