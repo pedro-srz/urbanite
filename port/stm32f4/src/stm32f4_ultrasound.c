@@ -37,7 +37,7 @@ typedef struct
     uint8_t echo_alt_fun; /*!< Alternate function of the echo pin of the ultrasound sensor.*/
     bool trigger_ready; /*!< Flag to indicate if the trigger is ready to start a new measurement.*/
     bool trigger_end; /*!< Flag to indicate if the trigger has ended.*/
-    bool echo_recieved; /*!< Flag to indicate if the echo has been recieved.*/
+    bool echo_received; /*!< Flag to indicate if the echo has been received.*/
     uint32_t echo_init_tick; /*!< Initial tick of the echo signal.*/
     uint32_t echo_end_tick; /*!< Final tick of the echo signal.*/
     uint32_t echo_overflows; /*!< Number of overflows of the echo signal.*/
@@ -45,7 +45,7 @@ typedef struct
 
 /* Global variables */
 static stm32f4_ultrasound_hw_t ultrasound_arr[] = {
-    [PORT_REAR_PARKING_SENSOR_ID] = {.p_trigger_port = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO, .p_echo_port = STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO, .trigger_pin = STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN, .echo_pin = STM32F4_REAR_PARKING_SENSOR_ECHO_PIN, .echo_alt_fun = 0, .trigger_ready = false, .trigger_end = false, .echo_recieved = false, .echo_init_tick = 0, .echo_end_tick = 0, .echo_overflows = 0},
+    [PORT_REAR_PARKING_SENSOR_ID] = {.p_trigger_port = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO, .p_echo_port = STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO, .trigger_pin = STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN, .echo_pin = STM32F4_REAR_PARKING_SENSOR_ECHO_PIN, .echo_alt_fun = 0, .trigger_ready = false, .trigger_end = false, .echo_received = false, .echo_init_tick = 0, .echo_end_tick = 0, .echo_overflows = 0},
 };
 
 /* Private functions ----------------------------------------------------------*/
@@ -149,7 +149,7 @@ void port_ultrasound_init(uint32_t ultrasound_id)
     p_ultrasound->echo_alt_fun = STM32F4_AF1;
     p_ultrasound->trigger_ready = true;
     p_ultrasound->trigger_end = false;
-    p_ultrasound->echo_recieved = false;
+    p_ultrasound->echo_received = false;
     p_ultrasound->echo_init_tick = 0;
     p_ultrasound->echo_end_tick = 0;
     p_ultrasound->echo_overflows = 0;
@@ -200,7 +200,7 @@ void port_ultrasound_stop_echo_timer(uint32_t ultrasound_id)
 {
     stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
     TIM2->CR1 &= ~TIM_CR1_CEN;
-    if (p_ultrasound->echo_recieved)
+    if (p_ultrasound->echo_received)
     {
         _timer_echo_setup();
     }
@@ -223,7 +223,7 @@ void port_ultrasound_reset_echo_ticks(uint32_t ultrasound_id)
     p_ultrasound->echo_init_tick = 0;
     p_ultrasound->echo_end_tick = 0;
     p_ultrasound->echo_overflows = 0;
-    p_ultrasound->echo_recieved = false;
+    p_ultrasound->echo_received = false;
 }
 
 void port_ultrasound_stop_ultrasound(uint32_t ultrasound_id)
@@ -286,13 +286,13 @@ void port_ultrasound_set_echo_end_tick(uint32_t ultrasound_id, uint32_t echo_end
 bool port_ultrasound_get_echo_received(uint32_t ultrasound_id)
 {
     stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
-    return p_ultrasound->echo_recieved;
+    return p_ultrasound->echo_received;
 }
 
 void port_ultrasound_set_echo_received(uint32_t ultrasound_id, bool echo_recieved)
 {
     stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
-    p_ultrasound->echo_recieved = echo_recieved;
+    p_ultrasound->echo_received = echo_recieved;
 }
 
 uint32_t port_ultrasound_get_echo_overflows(uint32_t ultrasound_id)
