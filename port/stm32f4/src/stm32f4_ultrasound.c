@@ -76,16 +76,16 @@ static void _timer_trigger_setup()
     TIM3->CR1 |= TIM_CR1_ARPE;
     TIM3->CNT = 0;
     double f_clk = (double)SystemCoreClock;
-    double f_timer = 1/PORT_PARKING_SENSOR_TRIGGER_UP_US;
-    double psc = (f_clk / (f_timer * MAX_ARR_VALUE));
+    double f_timer = (double)1/PORT_PARKING_SENSOR_TRIGGER_UP_US * 1000000;
+    double psc = (f_clk / (f_timer * (MAX_ARR_VALUE + 1))) - 1;
     psc = round(psc);
-    double arr = (f_clk / (psc * f_timer));
+    double arr = (f_clk / ((psc + 1) * f_timer)) - 1;
     arr = round(arr);
     if (arr > MAX_ARR_VALUE)
     {
         psc = psc + 1;
         psc = round(psc);
-        arr = (f_clk / (psc * f_timer));
+        arr = (f_clk / ((psc + 1) * f_timer)) - 1;
         arr = round(arr);
     }
     TIM3->PSC = psc;
@@ -93,8 +93,7 @@ static void _timer_trigger_setup()
     TIM3->EGR |= TIM_EGR_UG;
     TIM3->SR &= ~TIM_SR_UIF;
     TIM3->DIER |= TIM_DIER_UIE;
-    NVIC_SetPriority(TIM3_IRQn, PRIORITY_LEVEL_4);
-
+    NVIC_SetPriority(TIM3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), PRIORITY_LEVEL_4, 0));
 }
 
 void _timer_new_measurement_setup()
@@ -104,31 +103,31 @@ void _timer_new_measurement_setup()
     TIM5->CR1 |= TIM_CR1_ARPE;
     TIM5->CNT = 0;
     double f_clk = (double)SystemCoreClock;
-    double f_timer = 1/PORT_PARKING_SENSOR_TIMEOUT_MS;
-    double psc = (f_clk / (f_timer * MAX_ARR_VALUE));
+    double f_timer = (double)1/PORT_PARKING_SENSOR_TIMEOUT_MS * 1000;
+    double psc = (f_clk / (f_timer * (MAX_ARR_VALUE + 1))) - 1;
     psc = round(psc);
-    double arr = (f_clk / (psc * f_timer));
+    double arr = (f_clk / ((psc + 1) * f_timer)) - 1;
     arr = round(arr);
     if (arr > MAX_ARR_VALUE)
     {
         psc = psc + 1;
         psc = round(psc);
-        arr = (f_clk / (psc * f_timer));
+        arr = (f_clk / ((psc + 1) * f_timer)) - 1;
         arr = round(arr);
     }
     TIM5->PSC = psc;
     TIM5->ARR = arr;
+    TIM5->EGR |= TIM_EGR_UG;
     TIM5->SR &= ~TIM_SR_UIF;
     TIM5->DIER |= TIM_DIER_UIE;
-    NVIC_SetPriority(TIM5_IRQn, PRIORITY_LEVEL_5);
-    TIM5->EGR |= TIM_EGR_UG;
+    NVIC_SetPriority(TIM5_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), PRIORITY_LEVEL_5, 0));
 }
 
 void _timer_echo_setup()
 {
     RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
     TIM2->CR1 &= ~TIM_CR1_CEN;
-    TIM2->PSC = 16;
+    TIM2->PSC = 15;
     TIM2->ARR = MAX_ARR_VALUE;
     TIM2->CR1 |= TIM_CR1_ARPE;
     TIM2->CCMR1 |= TIM_CCMR1_CC2S_0;
@@ -140,7 +139,6 @@ void _timer_echo_setup()
     TIM2->DIER |= TIM_DIER_UIE;
     NVIC_SetPriority(TIM2_IRQn, PRIORITY_LEVEL_3);
     TIM2->EGR |= TIM_EGR_UG;
-
 }
 
 /* Public functions -----------------------------------------------------------*/
@@ -148,11 +146,7 @@ void port_ultrasound_init(uint32_t ultrasound_id)
 {
     /* Get the ultrasound sensor */
     stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
-    p_ultrasound->p_trigger_port = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO;
-    p_ultrasound->p_echo_port = STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO;
-    p_ultrasound->trigger_pin = STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN;
-    p_ultrasound->echo_pin = STM32F4_REAR_PARKING_SENSOR_ECHO_PIN;
-    p_ultrasound->echo_alt_fun = 0;
+    p_ultrasound->echo_alt_fun = STM32F4_AF1;
     p_ultrasound->trigger_ready = true;
     p_ultrasound->trigger_end = false;
     p_ultrasound->echo_recieved = false;
@@ -166,7 +160,6 @@ void port_ultrasound_init(uint32_t ultrasound_id)
     /* Echo pin configuration */
     stm32f4_system_gpio_config(p_ultrasound->p_echo_port, p_ultrasound->echo_pin, STM32F4_GPIO_MODE_AF, STM32F4_GPIO_PUPDR_NOPULL);
     stm32f4_system_gpio_config_alternate(p_ultrasound->p_echo_port, p_ultrasound->echo_pin, p_ultrasound->echo_alt_fun);
-    
 
     /* Configure timers */
     _timer_trigger_setup();
@@ -178,19 +171,22 @@ void port_ultrasound_start_measurement(uint32_t ultrasound_id)
 {
     stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
     p_ultrasound->trigger_ready = true;
-    TIM2->CNT = 0;
-    TIM3->CNT = 0;
-    TIM5->CNT = 0;
-    if (p_ultrasound->trigger_ready)
+    if (ultrasound_id == PORT_REAR_PARKING_SENSOR_ID)
     {
-        _timer_trigger_setup();
-        _timer_echo_setup();
+        TIM2->CNT = 0;
+        TIM3->CNT = 0;
     }
+    TIM5->CNT = 0;
     stm32f4_system_gpio_write(p_ultrasound->p_trigger_port, p_ultrasound->trigger_pin, HIGH);
     NVIC_EnableIRQ(TIM2_IRQn);
     NVIC_EnableIRQ(TIM3_IRQn);
-    TIM2->CR1 |= TIM_CR1_CEN;
-    TIM3->CR1 |= TIM_CR1_CEN;
+    NVIC_EnableIRQ(TIM5_IRQn);
+    if (ultrasound_id == PORT_REAR_PARKING_SENSOR_ID)
+    {
+        TIM2->CR1 |= TIM_CR1_CEN;
+        TIM3->CR1 |= TIM_CR1_CEN;
+    }
+    TIM5->CR1 |= TIM_CR1_CEN;
 }
 
 void port_ultrasound_stop_trigger_timer(uint32_t ultrasound_id)
