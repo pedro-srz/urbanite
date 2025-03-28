@@ -36,8 +36,8 @@ uint32_t port_ultrasound_get_echo_init_tick(uint32_t ultrasound_id); /*!< Get th
 void port_ultrasound_set_echo_init_tick(uint32_t ultrasound_id, uint32_t echo_init_tick); /*!< Set the initial tick of the echo of the ultrasound sensor.*/
 uint32_t port_ultrasound_get_echo_end_tick(uint32_t ultrasound_id); /*!< Get the final tick of the echo of the ultrasound sensor.*/
 void port_ultrasound_set_echo_end_tick(uint32_t ultrasound_id, uint32_t echo_end_tick); /*!< Set the final tick of the echo of the ultrasound sensor.*/
-bool port_ultrasound_get_echo_recieved(uint32_t ultrasound_id); /*!< Get the status of the echo of the ultrasound sensor.*/
-void port_ultrasound_set_echo_recieved(uint32_t ultrasound_id, bool echo_recieved); /*!< Set the status of the echo of the ultrasound sensor.*/
+bool port_ultrasound_get_echo_received(uint32_t ultrasound_id); /*!< Get the status of the echo of the ultrasound sensor.*/
+void port_ultrasound_set_echo_received(uint32_t ultrasound_id, bool echo_recieved); /*!< Set the status of the echo of the ultrasound sensor.*/
 uint32_t port_ultrasound_get_echo_overflows(uint32_t ultrasound_id); /*!< Get the number of overflows of the echo of the ultrasound sensor.*/
 void port_ultrasound_set_echo_overflows(uint32_t ultrasound_id, uint32_t echo_overflows); /*!< Set the number of overflows of the echo of the ultrasound sensor.*/
 

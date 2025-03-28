@@ -59,7 +59,7 @@ void TIM2_IRQHandler(void)
         else
         {
             port_ultrasound_set_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID, TIM2->CCR2);
-            port_ultrasound_set_echo_recieved(PORT_REAR_PARKING_SENSOR_ID, true);
+            port_ultrasound_set_echo_received(PORT_REAR_PARKING_SENSOR_ID, true);
         }
 
     }

@@ -90,10 +90,11 @@ static void _timer_trigger_setup()
     }
     TIM3->PSC = psc;
     TIM3->ARR = arr;
+    TIM3->EGR |= TIM_EGR_UG;
     TIM3->SR &= ~TIM_SR_UIF;
     TIM3->DIER |= TIM_DIER_UIE;
     NVIC_SetPriority(TIM3_IRQn, PRIORITY_LEVEL_4);
-    TIM3->EGR |= TIM_EGR_UG;
+
 }
 
 void _timer_new_measurement_setup()
@@ -164,7 +165,8 @@ void port_ultrasound_init(uint32_t ultrasound_id)
 
     /* Echo pin configuration */
     stm32f4_system_gpio_config(p_ultrasound->p_echo_port, p_ultrasound->echo_pin, STM32F4_GPIO_MODE_AF, STM32F4_GPIO_PUPDR_NOPULL);
-    stm32f4_system_gpio_config_af(p_ultrasound->p_echo_port, p_ultrasound->echo_pin, p_ultrasound->echo_alt_fun);
+    stm32f4_system_gpio_config_alternate(p_ultrasound->p_echo_port, p_ultrasound->echo_pin, p_ultrasound->echo_alt_fun);
+    
 
     /* Configure timers */
     _timer_trigger_setup();
@@ -230,7 +232,6 @@ void port_ultrasound_reset_echo_ticks(uint32_t ultrasound_id)
 
 void port_ultrasound_stop_ultrasound(uint32_t ultrasound_id)
 {
-    stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
     port_ultrasound_stop_trigger_timer(ultrasound_id);
     port_ultrasound_stop_echo_timer(ultrasound_id);
     port_ultrasound_stop_new_measurement_timer();
@@ -286,13 +287,13 @@ void port_ultrasound_set_echo_end_tick(uint32_t ultrasound_id, uint32_t echo_end
     p_ultrasound->echo_end_tick = echo_end_tick;
 }
 
-bool port_ultrasound_get_echo_recieved(uint32_t ultrasound_id)
+bool port_ultrasound_get_echo_received(uint32_t ultrasound_id)
 {
     stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
     return p_ultrasound->echo_recieved;
 }
 
-void port_ultrasound_set_echo_recieved(uint32_t ultrasound_id, bool echo_recieved)
+void port_ultrasound_set_echo_received(uint32_t ultrasound_id, bool echo_recieved)
 {
     stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
     p_ultrasound->echo_recieved = echo_recieved;
