@@ -170,7 +170,7 @@ void port_ultrasound_init(uint32_t ultrasound_id)
 void port_ultrasound_start_measurement(uint32_t ultrasound_id)
 {
     stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
-    p_ultrasound->trigger_ready = true;
+    p_ultrasound->trigger_ready = false;
     if (ultrasound_id == PORT_REAR_PARKING_SENSOR_ID)
     {
         TIM2->CNT = 0;
@@ -253,7 +253,7 @@ bool port_ultrasound_get_trigger_end(uint32_t ultrasound_id)
     return p_ultrasound->trigger_end;
 }
 
-void port_utrasound_set_trigger_end(uint32_t ultrasound_id, bool trigger_end)
+void port_ultrasound_set_trigger_end(uint32_t ultrasound_id, bool trigger_end)
 {
     stm32f4_ultrasound_hw_t *p_ultrasound = _stm32f4_ultrasound_get(ultrasound_id);
     p_ultrasound->trigger_end = trigger_end;

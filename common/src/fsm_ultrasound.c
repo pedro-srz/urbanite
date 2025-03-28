@@ -43,16 +43,6 @@ int _compare(const void *a, const void *b)
 }
 
 /* State machine input or transition functions */
-static fsm_trans_t fsm_trans_ultrasound[] = {
-    {WAIT_START, check_on, TRIGGER_START, do_start_measurement},
-    {TRIGGER_START, check_trigger_end, WAIT_ECHO_START, do_stop_trigger},
-    {WAIT_ECHO_START, check_echo_init, WAIT_ECHO_END, NULL},
-    {WAIT_ECHO_END, check_echo_recieved, SET_DISTANCE, do_set_distance},
-    {SET_DISTANCE, check_new_measurement, TRIGGER_START, do_start_new_measurement},
-    {SET_DISTANCE, check_off, WAIT_START, do_start_measurement},
-    {-1, NULL, -1, NULL},
-};
-
 static bool check_on(fsm_t *p_this)
 {
     fsm_ultrasound_t *p_fsm = (fsm_ultrasound_t *)(p_this);
@@ -128,7 +118,7 @@ static void do_set_distance(fsm_t *p_this)
     uint32_t init_tick = port_ultrasound_get_echo_init_tick(p_fsm->ultrasound_id);
     uint32_t end_tick = port_ultrasound_get_echo_end_tick(p_fsm->ultrasound_id);
     uint32_t overflows = port_ultrasound_get_echo_overflows(p_fsm->ultrasound_id);
-    uint32_t time_us = (end_tick + overflows * MAX_ARR_VALUE - init_tick);
+    uint32_t time_us = (end_tick + overflows * MAX_ARR_VALUE - init_tick)/1600000;
     uint32_t distance = (time_us * SPEED_OF_SOUND_MS)/(2 * 10000);
     p_fsm->distance_arr[p_fsm->distance_idx] = distance;
     if (p_fsm->distance_idx == 4)
@@ -151,12 +141,23 @@ static void do_stop_measurement(fsm_t *p_this)
 
 /* Other auxiliary functions */
 
+static fsm_trans_t fsm_trans_ultrasound[] = {
+    {WAIT_START, check_on, TRIGGER_START, do_start_measurement},
+    {TRIGGER_START, check_trigger_end, WAIT_ECHO_START, do_stop_trigger},
+    {WAIT_ECHO_START, check_echo_init, WAIT_ECHO_END, NULL},
+    {WAIT_ECHO_END, check_echo_recieved, SET_DISTANCE, do_set_distance},
+    {SET_DISTANCE, check_new_measurement, TRIGGER_START, do_start_new_measurement},
+    {SET_DISTANCE, check_off, WAIT_START, do_stop_measurement},
+    {-1, NULL, -1, NULL},
+};
+
 void fsm_ultrasound_init(fsm_ultrasound_t *p_fsm_ultrasound, uint32_t ultrasound_id)
 {
     // Initialize the FSM
     fsm_init(&p_fsm_ultrasound->f, fsm_trans_ultrasound);
 
     // Initialize the fields of the FSM structure
+    p_fsm_ultrasound->ultrasound_id = ultrasound_id;
     p_fsm_ultrasound->distance_cm = 0;
     p_fsm_ultrasound->distance_idx = 0;
     memset(p_fsm_ultrasound->distance_arr, 0, sizeof(p_fsm_ultrasound->distance_arr));

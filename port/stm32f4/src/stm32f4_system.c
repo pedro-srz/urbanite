@@ -206,11 +206,11 @@ void stm32f4_system_gpio_write(GPIO_TypeDef *p_port, uint8_t pin, bool value)
 {
   if (value)
   {
-    p_port->BSRR = BIT_POS_TO_MASK(pin);
+    p_port->BSRR |= BIT_POS_TO_MASK(pin);
   }
   else
   {
-    p_port->BSRR = BIT_POS_TO_MASK(pin) << 16;
+    p_port->BSRR |= BIT_POS_TO_MASK(pin) << 16;
   }
 }
 

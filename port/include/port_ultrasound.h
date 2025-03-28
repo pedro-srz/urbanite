@@ -31,7 +31,7 @@ void port_ultrasound_stop_ultrasound(uint32_t ultrasound_id); /*!< Stop the ultr
 bool port_ultrasound_get_trigger_ready(uint32_t ultrasound_id); /*!< Get the status of the trigger of the ultrasound sensor.*/
 void port_ultrasound_set_trigger_ready(uint32_t ultrasound_id, bool trigger_ready); /*!< Set the status of the trigger of the ultrasound sensor.*/
 bool port_ultrasound_get_trigger_end(uint32_t ultrasound_id); /*!< Get the status of the trigger end of the ultrasound sensor.*/
-void port_utrasound_set_trigger_end(uint32_t ultrasound_id, bool trigger_end); /*!< Set the status of the trigger end of the ultrasound sensor.*/
+void port_ultrasound_set_trigger_end(uint32_t ultrasound_id, bool trigger_end); /*!< Set the status of the trigger end of the ultrasound sensor.*/
 uint32_t port_ultrasound_get_echo_init_tick(uint32_t ultrasound_id); /*!< Get the initial tick of the echo of the ultrasound sensor.*/
 void port_ultrasound_set_echo_init_tick(uint32_t ultrasound_id, uint32_t echo_init_tick); /*!< Set the initial tick of the echo of the ultrasound sensor.*/
 uint32_t port_ultrasound_get_echo_end_tick(uint32_t ultrasound_id); /*!< Get the final tick of the echo of the ultrasound sensor.*/

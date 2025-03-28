@@ -47,12 +47,13 @@ void TIM2_IRQHandler(void)
 {
     if (TIM2->SR & TIM_SR_UIF)
     {
+        uint32_t echo_overflows = port_ultrasound_get_echo_overflows(PORT_REAR_PARKING_SENSOR_ID);
+        port_ultrasound_set_echo_overflows(PORT_REAR_PARKING_SENSOR_ID, echo_overflows + 1);
         TIM2->SR &= ~TIM_SR_UIF;
-        port_ultrasound_set_echo_overflows(PORT_REAR_PARKING_SENSOR_ID, port_ultrasound_get_echo_overflows(PORT_REAR_PARKING_SENSOR_ID) + 1);
     }
     if (TIM2->SR & TIM_SR_CC2IF)
     {
-        if (port_ultrasound_get_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID) == port_ultrasound_get_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID))
+        if (port_ultrasound_get_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID) == 0 && port_ultrasound_get_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID) == 0)
         {
             port_ultrasound_set_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID, TIM2->CCR2);
         }
@@ -73,11 +74,8 @@ void TIM2_IRQHandler(void)
  */
 void TIM3_IRQHandler(void)
 {
-    if (TIM3->SR & TIM_SR_UIF)
-    {
-        TIM3->SR &= ~TIM_SR_UIF;
-        port_utrasound_set_trigger_end(PORT_REAR_PARKING_SENSOR_ID, true);
-    }
+    TIM3->SR &= ~TIM_SR_UIF;
+    port_ultrasound_set_trigger_end(PORT_REAR_PARKING_SENSOR_ID, true);
 }
 
 /**
@@ -88,11 +86,8 @@ void TIM3_IRQHandler(void)
  */
 void TIM5_IRQHandler(void)
 {
-    if (TIM5->SR & TIM_SR_UIF)
-    {
-        TIM5->SR &= ~TIM_SR_UIF;
-        port_ultrasound_set_trigger_ready(PORT_REAR_PARKING_SENSOR_ID, true);
-    }
+    TIM5->SR &= ~TIM_SR_UIF;
+    port_ultrasound_set_trigger_ready(PORT_REAR_PARKING_SENSOR_ID, true);
 }
 
 
