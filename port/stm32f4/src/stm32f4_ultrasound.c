@@ -45,7 +45,11 @@ typedef struct
 
 /* Global variables */
 static stm32f4_ultrasound_hw_t ultrasound_arr[] = {
-    [PORT_REAR_PARKING_SENSOR_ID] = {.p_trigger_port = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO, .p_echo_port = STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO, .trigger_pin = STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN, .echo_pin = STM32F4_REAR_PARKING_SENSOR_ECHO_PIN, .echo_alt_fun = 0, .trigger_ready = false, .trigger_end = false, .echo_received = false, .echo_init_tick = 0, .echo_end_tick = 0, .echo_overflows = 0},
+    [PORT_REAR_PARKING_SENSOR_ID] = {.p_trigger_port = STM32F4_REAR_PARKING_SENSOR_TRIGGER_GPIO,
+                                     .p_echo_port = STM32F4_REAR_PARKING_SENSOR_ECHO_GPIO,
+                                     .trigger_pin = STM32F4_REAR_PARKING_SENSOR_TRIGGER_PIN, 
+                                     .echo_pin = STM32F4_REAR_PARKING_SENSOR_ECHO_PIN, 
+                                     .echo_alt_fun = 0},
 };
 
 /* Private functions ----------------------------------------------------------*/
@@ -76,10 +80,10 @@ static void _timer_trigger_setup()
     TIM3->CR1 |= TIM_CR1_ARPE;
     TIM3->CNT = 0;
     double f_clk = (double)SystemCoreClock;
-    double f_timer = (double)1/PORT_PARKING_SENSOR_TRIGGER_UP_US * 1000000;
-    double psc = (f_clk / (f_timer * (MAX_ARR_VALUE + 1))) - 1;
+    double f_timer = (double)((1.0 / (double)PORT_PARKING_SENSOR_TRIGGER_UP_US) * 1000000);
+    double psc = (double)((f_clk / ((MAX_ARR_VALUE + 1) * f_timer)) - 1);
     psc = round(psc);
-    double arr = (f_clk / ((psc + 1) * f_timer)) - 1;
+    double arr = (double)((f_clk) / ((psc + 1) * f_timer)) - 1;
     arr = round(arr);
     if (arr > MAX_ARR_VALUE)
     {
@@ -103,10 +107,10 @@ void _timer_new_measurement_setup()
     TIM5->CR1 |= TIM_CR1_ARPE;
     TIM5->CNT = 0;
     double f_clk = (double)SystemCoreClock;
-    double f_timer = (double)1/PORT_PARKING_SENSOR_TIMEOUT_MS * 1000;
-    double psc = (f_clk / (f_timer * (MAX_ARR_VALUE + 1))) - 1;
+    double f_timer = (double)((1.0 / (double)PORT_PARKING_SENSOR_TIMEOUT_MS) * 1000);
+    double psc = (double)((f_clk / ((MAX_ARR_VALUE + 1) * f_timer)) - 1);
     psc = round(psc);
-    double arr = (f_clk / ((psc + 1) * f_timer)) - 1;
+    double arr = (double)((f_clk) / ((psc + 1) * f_timer)) - 1;
     arr = round(arr);
     if (arr > MAX_ARR_VALUE)
     {
@@ -127,13 +131,13 @@ void _timer_echo_setup()
 {
     RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
     TIM2->CR1 &= ~TIM_CR1_CEN;
-    TIM2->PSC = 15;
+    TIM2->PSC = (uint32_t)((SystemCoreClock / 1000000) - 1);
     TIM2->ARR = MAX_ARR_VALUE;
     TIM2->CR1 |= TIM_CR1_ARPE;
     TIM2->CCMR1 |= TIM_CCMR1_CC2S_0;
     TIM2->CCMR1 &= ~TIM_CCMR1_IC2F;
     TIM2->CCER |= (TIM_CCER_CC2P | TIM_CCER_CC2NP);
-    TIM2->CCMR1 &= ~TIM_CCMR1_IC2F;
+    TIM2->CCMR1 &= ~TIM_CCMR1_IC2PSC;
     TIM2->CCER |= TIM_CCER_CC2E;
     TIM2->DIER |= TIM_DIER_CC2IE;
     TIM2->DIER |= TIM_DIER_UIE;

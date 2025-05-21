@@ -118,17 +118,26 @@ static void do_set_distance(fsm_t *p_this)
     uint32_t init_tick = port_ultrasound_get_echo_init_tick(p_fsm->ultrasound_id);
     uint32_t end_tick = port_ultrasound_get_echo_end_tick(p_fsm->ultrasound_id);
     uint32_t overflows = port_ultrasound_get_echo_overflows(p_fsm->ultrasound_id);
-    uint32_t time_us = (end_tick + overflows * MAX_ARR_VALUE - init_tick)/1600000;
+    uint32_t time_us = (end_tick + overflows * MAX_ARR_VALUE - init_tick);
     uint32_t distance = (time_us * SPEED_OF_SOUND_MS)/(2 * 10000);
     p_fsm->distance_arr[p_fsm->distance_idx] = distance;
-    if (p_fsm->distance_idx == 4)
+    if (p_fsm->distance_idx == FSM_ULTRASOUND_NUM_MEASUREMENTS - 1)
     {
         qsort(p_fsm->distance_arr, FSM_ULTRASOUND_NUM_MEASUREMENTS, sizeof(uint32_t), _compare);
-        p_fsm->distance_cm = p_fsm->distance_arr[FSM_ULTRASOUND_NUM_MEASUREMENTS / 2];
+        if (FSM_ULTRASOUND_NUM_MEASUREMENTS % 2 == 0)
+        {
+            p_fsm->distance_cm = (p_fsm->distance_arr[FSM_ULTRASOUND_NUM_MEASUREMENTS / 2 - 1] 
+                                + p_fsm->distance_arr[FSM_ULTRASOUND_NUM_MEASUREMENTS / 2]) / 2;
+        } else {
+            p_fsm->distance_cm = p_fsm->distance_arr[FSM_ULTRASOUND_NUM_MEASUREMENTS / 2];
+        }
         p_fsm->new_measurement = true;
-
     }
-    p_fsm->distance_idx = (p_fsm->distance_idx + 1) % FSM_ULTRASOUND_NUM_MEASUREMENTS;
+    p_fsm->distance_idx = (p_fsm->distance_idx + 1);
+    if (p_fsm->distance_idx >= FSM_ULTRASOUND_NUM_MEASUREMENTS)
+    {
+        p_fsm->distance_idx = 0;
+    }
     port_ultrasound_stop_echo_timer(p_fsm->ultrasound_id);
     port_ultrasound_reset_echo_ticks(p_fsm->ultrasound_id);
 }

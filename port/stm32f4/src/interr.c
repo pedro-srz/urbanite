@@ -62,8 +62,30 @@ void TIM2_IRQHandler(void)
             port_ultrasound_set_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID, TIM2->CCR2);
             port_ultrasound_set_echo_received(PORT_REAR_PARKING_SENSOR_ID, true);
         }
-
     }
+
+    // if (TIM2->SR & TIM_SR_UIF)
+    // {
+    //     uint32_t echo_overflows = port_ultrasound_get_echo_overflows(PORT_REAR_PARKING_SENSOR_ID);
+    //     port_ultrasound_set_echo_overflows(PORT_REAR_PARKING_SENSOR_ID, echo_overflows + 1);
+    //     TIM2->SR &= ~TIM_SR_UIF;
+    // }
+    // if (TIM2->SR & TIM_SR_CC2IF)
+    // {
+    //     uint32_t tick = TIM2->CCR2;
+    //     uint32_t echo_init_tick = port_ultrasound_get_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID);
+    //     uint32_t echo_end_tick = port_ultrasound_get_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID);
+    //     if (echo_init_tick == 0 && echo_end_tick == 0)
+    //     {
+    //         port_ultrasound_set_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID, tick);
+    //     }
+    //     else
+    //     {
+    //         port_ultrasound_set_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID, tick);
+    //         port_ultrasound_set_echo_received(PORT_REAR_PARKING_SENSOR_ID, true);
+    //     }
+    // }
+
 }
 
 /**
