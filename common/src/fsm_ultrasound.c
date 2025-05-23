@@ -59,7 +59,14 @@ static bool check_on(fsm_t *p_this)
 static bool check_off(fsm_t *p_this)
 {
     fsm_ultrasound_t *p_fsm = (fsm_ultrasound_t *)(p_this);
-    return !port_ultrasound_get_trigger_ready(p_fsm->ultrasound_id);
+    if (p_fsm->status)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
 static bool check_trigger_end(fsm_t *p_this)
@@ -149,7 +156,6 @@ static void do_stop_measurement(fsm_t *p_this)
 }
 
 /* Other auxiliary functions */
-
 static fsm_trans_t fsm_trans_ultrasound[] = {
     {WAIT_START, check_on, TRIGGER_START, do_start_measurement},
     {TRIGGER_START, check_trigger_end, WAIT_ECHO_START, do_stop_trigger},
@@ -160,7 +166,7 @@ static fsm_trans_t fsm_trans_ultrasound[] = {
     {-1, NULL, -1, NULL},
 };
 
-void fsm_ultrasound_init(fsm_ultrasound_t *p_fsm_ultrasound, uint32_t ultrasound_id)
+static void fsm_ultrasound_init(fsm_ultrasound_t *p_fsm_ultrasound, uint32_t ultrasound_id)
 {
     // Initialize the FSM
     fsm_init(&p_fsm_ultrasound->f, fsm_trans_ultrasound);
@@ -177,7 +183,7 @@ void fsm_ultrasound_init(fsm_ultrasound_t *p_fsm_ultrasound, uint32_t ultrasound
 
 void fsm_ultrasound_destroy(fsm_ultrasound_t *p_fsm)
 {
-    free(&p_fsm->f);
+    free(&p_fsm->f); // Free the memory allocated for the FSM
 }
 
 void fsm_ultrasound_fire(fsm_ultrasound_t *p_fsm)
@@ -249,4 +255,9 @@ fsm_ultrasound_t *fsm_ultrasound_new(uint32_t ultrasound_id)
 void fsm_ultrasound_set_state(fsm_ultrasound_t *p_fsm, int8_t state)
 {
     p_fsm->f.current_state = state;
+}
+
+bool fsm_ultrasound_check_activity(fsm_ultrasound_t *p_fsm)
+{
+    return false;
 }

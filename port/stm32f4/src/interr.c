@@ -24,17 +24,13 @@
  */
 void EXTI15_10_IRQHandler(void)
 {
-    /* ISR parking button */
-    if (port_button_get_value(PORT_PARKING_BUTTON_ID))
+    port_system_systick_resume();
+
+    if (port_button_get_pending_interrupt(PORT_PARKING_BUTTON_ID) == true)
     {
-        // Set the flag to false
         port_button_set_pressed(PORT_PARKING_BUTTON_ID, !port_button_get_value(PORT_PARKING_BUTTON_ID));
-    } else {
-        // Set the flag to true
-        port_button_set_pressed(PORT_PARKING_BUTTON_ID, !port_button_get_value(PORT_PARKING_BUTTON_ID));
+        port_button_clear_pending_interrupt(PORT_PARKING_BUTTON_ID);
     }
-    // Clear the pending interrupt for the button pin
-    port_button_clear_pending_interrupt(PORT_PARKING_BUTTON_ID);
 }
 
 /**
@@ -45,6 +41,7 @@ void EXTI15_10_IRQHandler(void)
  */
 void TIM2_IRQHandler(void)
 {
+    port_system_systick_resume();
     if (TIM2->SR & TIM_SR_UIF)
     {
         uint32_t echo_overflows = port_ultrasound_get_echo_overflows(PORT_REAR_PARKING_SENSOR_ID);
@@ -53,7 +50,7 @@ void TIM2_IRQHandler(void)
     }
     if (TIM2->SR & TIM_SR_CC2IF)
     {
-        if (port_ultrasound_get_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID) == 0 && port_ultrasound_get_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID) == 0)
+        if ((port_ultrasound_get_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID) == 0) && (port_ultrasound_get_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID) == 0))
         {
             port_ultrasound_set_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID, TIM2->CCR2);
         }
@@ -63,29 +60,6 @@ void TIM2_IRQHandler(void)
             port_ultrasound_set_echo_received(PORT_REAR_PARKING_SENSOR_ID, true);
         }
     }
-
-    // if (TIM2->SR & TIM_SR_UIF)
-    // {
-    //     uint32_t echo_overflows = port_ultrasound_get_echo_overflows(PORT_REAR_PARKING_SENSOR_ID);
-    //     port_ultrasound_set_echo_overflows(PORT_REAR_PARKING_SENSOR_ID, echo_overflows + 1);
-    //     TIM2->SR &= ~TIM_SR_UIF;
-    // }
-    // if (TIM2->SR & TIM_SR_CC2IF)
-    // {
-    //     uint32_t tick = TIM2->CCR2;
-    //     uint32_t echo_init_tick = port_ultrasound_get_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID);
-    //     uint32_t echo_end_tick = port_ultrasound_get_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID);
-    //     if (echo_init_tick == 0 && echo_end_tick == 0)
-    //     {
-    //         port_ultrasound_set_echo_init_tick(PORT_REAR_PARKING_SENSOR_ID, tick);
-    //     }
-    //     else
-    //     {
-    //         port_ultrasound_set_echo_end_tick(PORT_REAR_PARKING_SENSOR_ID, tick);
-    //         port_ultrasound_set_echo_received(PORT_REAR_PARKING_SENSOR_ID, true);
-    //     }
-    // }
-
 }
 
 /**
@@ -128,3 +102,4 @@ void SysTick_Handler(void)
     // Increment the System tick counter in 1 count
     port_system_set_millis(port_system_get_millis() + 1);
 }
+

@@ -48,4 +48,30 @@ void port_system_delay_ms(uint32_t ms);
  */
 void port_system_delay_until_ms(uint32_t *t, uint32_t ms);
 
+/**
+ * @brief Puts the system to sleep.
+ */
+void port_system_sleep(void);
+
+/**
+ * @brief Suspends the SysTick timer.
+ */
+void port_system_systick_suspend(void);
+
+/**
+ * @brief Resumes the SysTick timer.
+ */
+void port_system_systick_resume(void);
+
+/**
+ * @brief Puts the system in low power mode.
+ */
+void port_system_power_sleep(void);
+
 #endif /* PORT_SYSTEM_H_ */
+
+/**
+ * @brief Puts the system in stop mode.
+ */
+void port_system_power_stop(void);
+

@@ -74,9 +74,8 @@ static bool check_timeout(fsm_t *p_this)
 }
 
 /* State machine output or action functions */
-
 /**
- * @brief Button FSM to store the system tick when the button was pressed.
+ * @brief Button FSM to store the tick when the button is pressed.
  * 
  * @param p_this Pointer to the FSM.
  */
@@ -102,7 +101,7 @@ static void do_set_duration(fsm_t *p_this)
 /**
  * @brief Button FSM to reset the duration of the button press.
  * 
- * @param p_this Pointer to the FSM.
+ * 
  */
 static fsm_trans_t fsm_trans_button[] = {
     {BUTTON_RELEASED, check_button_pressed, BUTTON_PRESSED_WAIT, do_store_tick_pressed},
@@ -113,6 +112,13 @@ static fsm_trans_t fsm_trans_button[] = {
 };
 
 /* Other auxiliary functions */
+/**
+ * @brief Initialize the button FSM.
+ * 
+ * @param p_fsm_button Pointer to the button FSM.
+ * @param debounce_time Debounce time in milliseconds.
+ * @param button_id Button ID.
+ */
 void fsm_button_init(fsm_button_t *p_fsm_button, uint32_t debounce_time, uint32_t button_id)
 {
     fsm_init(&p_fsm_button->f, fsm_trans_button);
@@ -124,6 +130,14 @@ void fsm_button_init(fsm_button_t *p_fsm_button, uint32_t debounce_time, uint32_
 }
 
 /* Public functions -----------------------------------------------------------*/
+/**
+ * @brief Create a new button FSM.
+ * 
+ * @param debounce_time Debounce time in milliseconds.
+ * @param button_id Button ID.
+ * 
+ * @return Pointer to the new button FSM.
+ */
 fsm_button_t *fsm_button_new(uint32_t debounce_time, uint32_t button_id)
 {
     fsm_button_t *p_fsm_button = malloc(sizeof(fsm_button_t)); /* Do malloc to reserve memory of all other FSM elements, although it is interpreted as fsm_t (the first element of the structure) */
@@ -132,11 +146,21 @@ fsm_button_t *fsm_button_new(uint32_t debounce_time, uint32_t button_id)
 }
 
 /* FSM-interface functions. These functions are used to interact with the FSM */
+/**
+ * @brief Fire the button FSM.
+ * 
+ * @param p_fsm Pointer to the button FSM.
+ */
 void fsm_button_fire(fsm_button_t *p_fsm)
 {
     fsm_fire(&p_fsm->f); // Is it also possible to it in this way: fsm_fire((fsm_t *)p_fsm);
 }
 
+/**
+ * @brief Destroy de FSM of the button
+ * 
+ * @param p_fsm Pointer to the button FSM
+ */
 void fsm_button_destroy(fsm_button_t *p_fsm)
 {
     free(&p_fsm->f);
@@ -147,23 +171,62 @@ fsm_t *fsm_button_get_inner_fsm(fsm_button_t *p_fsm)
     return &p_fsm->f;
 }
 
+/**
+ * @brief Check if the button FSM has been active.
+ * 
+ * @param p_fsm Pointer to the button FSM.
+ * 
+ * @return true if the button FSM has been active, false otherwise.
+ */
 uint32_t fsm_button_get_state(fsm_button_t *p_fsm)
 {
     return p_fsm->f.current_state;
 }
 
+/**
+ * @brief Get the duration of the button FSM.
+ * 
+ * @param p_fsm Pointer to the button FSM.
+ * 
+ * @return Duration of the button FSM in milliseconds.
+ */
 uint32_t fsm_button_get_duration(fsm_button_t *p_fsm)
 {
-    
     return p_fsm->duration;
 }
 
+/**
+ * @brief Get the debounce time of the button FSM.
+ * 
+ * @param p_fsm Pointer to the button FSM.
+ * 
+ * @return Debounce time of the button FSM in milliseconds.
+ */
 uint32_t fsm_button_get_debounce_time_ms(fsm_button_t *p_fsm)
 {
     return p_fsm->debounce_time;
 }
 
+/**
+ * @brief Get the button ID of the button FSM.
+ * 
+ * @param p_fsm Pointer to the button FSM.
+ * 
+ * @return Button ID of the button FSM.
+ */
 void fsm_button_reset_duration(fsm_button_t *p_fsm)
 {
     p_fsm->duration = 0;
 }
+
+bool fsm_button_check_activity(fsm_button_t *p_fsm)
+{
+    if (p_fsm->f.current_state == BUTTON_RELEASED)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}   

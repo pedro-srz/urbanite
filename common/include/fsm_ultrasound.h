@@ -47,18 +47,7 @@ fsm_t *fsm_ultrasound_get_inner_fsm(fsm_ultrasound_t *p_fsm); /* Getter for the 
 uint32_t fsm_ultrasound_get_state(fsm_ultrasound_t *p_fsm); /* Getter for the state */
 void fsm_ultrasound_set_state(fsm_ultrasound_t *p_fsm, int8_t state); /* Setter for the state */
 bool fsm_ultrasound_check_activity(fsm_ultrasound_t *p_fsm); /* Check if the FSM is active */
- 
- /**
-  * @brief Set the state of the ultrasound FSM.
-  *
-  * This function sets the current state of the ultrasound FSM.
-  *
-  * > &nbsp;&nbsp;&nbsp;&nbsp;💡 This function is important because the struct is private and external functions such as those of the unit tests cannot access the state of the FSM directly. \n
-  * 
-  * @param p_fsm Pointer to an `fsm_ultrasound_t` struct.
-  * @param state New state of the ultrasound FSM.
-  */
- void fsm_ultrasound_set_state(fsm_ultrasound_t *p_fsm, int8_t state);
+void fsm_ultrasound_set_state(fsm_ultrasound_t *p_fsm, int8_t state);
  
  #endif /* FSM_ULTRASOUND_H_ */
  
